@@ -3,7 +3,7 @@ window.onload = function() {
 
 
 
-  let listOfDisplayedProducts = [];
+
   let listOfAllProducts = [];
 
   // Class which will create new products (object) //
