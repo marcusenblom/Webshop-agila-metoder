@@ -109,7 +109,7 @@
         #productSection .flex-container .productContainer .productTitleContainer .priceSpan {
           margin-top: 5px; }
         #productSection .flex-container .productContainer .productTitleContainer .titleFont {
-          font-family: 'Playfair Display', serif;
+          font-family: 'Baskervville', serif;
           font-size: 1.2rem; }
     @media screen and (min-width: 600px) {
       #productSection .flex-container .productContainer {
