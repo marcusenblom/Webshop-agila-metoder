@@ -12,6 +12,7 @@
       width: 20%;
       text-align: center;
     }
+
     .hr-column-middle {
       width: 30%;
       text-align: center;
@@ -27,8 +28,38 @@
     justify-content: center;
     flex-wrap: wrap;
 
+    #recommended-middle-flex {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .recommended-flex-left,
+    .recommended-flex-right {
+      width: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        font-size: 20px;
+        color: grey;
+        cursor: pointer;
+      }
+      @media screen and (max-width: 550px) {
+        i {
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+      }
+    }
+
     .recommendedContainer {
-      width: 180px;
+      width: 160px;
       margin: 5px;
 
       .recommendedImage {
