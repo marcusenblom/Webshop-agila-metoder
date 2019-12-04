@@ -2,21 +2,24 @@ $(document).ready(function() {
 
   // Funktion som ändrar backgrunden på #header beroende på scroll position //
   $(document).scroll(function() {
-    if (window.pageYOffset > 400) {
-      $("#header").css({
-        "background-color": "white",
-        "color": "black"
-      }).addClass("borderShadow");
+    if (window.pageYOffset < 60) {
+      $("#header").removeClass("borderTransparent").addClass("borderWhite");
+
     } else {
-      $("#header").css({
-        "background-color": "transparent",
-        "color": "white"
-      }).removeClass("borderShadow").addClass("borderWhite");
-    };
-    if (window.pageYOffset > 60) {
-      $("#header").removeClass("borderWhite");
+      if (window.pageYOffset < 400) {
+        $("#header").removeClass("borderWhite borderTransparent").css({
+          "background-color": "transparent",
+          "color": "white"
+        });
+      } else {
+        $("#header").css({
+          "background-color": "white",
+          "color": "black"
+        }).addClass("borderShadow");
+      };
     };
   });
+
 
 
   // Array med alla objekt //
@@ -45,23 +48,29 @@ $(document).ready(function() {
 
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
+  function recommend() {
+    for (var i = 0; i < 3; i++) {
+      let randomNumber = Math.floor((Math.random() * 32));
 
-  for (var i = 0; i < 3; i++) {
-    let randomNumber = Math.floor((Math.random() * 24));
+      let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
 
-    let productContainer = $("<div>").addClass("recommendedContainer").appendTo($(".recommended-flex"));
+      let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+    };
+  }
+  // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
+  recommend();
 
-    let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+  // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
+  $(".nextPrevious").on("click", function() {
+    $("#recommended-middle-flex").empty();
+    recommend();
+  });
 
-  };
+
+
+
 
 });
-
-
-
-
-
-
 
 
 
@@ -116,7 +125,7 @@ let productCoat3 = new ProductClass();
 
 productCoat3.id = "idCoat3";
 productCoat3.category = "Coat";
-productCoat3.title = "Topshop - Boucle Double Breasted Coat";
+productCoat3.title = "Double Breasted Coat";
 productCoat3.price = 2900;
 productCoat3.size1 = "S";
 productCoat3.size2 = "M";
@@ -165,7 +174,7 @@ productCoat6.price = 1900;
 productCoat6.size1 = "S";
 productCoat6.size2 = "M";
 productCoat6.size3 = "L";
-productCoat6.description = "";
+productCoat6.description = "Leather jacket. 100% Leather. Smooth.";
 productCoat6.src = "images/coat6.jpg";
 productCoat6.src2 = "images/coat6_2.jpg";
 productCoat6.favorite = false;
@@ -188,7 +197,7 @@ let productCoat8 = new ProductClass();
 
 productCoat8.id = "idCoat7";
 productCoat8.category = "Coat";
-productCoat8.title = "Gant D1. Full length coat";
+productCoat8.title = "Gant - Full length coat";
 productCoat8.price = 1900;
 productCoat8.size1 = "S";
 productCoat8.size2 = "M";
@@ -216,7 +225,7 @@ productDress1.favorite = false;
 let productDress2 = new ProductClass();
 productDress2.category = "dress";
 productDress2.id = "idDress2";
-productDress2.title = "RALPH LAUREN - Mid weight dress";
+productDress2.title = "Mid weight dress";
 productDress2.price = 560;
 productDress2.size1 = "S";
 productDress2.size2 = "M";
@@ -231,7 +240,7 @@ productDress2.favorite = false;
 let productDress3 = new ProductClass();
 productDress3.category = "dress";
 productDress3.id = "idDress3";
-productDress3.title = "RIVER ISLAND - Vardagsklänning";
+productDress3.title = "River Island - Blazer";
 productDress3.price = 740;
 productDress3.size1 = "S";
 productDress3.size2 = "M";
@@ -246,7 +255,7 @@ productDress3.favorite = false;
 let productDress4 = new ProductClass();
 productDress4.category = "dress";
 productDress4.id = "idDress4";
-productDress4.title = "MANGO - Vardagsklänning";
+productDress4.title = "Mango - Vardagsklänning";
 productDress4.price = 900;
 productDress4.size1 = "S";
 productDress4.size2 = "M";
@@ -260,7 +269,7 @@ productDress4.favorite = false;
 let productDress5 = new ProductClass();
 productDress5.category = "dress";
 productDress5.id = "idDress5";
-productDress5.title = "SELECTED FEMME - Midi dress";
+productDress5.title = "Selected - Midi dress";
 productDress5.price = 688;
 productDress5.size1 = "S";
 productDress5.size2 = "M";
@@ -273,7 +282,7 @@ productDress5.favorite = false;
 let productDress6 = new ProductClass();
 productDress6.category = "dress";
 productDress6.id = "idDress6";
-productDress6.title = "ESPRIT - Belt dress"
+productDress6.title = "Esprit - Belt dress"
 productDress6.price = 699;
 productDress6.size1 = "S";
 productDress6.size2 = "M";
@@ -286,7 +295,7 @@ productDress6.favorite = false;
 let productDress7 = new ProductClass();
 productDress7.category = "dress";
 productDress7.id = "idDress7";
-productDress7.title = "For Love & Lemons - Morrison Mini Dress";
+productDress7.title = "Morrison Mini Dress";
 productDress7.price = 559;
 productDress7.size1 = "S";
 productDress7.size2 = "M";
@@ -299,7 +308,7 @@ productDress7.favorite = false;
 let productDress8 = new ProductClass();
 productDress8.category = "dress";
 productDress8.id = "idDress8";
-productDress8.title = "Ax Paris - Long Sleeve Blazer Dress";
+productDress8.title = "Ax Paris - Long Sleeve";
 productDress8.price = 999;
 productDress8.size1 = "S";
 productDress8.size2 = "M";
@@ -314,7 +323,7 @@ let productShoe1 = new ProductClass();
 
 productShoe1.id = "idShoe1";
 productShoe1.category = "Shoe";
-productShoe1.title = "TAMARIS - Sneakers";
+productShoe1.title = "Tamaris - Sneakers";
 productShoe1.price = 700;
 productShoe1.size1 = "S";
 productShoe1.size2 = "M";
@@ -330,7 +339,7 @@ let productShoe2 = new ProductClass();
 
 productShoe2.id = "idShoe2";
 productShoe2.category = "Shoe";
-productShoe2.title = "CROSSOVER - Sandaler";
+productShoe2.title = "Crossover - Sandaler";
 productShoe2.price = 2900;
 productShoe2.size1 = 37;
 productShoe2.size2 = 38;
@@ -344,8 +353,8 @@ let productShoe3 = new ProductClass();
 
 productShoe3.id = "idShoe3";
 productShoe3.category = "Shoe";
-productShoe3.title = "DOROTHY PERKINS";
-productShoe3.price = 2900;
+productShoe3.title = "Stan Smith - Sneakers";
+productShoe3.price = 2800;
 productShoe3.size1 = 37;
 productShoe3.size2 = 38;
 productShoe3.size3 = 40;
@@ -359,8 +368,8 @@ let productShoe4 = new ProductClass();
 
 productShoe4.id = "idShoe4";
 productShoe4.category = "Shoe";
-productShoe4.title = "RAID Winde fit, WIDE FIT JANESSA - Klassiska pumps";
-productShoe4.price = 2900;
+productShoe4.title = "Winde - Classic pumps";
+productShoe4.price = 2300;
 productShoe4.size1 = 37;
 productShoe4.size2 = 38;
 productShoe4.size3 = 40;
@@ -373,7 +382,7 @@ let productShoe5 = new ProductClass();
 
 productShoe5.id = "idShoet5";
 productShoe5.category = "Shoe";
-productShoe5.title = "KATY - Klassiska pumps - yellow";
+productShoe5.title = "Katy - yellow";
 productShoe5.price = 2900;
 productShoe5.size1 = 37;
 productShoe5.size2 = 38;
@@ -387,7 +396,7 @@ productShoe5.favorite = false;
 let productShoe6 = new ProductClass();
 productShoe6.id = "idShoe6";
 productShoe6.category = "Shoe6";
-productShoe6.title = "Charks-KAYLIN CARA - Pumps - black";
+productShoe6.title = "Cara - Pumps";
 productShoe6.price = 1900;
 productShoe6.size1 = 37;
 productShoe6.size2 = 38;
@@ -401,7 +410,7 @@ let productShoe7 = new ProductClass();
 
 productShoe7.id = "idShoe7";
 productShoe7.category = "Shoe";
-productShoe7.title = "STAN SMITH - Sneakers";
+productShoe7.title = "Dorothy Perkins";
 productShoe7.price = 1900;
 productShoe7.size1 = 37;
 productCoat7.size2 = 38;
@@ -415,8 +424,8 @@ let productShoe8 = new ProductClass();
 
 productShoe8.id = "idShoe8";
 productShoe8.category = "Shoe";
-productShoe8.title = "Converse: CHUCK TAYLOR ALL STAR OPI - Höga sneakers";
-productShoe8price = 1900;
+productShoe8.title = "Converse - Superlåga sneakers";
+productShoe8.price = 1100;
 productShoe8.size1 = 37;
 productShoe8.size2 = 38;
 productShoe8.size3 = 40;
@@ -430,7 +439,7 @@ let productShirts1 = new ProductClass();
 
 productShirts1.id = "idShirts1";
 productShirts1.category = "Shirts";
-productShirts1.title = "Michael Michael Kors - LUREX STRIPE DRAP TOP";
+productShirts1.title = "Michael Kors - Top";
 productShirts1.price = 500;
 productShirts1.size1 = "S";
 productShirts1.size2 = "M";
@@ -445,7 +454,7 @@ let productShirts2 = new ProductClass();
 
 productShirts2.id = "idShirts2";
 productShirts2.category = "Shirts";
-productShirts2.title = "Ivyrevel - CROPPED SHIRT";
+productShirts2.title = "Ivyrevel - Cropped shirt";
 productShirts2.price = 500;
 productShirts2.size1 = "S";
 productShirts2.size2 = "M";
@@ -459,7 +468,7 @@ let productShirts3 = new ProductClass();
 
 productShirts3.id = "idShirts3";
 productShirts3.category = "Shirts";
-productShirts3.title = "Co'couture Khaki Denim Shirt";
+productShirts3.title = "Co'couture - Denim Shirt";
 productShirts3.price = 500;
 productShirts3.size1 = "S";
 productShirts3.size2 = "M";
@@ -475,12 +484,12 @@ let productShirts4 = new ProductClass();
 
 productShirts4.id = "idShirts4";
 productShirts4.category = "Shirts";
-productShirts4.title = "title missing";
+productShirts4.title = "Top-down bottom shirt";
 productShirts4.price = 500;
 productShirts4.size1 = "S";
 productShirts4.size2 = "M";
 productShirts4.size3 = "L";
-productShirts4.description = "description missing";
+productShirts4.description = "Blue top-down bottom shirt. 100% nice material";
 productShirts4.src = "images/shirts4.jpg";
 productShirts4.src2 = "images/shirts4_2.jpg";
 productShirts4.favorite = false;
@@ -492,7 +501,7 @@ let productShirts5 = new ProductClass();
 
 productShirts5.id = "idShirts5";
 productShirts5.category = "Shirts";
-productShirts5.title = "title missing";
+productShirts5.title = "Bottle-neck nothing shirt";
 productShirts5.price = 500;
 productShirts5.size1 = "S";
 productShirts5.size2 = "M";
@@ -509,7 +518,7 @@ let productShirts6 = new ProductClass();
 
 productShirts6.id = "idShirts6";
 productShirts6.category = "Shirts";
-productShirts6.title = "Jacqueline de Yong JDYPRIDE L/S SHIRT WVN";
+productShirts6.title = "De Yong - Shirt";
 productShirts6.price = 500;
 productShirts6.size1 = "S";
 productShirts6.size2 = "M";
@@ -526,7 +535,7 @@ let productShirts7 = new ProductClass();
 
 productShirts7.id = "idShirts7";
 productShirts7.category = "Shirts";
-productShirts7.title = "Topshop - Boucle Double Breasted Coat";
+productShirts7.title = "Topshop - Shirtless";
 productShirts7.price = 500;
 productShirts7.size1 = "S";
 productShirts7.size2 = "M";
@@ -542,7 +551,7 @@ let productShirts8 = new ProductClass();
 
 productShirts8.id = "idShirts8";
 productShirts8.category = "Shirts";
-productShirts8.title = "Filippa - Nina Silk Shirt";
+productShirts8.title = "Filippa - Silk Shirt";
 productShirts8.price = 500;
 productShirts8.size1 = "S";
 productShirts8.size2 = "M";
