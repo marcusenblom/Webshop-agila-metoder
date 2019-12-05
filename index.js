@@ -3,11 +3,11 @@ $(document).ready(function() {
   // Funktion som ändrar backgrunden på #header beroende på scroll position //
   $(document).scroll(function() {
     if (window.pageYOffset < 60) {
-      $("#header").removeClass("borderTransparent").addClass("borderWhite");
+      $("#header").removeClass("borderShadow");
 
     } else {
-      if (window.pageYOffset < 400) {
-        $("#header").removeClass("borderWhite borderTransparent").css({
+      if (window.pageYOffset < 340) {
+        $("#header").removeClass("borderShadow").css({
           "background-color": "transparent",
           "color": "white"
         });
@@ -19,7 +19,6 @@ $(document).ready(function() {
       };
     };
   });
-
 
 
   // Array med alla objekt //
@@ -44,7 +43,45 @@ $(document).ready(function() {
     let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
     let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
     let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+
+    $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
   };
+
+  // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
+
+  $(".filter-button").on("click", function() {
+    $(".flex-container").empty();
+
+    let category = this.id;
+    console.log(category);
+
+    let numberOfItemsAdded = 0;
+
+    for (var i = 0; i < listOfAllProducts.length; i++) {
+
+      if (listOfAllProducts[i].category === category) {
+
+        numberOfItemsAdded++;
+        console.log(numberOfItemsAdded);
+
+        let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+
+        let imgSrc = listOfAllProducts[i].src;
+        let imgSrc2 = listOfAllProducts[i].src2;
+        let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+          image.attr("src", imgSrc2);
+        }).mouseout(function() {
+          image.attr("src", imgSrc);
+        }).appendTo(productContainer);
+
+        let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+        let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+        let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+      }
+      $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
+    };
+  });
+
 
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
@@ -69,7 +106,6 @@ $(document).ready(function() {
 
 
 
-
 });
 
 
@@ -80,7 +116,7 @@ $(document).ready(function() {
 function ProductClass() {
   this.id;
   this.category;
-  this.titel;
+  this.title;
   this.price;
   this.size1;
   this.size2;
@@ -209,7 +245,7 @@ productCoat8.favorite = false;
 
 let productDress1 = new ProductClass();
 
-productDress1.category = "dress";
+productDress1.category = "Dress";
 productDress1.id = "idDress1";
 productDress1.title = "VILA - Cocktailklänning";
 productDress1.price = 500;
@@ -223,7 +259,7 @@ productDress1.favorite = false;
 
 
 let productDress2 = new ProductClass();
-productDress2.category = "dress";
+productDress2.category = "Dress";
 productDress2.id = "idDress2";
 productDress2.title = "Mid weight dress";
 productDress2.price = 560;
@@ -238,7 +274,7 @@ productDress2.favorite = false;
 
 
 let productDress3 = new ProductClass();
-productDress3.category = "dress";
+productDress3.category = "Dress";
 productDress3.id = "idDress3";
 productDress3.title = "River Island - Blazer";
 productDress3.price = 740;
@@ -253,7 +289,7 @@ productDress3.favorite = false;
 
 
 let productDress4 = new ProductClass();
-productDress4.category = "dress";
+productDress4.category = "Dress";
 productDress4.id = "idDress4";
 productDress4.title = "Mango - Vardagsklänning";
 productDress4.price = 900;
@@ -267,7 +303,7 @@ productDress4.favorite = false;
 
 
 let productDress5 = new ProductClass();
-productDress5.category = "dress";
+productDress5.category = "Dress";
 productDress5.id = "idDress5";
 productDress5.title = "Selected - Midi dress";
 productDress5.price = 688;
@@ -280,7 +316,7 @@ productDress5.src2 = "images/dress5_2.jpg";
 productDress5.favorite = false;
 
 let productDress6 = new ProductClass();
-productDress6.category = "dress";
+productDress6.category = "Dress";
 productDress6.id = "idDress6";
 productDress6.title = "Esprit - Belt dress"
 productDress6.price = 699;
@@ -293,7 +329,7 @@ productDress6.src2 = "images/dress6_2.jpg";
 productDress6.favorite = false;
 
 let productDress7 = new ProductClass();
-productDress7.category = "dress";
+productDress7.category = "Dress";
 productDress7.id = "idDress7";
 productDress7.title = "Morrison Mini Dress";
 productDress7.price = 559;
@@ -306,7 +342,7 @@ productDress7.src2 = "images/dress7_2.jpg";
 productDress7.favorite = false;
 
 let productDress8 = new ProductClass();
-productDress8.category = "dress";
+productDress8.category = "Dress";
 productDress8.id = "idDress8";
 productDress8.title = "Ax Paris - Long Sleeve";
 productDress8.price = 999;
@@ -395,7 +431,7 @@ productShoe5.favorite = false;
 
 let productShoe6 = new ProductClass();
 productShoe6.id = "idShoe6";
-productShoe6.category = "Shoe6";
+productShoe6.category = "Shoe";
 productShoe6.title = "Cara - Pumps";
 productShoe6.price = 1900;
 productShoe6.size1 = 37;
