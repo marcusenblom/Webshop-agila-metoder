@@ -139,35 +139,35 @@ $(document).ready(function() {
 
     // Funktion som skapar upp produkter under sektionen: "recommended" //
 
-})
 
 
-let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
-let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
-// Funktion som skapar upp produkter under sektionen: "recommended" //
+    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
-function recommend() {
-    for (var i = 0; i < 3; i++) {
-        let randomNumber = Math.floor((Math.random() * 32));
+    // Funktion som skapar upp produkter under sektionen: "recommended" //
 
-        let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
+    function recommend() {
+        for (var i = 0; i < 3; i++) {
+            let randomNumber = Math.floor((Math.random() * 32));
 
-        let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
-    };
-}
-// Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
-recommend();
+            let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
 
-// Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
-$(".nextPrevious").on("click", function() {
-    $("#recommended-middle-flex").empty();
+            let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+        };
+    }
+    // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
     recommend();
+
+    // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
+    $(".nextPrevious").on("click", function() {
+        $("#recommended-middle-flex").empty();
+        recommend();
+    });
+
+
 });
-
-
-
 
 // --------------------- OBJEKT -------------------- //
 
