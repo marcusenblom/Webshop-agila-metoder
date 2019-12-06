@@ -16,7 +16,7 @@
 
     .productContainer {
       width: 48%;
-      margin: 5px;
+      margin: 2px;
 
       .productImage {
         width: 100%;
@@ -52,4 +52,14 @@
       }
     }
   }
+}
+
+.number-of-items {
+  width: 100%;
+  height: 40px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
 }
