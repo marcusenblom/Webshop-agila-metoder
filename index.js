@@ -1,24 +1,29 @@
 $(document).ready(function() {
 
   // Funktion som ändrar backgrunden på #header beroende på scroll position //
-  $(document).scroll(function() {
-    if (window.pageYOffset < 60) {
-      $("#header").removeClass("borderShadow");
+  // $(document).scroll(function() {
+  //   if (window.pageYOffset < 60) {
+  //     $("#header").removeClass("borderShadow");
+  //
+  //   } else {
+  //     if (window.pageYOffset < 340) {
+  //       $("#header").removeClass("borderShadow").css({
+  //         "background-color": "transparent",
+  //         "color": "white"
+  //       });
+  //     } else {
+  //       $("#header").css({
+  //         "background-color": "white",
+  //         "color": "black"
+  //       }).addClass("borderShadow");
+  //     };
+  //   };
+  // });
 
-    } else {
-      if (window.pageYOffset < 340) {
-        $("#header").removeClass("borderShadow").css({
-          "background-color": "transparent",
-          "color": "white"
-        });
-      } else {
-        $("#header").css({
-          "background-color": "white",
-          "color": "black"
-        }).addClass("borderShadow");
-      };
-    };
+  $(".menu-toggle").on("click", function(){
+
   });
+
 
 
   // Array med alla objekt //
@@ -87,7 +92,7 @@ $(document).ready(function() {
   $(".winter-collection").on("click", function() {
     $(".flex-container").empty();
 
-  let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
+    let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
 
     for (var i = 0; i < objectsToUse.length; i++) {
 
