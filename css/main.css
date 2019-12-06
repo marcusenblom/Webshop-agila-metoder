@@ -97,7 +97,7 @@
     flex-wrap: wrap; }
     #productSection .flex-container .productContainer {
       width: 48%;
-      margin: 5px; }
+      margin: 2px; }
       #productSection .flex-container .productContainer .productImage {
         width: 100%; }
       #productSection .flex-container .productContainer .productTitleContainer {
@@ -195,3 +195,6 @@ body {
   font-family: 'Baskervville', serif;
   font-family: 'Barlow', sans-serif;
   font-family: Helvetica,Arial,sans-serif; }
+
+html {
+  scroll-behavior: smooth; }

@@ -62,7 +62,6 @@ $(document).ready(function() {
       if (listOfAllProducts[i].category === category) {
 
         numberOfItemsAdded++;
-        console.log(numberOfItemsAdded);
 
         let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
 
@@ -82,6 +81,33 @@ $(document).ready(function() {
     };
   });
 
+
+  // Winter-collection //
+
+  $(".winter-collection").on("click", function() {
+    $(".flex-container").empty();
+
+  let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
+
+    for (var i = 0; i < objectsToUse.length; i++) {
+
+      let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+
+      let imgSrc = objectsToUse[i].src;
+      let imgSrc2 = objectsToUse[i].src2;
+      let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+        image.attr("src", imgSrc2);
+      }).mouseout(function() {
+        image.attr("src", imgSrc);
+      }).appendTo(productContainer);
+
+      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+      let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
+      let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+
+    };
+    $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
+  });
 
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
