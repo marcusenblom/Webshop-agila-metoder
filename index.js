@@ -21,8 +21,8 @@ $(document).ready(function() {
     });
 
 
-
-    // Array med alla objekt //
+    //hej hej 
+    // Array med alla objekt 
     // Funktion som ändrar backgrunden på #header beroende på scroll position //
     $(document).scroll(function() {
         if (window.pageYOffset < 60) {
