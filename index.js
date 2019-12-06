@@ -145,7 +145,6 @@ $(document).ready(function() {
 let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
 let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
 let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-};
 
 // Funktion som skapar upp produkter under sektionen: "recommended" //
 
@@ -177,10 +176,7 @@ recommend();
 // --------------------- OBJEKT -------------------- //
 
 
-function ProductClass() { <<
-    <<
-    <<
-    < HEAD
+function ProductClass() {
     this.id;
     this.category;
     this.titel;
@@ -191,9 +187,7 @@ function ProductClass() { <<
     this.description;
     this.src;
     this.src2;
-    this.favorite; ===
-    ===
-    =
+    this.favorite;
     this.id;
     this.category;
     this.title;
@@ -204,10 +198,8 @@ function ProductClass() { <<
     this.description;
     this.src;
     this.src2;
-    this.favorite; >>>
-    >>>
-    >
-    2 a3591195c03ec67ea92ea40e12a84762735b430
+    this.favorite;
+    //2 a3591195c03ec67ea92ea40e12a84762735b430
 };
 
 let productCoat1 = new ProductClass();

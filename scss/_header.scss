@@ -6,8 +6,10 @@
 }
 
 #header {
-  background-color: transparent;
-  color: white;
+  // background-color: transparent;
+  background-color: white;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);;
+  color: black;
   height: 60px;
   width: 100%;
   display: flex;
