@@ -21,7 +21,7 @@ $(document).ready(function() {
     });
 
 
-    //hej hej 
+    //hej hej nej
     // Array med alla objekt 
     // Funktion som ändrar backgrunden på #header beroende på scroll position //
     $(document).scroll(function() {
@@ -162,14 +162,10 @@ recommend();
 
 // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
 $(".nextPrevious").on("click", function() {
-$("#recommended-middle-flex").empty();
-recommend();
+    $("#recommended-middle-flex").empty();
+    recommend();
 });
 
-
-
-
-});
 
 
 
