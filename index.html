@@ -4,10 +4,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
   <script src="index.js" charset="utf-8"></script>
   <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Vollkorn:700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/3387f41f9e.js" crossorigin="anonymous"></script>
@@ -21,22 +18,26 @@
 
     <header class="borderWhite" id="header">
       <div class="header-left">
-        <span>Clothing</span>
+        <span>Company name</span>
+      </div>
+      <div class="header-middle">
+        <span></span>
       </div>
       <div class="header-right">
         <i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i>
       </div>
     </header>
 
-    <video id="movie" autoplay="autoplay" playsinline="" muted="muted" loop="loop" preload="" data-v-58d7402a=""><source src="images/snow.mp4" data-v-58d7402a=""></video>
-    <p>New winter collection</p>
+    <video id="movie" autoplay="autoplay" playsinline="" muted="muted" loop="loop" preload="" data-v-58d7402a="">
+      <source src="images/snow.mp4" data-v-58d7402a=""></video>
+    <p class="winter-collection">New winter collection</p>
   </section>
 
   <section id="filter">
-    <button class="btn btn-light" type="button" name="button">Kappor</button>
-    <button class="btn btn-light" type="button" name="button">Klänningar</button>
-    <button class="btn btn-light" type="button" name="button">Skor</button>
-    <button class="btn btn-light" type="button" name="button">Skjortor</button>
+    <button id="Coat" class="filter-button btn btn-light" type="button" name="button">Kappor</button>
+    <button id="Dress" class="filter-button btn btn-light" type="button" name="button">Klänningar</button>
+    <button id="Shoe" class="filter-button btn btn-light" type="button" name="button">Skor</button>
+    <button id="Shirts" class="filter-button btn btn-light" type="button" name="button">Skjortor</button>
   </section>
 
   <section id="productSection">
@@ -44,6 +45,9 @@
 
     </div>
   </section>
+  <div class="number-of-items">
+
+  </div>
 
   <section id="recommended">
     <div class="hr-header">
@@ -72,9 +76,9 @@
 
   </section>
 
-<footer>
-  Footer
-</footer>
+  <footer>
+    Footer
+  </footer>
 </body>
 
 </html>
