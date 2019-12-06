@@ -1,0 +1,121 @@
+    body {
+        margin: 0px;
+        background: rgb(128, 130, 133);
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    .detail-box2 {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .detail-box {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: chartreuse;
+        margin: 40px;
+    }
+    
+    .detail-box-Img {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background: darkslateblue;
+    }
+    
+    .detail-innerbox-Img {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        background: crimson;
+    }
+    
+    img {
+        max-width: 70%;
+        object-fit: contain;
+    }
+    
+    .detail-innerbox2 {
+        display: flex;
+        justify-content: center;
+        background-color: chocolate;
+    }
+    
+    .detail-h3-price-radiosize-Box {
+        display: flex;
+        width: 70%;
+        background: rgb(148, 137, 156);
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .detail-radiosize-Box {
+        display: flex;
+        direction: row;
+        margin: 5px;
+    }
+    
+    .detail-radiosize-innebox {
+        margin: 5px;
+    }
+    
+    button {
+        margin: 5px;
+        padding: 5px;
+    }
+    
+    .detail-description-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    @media screen and (min-width: 600px) {
+        .detail-box2 {
+            justify-content: center;
+        }
+        .detail-box {
+            flex-direction: row;
+            margin: 10px;
+        }
+        .detail-box-Img {
+            background: orchid;
+            width: 100%;
+            margin: 10px;
+        }
+        .detail-innerbox-Img {
+            width: 100%;
+        }
+        img {
+            min-width: 80%;
+        }
+        .detail-innerbox2 {
+            justify-content: center;
+            background: darkorchid;
+        }
+        .detail-h3-price-radiosize-Box {
+            width: 70%;
+        }
+    }
+    
+    @media screen and (min-width: 1000px) {
+        .detail-box2 {
+            justify-content: center;
+        }
+        .detail-box {
+            width: 100%;
+            justify-content: center;
+        }
+        .detail-innerbox-Img {
+            width: 100%;
+        }
+        .detail-box-Img {
+            width: 40%;
+        }
+        img {
+            max-width: 30%;
+        }
+    }
