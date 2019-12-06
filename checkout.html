@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS/checkout.css"/>
+    <script src="checkout.js"></script>
+    <title>Gruppuppgift JS</title>
+</head>
+<body>
+    <header class="flex-container" id="checkout_container_header">
+      <div id="checkout_header_left">
+        <span>Clothing</span>
+      </div>
+      <div id="checkout_header_right">
+        <i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i>
+      </div>
+    </header>
+    <div id="checkout_headline">
+        <h1>Din varukorg</h1>
+    </div>
+    <div id="checkout_container_subheading" class="flex-container">
+        <div id="name" class="checkout_subheading">Namn</div> 
+        <div id="size" class="checkout_subheading">Storlek </div>
+        <div id="quantity" class="checkout_subheading">Antal</div>
+        <div id="price" class="checkout_subheading">Pris</div>
+        <div id="remove" class="checkout_subheading">Ta bort</div>
+    </div>
+    <div id="checkout_container_cart" class="flex-container">
+            <div id="checkout_container_items" class="flex-container">
+            <div id="checkout_items_name" class="checkout">Tröja</div>
+            <div id="checkout_items_size" class="checkout">Medium</div>
+            <div id="checkout_items_quantity" class="checkout">1</div>
+            <div id="checkout_items_price" class="checkout">399:-</div>
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <hr>
+        <br>
+        <div id="checkout_container_items" class="flex-container">
+            <div id="checkout_items_name" class="checkout">Tröja</div>
+            <div id="checkout_items_size" class="checkout">Medium</div>
+            <div id="checkout_items_quantity" class="checkout">1</div>
+            <div id="checkout_items_price" class="checkout">399:-</div>
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        <hr>
+        <br>
+        <div id="checkout_container_items" class="flex-container">
+            <div id="checkout_items_name" class="checkout">Tröja</div>
+            <div id="checkout_items_size" class="checkout">Medium</div>
+            <div id="checkout_items_quantity" class="checkout">1</div>
+            <div id="checkout_items_price" class="checkout">399:-</div>
+            <i class="fas fa-trash-alt"></i>
+        </div>
+    </div>
+    <div id="checkout_container_sum" class="flex-container">
+        <div id="checkout_to_pay">Att betala:</div> 
+        <div id="checkout_sum">Summa</div>
+    </div>
+    </div>
+    <div id="checkout_container_form" class="flex-container">
+        <form class="flex-container" id="checkout_form">
+            <p>Förnamn:</p>
+            <input type="text" name="firstName" required>
+            <p>Efternamn:</p>
+            <input type="text" name="lastName" required>
+            <p>E-postadress:</p>
+            <input type="text" name="email" required>
+            <p>Telefonnummer:</p>
+            <input type="tel" name="phone" required>
+        </form>
+        <form class="flex-container" id="checkout_form" required>
+            <p>Gatuadress:</p>
+            <input type="text" name="street" required>
+            <p>C/O:</p>
+            <input type="text" name="c/o" required>
+            <p>Postnummer:</p>
+            <input type="text" name="zipcode" required>
+            <p>Ort:</p>
+            <input type="text" name="city" required>
+        </form>
+        <div id="checkout_container_payment_options" class="flex-container">
+            <div id="checkout_payment_options" class="flex-container">
+                <input type="radio" name="payment_option">Swish
+            </div>
+            <div id="checkout_payment_options" class="flex-container">
+                <input type="radio" name="payment_option">Kortbetalning
+            </div>
+            <div id="checkout_payment_options" class="flex-container">
+                <input type="radio" name="payment_option">Faktura
+            </div> 
+        </div>  
+    </div>
+
+    <div id="checkout_container_confirmation" class="flex-container">
+        <div id="checkout_container_checkbox">
+            <input type="checkbox" id="checkout_checkbox">
+            <h4 id="checkout_conditions">Ja, jag godkänner <a href="">köpvillkoren</a></h4>
+        </div>
+        <button type="button" id="checkout_button">Slutför köp</button>
+    </div>
+    <div id="checkout_container_footer" class="flex-container">
+        <div id="checkout_footer">
+            <h3>Kontakta oss</h3>
+            Tulegatan 41<br>
+            113 53 Stockholm<br>
+            Telefon<br>
+            08-673 32 20<br>
+            Mail<br>
+            clothing@info.se<br>
+
+        </div>
+        <div id="checkout_footer_map">Karta</div>
+    </div>
+</body>
+</html>
