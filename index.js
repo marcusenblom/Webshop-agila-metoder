@@ -1,70 +1,78 @@
 $(document).ready(function() {
 
-  // Funktion som ändrar backgrunden på #header beroende på scroll position //
-  $(document).scroll(function() {
-    if (window.pageYOffset < 60) {
-      $("#header").removeClass("borderTransparent").addClass("borderWhite");
+    // Funktion som ändrar backgrunden på #header beroende på scroll position //
+    $(document).scroll(function() {
+        if (window.pageYOffset < 60) {
+            $("#header").removeClass("borderTransparent").addClass("borderWhite");
 
-    } else {
-      if (window.pageYOffset < 400) {
-        $("#header").removeClass("borderWhite borderTransparent").css({
-          "background-color": "transparent",
-          "color": "white"
-        });
-      } else {
-        $("#header").css({
-          "background-color": "white",
-          "color": "black"
-        }).addClass("borderShadow");
-      };
+        } else {
+            if (window.pageYOffset < 400) {
+                $("#header").removeClass("borderWhite borderTransparent").css({
+                    "background-color": "transparent",
+                    "color": "white"
+                });
+            } else {
+                $("#header").css({
+                    "background-color": "white",
+                    "color": "black"
+                }).addClass("borderShadow");
+            };
+        };
+    });
+
+
+
+    // Array med alla objekt //
+
+    let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
+
+    console.log(listOfAllProducts);
+    // Funktion som skapar upp produkter på förstasidan //
+
+    for (var i = 0; i < listOfAllProducts.length; i++) {
+
+        let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+
+        let imgSrc = listOfAllProducts[i].src;
+        let imgSrc2 = listOfAllProducts[i].src2;
+        let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+            image.attr("src", imgSrc2);
+        }).mouseout(function() {
+            image.attr("src", imgSrc);
+        }).appendTo(productContainer);
+
+        image.on("click", function() {
+            window.open("detaljsida.html")
+            window.close("index.js")
+
+
+        })
+
+
+        let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+        let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+        let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
     };
-  });
 
+    // Funktion som skapar upp produkter under sektionen: "recommended" //
 
+    function recommend() {
+        for (var i = 0; i < 3; i++) {
+            let randomNumber = Math.floor((Math.random() * 32));
 
-  // Array med alla objekt //
+            let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
 
-  let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
-
-  console.log(listOfAllProducts);
-  // Funktion som skapar upp produkter på förstasidan //
-
-  for (var i = 0; i < listOfAllProducts.length; i++) {
-
-    let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
-
-    let imgSrc = listOfAllProducts[i].src;
-    let imgSrc2 = listOfAllProducts[i].src2;
-    let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-      image.attr("src", imgSrc2);
-    }).mouseout(function() {
-      image.attr("src", imgSrc);
-    }).appendTo(productContainer);
-
-    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
-    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-  };
-
-  // Funktion som skapar upp produkter under sektionen: "recommended" //
-
-  function recommend() {
-    for (var i = 0; i < 3; i++) {
-      let randomNumber = Math.floor((Math.random() * 32));
-
-      let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
-
-      let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
-    };
-  }
-  // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
-  recommend();
-
-  // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
-  $(".nextPrevious").on("click", function() {
-    $("#recommended-middle-flex").empty();
+            let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+        };
+    }
+    // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
     recommend();
-  });
+
+    // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
+    $(".nextPrevious").on("click", function() {
+        $("#recommended-middle-flex").empty();
+        recommend();
+    });
 
 
 
@@ -78,17 +86,17 @@ $(document).ready(function() {
 
 
 function ProductClass() {
-  this.id;
-  this.category;
-  this.titel;
-  this.price;
-  this.size1;
-  this.size2;
-  this.size3;
-  this.description;
-  this.src;
-  this.src2;
-  this.favorite;
+    this.id;
+    this.category;
+    this.titel;
+    this.price;
+    this.size1;
+    this.size2;
+    this.size3;
+    this.description;
+    this.src;
+    this.src2;
+    this.favorite;
 };
 
 let productCoat1 = new ProductClass();
