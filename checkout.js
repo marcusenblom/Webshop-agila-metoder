@@ -1,11 +1,18 @@
 $(document).ready(function() {
 
-var checkBoxes = $("checkout_checkbox");
-checkBoxes.change(function () {
-$("#checkout_button").prop('disabled', checkBoxes.filter(':checked').length < 1);
-});
-checkBoxes.change();
-
-
-
 })
+
+let checkoutButton = $("#checkout_button");
+let checkBoxes = $("#checkout_checkbox");
+checkoutButton.addEventListener("click", function () {
+    $("#checkout_button").prop('disabled', checkBoxes.filter(':checked').length < 1);
+});
+checkBoxes.change();  
+    
+
+
+
+
+
+
+
