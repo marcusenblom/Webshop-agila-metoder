@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/checkout.css"/>
     <script src="checkout.js"></script>
@@ -60,59 +62,70 @@
         <div id="checkout_sum">Summa</div>
     </div>
     </div>
-    <div id="checkout_container_form" class="flex-container">
-        <form class="flex-container" id="checkout_form">
-            <p>Förnamn:</p>
-            <input type="text" name="firstName" required>
-            <p>Efternamn:</p>
-            <input type="text" name="lastName" required>
-            <p>E-postadress:</p>
-            <input type="text" name="email" required>
-            <p>Telefonnummer:</p>
-            <input type="tel" name="phone" required>
-        </form>
-        <form class="flex-container" id="checkout_form" required>
-            <p>Gatuadress:</p>
-            <input type="text" name="street" required>
-            <p>C/O:</p>
-            <input type="text" name="c/o" required>
-            <p>Postnummer:</p>
-            <input type="text" name="zipcode" required>
-            <p>Ort:</p>
-            <input type="text" name="city" required>
-        </form>
+    <div id="checkout_container_form_payment" class="flex-container">
+        <div id="checkout_container_form" class="flex-container">
+            <div id="checkout_form_1" class="flex-container">
+                <form action="/action_page.php" method="post" id="form">
+                    <p>Förnamn:</p>
+                    <input type="text" name="firstName" required>
+                    <p>Efternamn:</p>
+                    <input type="text" name="lastName" required>
+                    <p>E-postadress:</p>
+                    <input type="email" name="email" required>
+                    <p>Telefonnummer:</p>
+                    <input type="tel" name="phone" required>
+                </form>
+            </div>
+            <div id="checkout_form_2" class="flex-container">
+                <form action="/action_page.php" method="post" id="form">
+                    <p>Gatuadress:</p>
+                    <input type="text" name="street" required>
+                    <p>C/O:</p>
+                    <input type="text" name="c/o">
+                    <p>Postnummer:</p>
+                    <input type="text" name="zipcode" required>
+                    <p>Ort:</p>
+                    <input type="text" name="city" required>
+                </form>
+            </div>
+        </div>
         <div id="checkout_container_payment_options" class="flex-container">
             <div id="checkout_payment_options" class="flex-container">
-                <input type="radio" name="payment_option">Swish
+                <span><input type="radio" name="payment_option" id="radio" value="1">Swish</span>
             </div>
             <div id="checkout_payment_options" class="flex-container">
-                <input type="radio" name="payment_option">Kortbetalning
+                <span><input type="radio" name="payment_option" id="radio">Kortbetalning</span>
             </div>
             <div id="checkout_payment_options" class="flex-container">
-                <input type="radio" name="payment_option">Faktura
+                <span><input type="radio" name="payment_option" id="radio">Faktura</span>
             </div> 
         </div>  
     </div>
 
     <div id="checkout_container_confirmation" class="flex-container">
         <div id="checkout_container_checkbox">
-            <input type="checkbox" id="checkout_checkbox">
+            <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
             <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
         </div>
-        <button type="button" id="checkout_button"><a href="confirmation.html">Slutför köp</a></button>
+        <button type="submit" value="Submit" id="checkout_button" form="form"><a href="confirmation.html">Slutför köp</a></button>
     </div>
     <div id="checkout_container_footer" class="flex-container">
         <div id="checkout_footer">
-            <h3>Kontakta oss</h3>
+            <h4>Kontakta oss</h4>
+            <u>Adress</u><br>
             Tulegatan 41<br>
             113 53 Stockholm<br>
-            Telefon<br>
+            <u>Telefon</u><br>
             08-673 32 20<br>
-            Mail<br>
+            <u>Mail</u><br>
             clothing@info.se<br>
 
         </div>
-        <div id="checkout_footer_map">Karta</div>
+        <div id="checkout_footer_map" class="flex-container">
+            <h4>Hitta butik</h4>
+            <a href="https://www.google.se/maps/place/Medieinstitutet/@59.3461053,18.0559554,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d6c21fb0343:0xe531e25988e5948e!8m2!3d59.3461053!4d18.058144" class="flex-container">
+            <img src="map.PNG" id="map">
+        </div>
     </div>
 </body>
 </html>

@@ -9,16 +9,20 @@ $(document).ready(function() {
 // });
 // checkBoxes.change();  
     
-$("#checkout_checkbox").on("change", function(e){
-    if($("#checkout_checkbox").attr("checked")){
-      $("#checkout_button").button("enable");
-    } else {
-      $(".submit").button("disable");
-    }
+// $("#checkout_checkbox").on("change", function(){
+//     if($("#checkout_checkbox").attr("checked")){
+//       $("#checkout_button").button("enable");
+//     } else {
+//       $("#checkout_button").button("disable");
+//     }
     
-  });
+//   });
 
-
+$("payment_option").on('click', function() { var checked = $("payment_option").prop('checked');
+console.log(checked);
+   if(checked) { $("#checkout_button").show();  } 
+   else { $("#checkout_button").hide(); }
+                                                 });
 
 
 
