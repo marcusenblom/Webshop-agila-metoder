@@ -3,6 +3,7 @@
 
 #productSection {
   width: 100%;
+  margin: 100px 0 0 0;
   display: flex;
   justify-content: center;
 
@@ -20,6 +21,11 @@
 
       .productImage {
         width: 100%;
+      }
+      .highlight {
+        -webkit-box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
+        -moz-box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
+        box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
       }
 
       .productTitleContainer {
