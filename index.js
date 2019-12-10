@@ -231,8 +231,6 @@ function detailProducts(event) {
     window.close("index.html")
 };
 
-});
-
 
 
 // --------------------- OBJEKT -------------------- //
