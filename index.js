@@ -106,9 +106,6 @@ $(document).ready(function() {
                 image.attr("type", "button")
                     .on("click", { bought: listOfAllProducts[i] }, detailProducts);
 
-
-
-
                 let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
                 let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
                 let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
@@ -137,7 +134,6 @@ $(document).ready(function() {
             }).mouseout(function() {
                 image.attr("src", imgSrc);
             }).appendTo(productContainer);
-
 
             image.attr("type", "button")
                 .on("click", { bought: listOfAllProducts[i] }, detailProducts);
@@ -182,8 +178,7 @@ $(document).ready(function() {
         recommend();
     });
 
-
-
+// skickar i väg till varukorgen
     function detailProducts(event) {
         let detailproduct = event.data.bought
 
