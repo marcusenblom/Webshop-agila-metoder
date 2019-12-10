@@ -1,28 +1,5 @@
 $(document).ready(function() {
-    //hej
-    // Funktion som ändrar backgrunden på #header beroende på scroll position //
-    $(document).scroll(function() {
-        if (window.pageYOffset < 60) {
-            $("#header").removeClass("borderTransparent").addClass("borderWhite");
 
-        } else {
-            if (window.pageYOffset < 400) {
-                $("#header").removeClass("borderWhite borderTransparent").css({
-                    "background-color": "transparent",
-                    "color": "white"
-                });
-            } else {
-                $("#header").css({
-                    "background-color": "white",
-                    "color": "black"
-                }).addClass("borderShadow");
-            };
-        };
-    });
-
-
-    //hej hej nej
-    // Array med alla objekt 
     // Funktion som ändrar backgrunden på #header beroende på scroll position //
     $(document).scroll(function() {
         if (window.pageYOffset < 60) {
@@ -43,6 +20,15 @@ $(document).ready(function() {
         };
     });
 
+    $(".menu-toggle").click(function() {
+        if ($(".menu").hasClass("menu-hide")) {
+            $(".menu").removeClass("menu-hide");
+            $(".menu").addClass("menu-show");
+        } else {
+            $(".menu").addClass("menu-hide");
+            $(".menu").removeClass("menu-show");
+        }
+    });
 
     // Array med alla objekt //
 
@@ -50,9 +36,9 @@ $(document).ready(function() {
 
 
     console.log(listOfAllProducts);
+
+
     // Funktion som skapar upp produkter på förstasidan //
-
-
     for (var i = 0; i < listOfAllProducts.length; i++) {
 
         let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
@@ -67,6 +53,11 @@ $(document).ready(function() {
 
         image.attr("type", "button")
             .on("click", { bought: listOfAllProducts[i] }, detailProducts);
+        image.on("click", function() {
+            window.open("detaljsida.html")
+            window.close("index.html")
+
+        });
 
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
@@ -178,12 +169,12 @@ $(document).ready(function() {
         recommend();
     });
 
-// skickar i väg till varukorgen
+    // skickar i väg till varukorgen
     function detailProducts(event) {
         let detailproduct = event.data.bought
 
         console.log("du köper", event.data.bought);
-        console.log(detailproduct, "hej")
+        console.log(detailproduct, "test")
 
 
         localStorage.setItem("products-1", JSON.stringify(detailproduct))
@@ -221,7 +212,7 @@ function ProductClass() {
     this.src;
     this.src2;
     this.favorite;
-    //2 a3591195c03ec67ea92ea40e12a84762735b430
+
 };
 
 let productCoat1 = new ProductClass();

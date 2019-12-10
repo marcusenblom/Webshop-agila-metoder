@@ -8,7 +8,7 @@
 #header {
   // background-color: transparent;
   background-color: white;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
   color: black;
   height: 60px;
   width: 100%;
@@ -53,5 +53,24 @@
         font-family: 'Barlow', sans-serif;
       }
     }
+  }
+}
+
+#hero {
+  .menu {
+    height: 0;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 59px;
+    transition: 0.5s;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  }
+
+  .menu-show {
+    height: 200px;
+  }
+  .menu-hide {
+    height: 0;
   }
 }
