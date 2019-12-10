@@ -8,7 +8,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="detaljsida.js" charset="utf-8"></script>
+    <script src="detaljsida_test.js" charset="utf-8"></script>
+
+    <!-- <script src="detaljsida.js" charset="utf-8"></script>
+     <script src="index.js" charset="utf-8"></script>-->
     <link rel="stylesheet" type="text/css" href="css/detaljsida-style.css">
 </head>
 
@@ -16,14 +19,14 @@
     <div class="detail-box2">
         <div class="detail-box">
             <div class="detail-box-Img">
-                <div class="detail-innerbox-Img">
-                    <img src="" alt="">
+                <div class="detail-innerbox-Img" id="id-detail-innerbox-Img">
+
                 </div>
             </div>
             <div class="detail-innerbox2">
                 <div class="detail-h3-price-radiosize-Box">
-                    <h3>Missguided</h3>
-                    <p>Pris:<span id="spaan"></span></p>
+                    <div id="h3"></div>
+                    <p>Pris:<span id="spaan"> </span></p>
                     <div class="detail-radiosize-Box">
                         <div class="detail-radiosize-innebox">
                             <input type="radio" name="size" value="small">Small
@@ -36,11 +39,11 @@
                         </div>
                     </div>
 
-                    <button>Lägg i varukorgen</button>
+                    <button type="button" id=" ">Lägg i varukorgen</button>
                     <div class="detail-description-text">
                         <h4>Beskrivning</h4>
-                        <p>
-                            Klänning i mesh från NLY Trend Stretchigt material Mini-längd Liten polokrage med knappar bak Fodrad
+                        <p id="detail-description">
+
                         </p>
                     </div>
 

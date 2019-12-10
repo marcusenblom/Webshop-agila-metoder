@@ -48,7 +48,7 @@ $(document).ready(function() {
 
     let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
-    localStorage.setItem("products-1", JSON.stringify(listOfAllProducts))
+
     console.log(listOfAllProducts);
     // Funktion som skapar upp produkter på förstasidan //
 
@@ -62,21 +62,11 @@ $(document).ready(function() {
         let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
             image.attr("src", imgSrc2);
         }).mouseout(function() {
-            image.attr("src", imgSrc);
+            image.attr("src", imgSrc)
         }).appendTo(productContainer);
 
-        image.on("click", function() {
-            window.open("detaljsida.html")
-            window.close("index.html")
-                /*let numberOfItemsAdded2 = 0;
-                for (i = 0; i < listOfAllProducts.length; i++) {
-                    numberOfItemsAdded2++;
-                    if (listOfAllProducts[i].id === id) {
-
-                        $("#spaan").append(listOfAllProducts[i].title)
-                    }
-                }*/
-        })
+        image.attr("type", "button")
+            .on("click", { bought: listOfAllProducts[i] }, detailProducts);
 
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
@@ -84,6 +74,8 @@ $(document).ready(function() {
 
         $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
     };
+
+
 
     // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
 
@@ -110,10 +102,11 @@ $(document).ready(function() {
                 }).mouseout(function() {
                     image.attr("src", imgSrc);
                 }).appendTo(productContainer);
-                image.on("click", function() {
-                    window.open("detaljsida.html")
-                    window.close("index.html")
-                })
+
+                image.attr("type", "button")
+                    .on("click", { bought: listOfAllProducts[i] }, detailProducts);
+
+
 
 
                 let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
@@ -123,6 +116,7 @@ $(document).ready(function() {
             $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
         };
     });
+
 
 
     // Winter-collection //
@@ -144,6 +138,12 @@ $(document).ready(function() {
                 image.attr("src", imgSrc);
             }).appendTo(productContainer);
 
+
+            image.attr("type", "button")
+                .on("click", { bought: listOfAllProducts[i] }, detailProducts);
+
+
+
             let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
             let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
             let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
@@ -153,6 +153,7 @@ $(document).ready(function() {
     });
 
     // Funktion som skapar upp produkter under sektionen: "recommended" //
+
 
 
 
@@ -182,7 +183,22 @@ $(document).ready(function() {
     });
 
 
+
+    function detailProducts(event) {
+        let detailproduct = event.data.bought
+
+        console.log("du köper", event.data.bought);
+        console.log(detailproduct, "hej")
+
+
+        localStorage.setItem("products-1", JSON.stringify(detailproduct))
+        window.open("detaljsida.html")
+        window.close("index.html")
+    };
+
 });
+
+
 
 // --------------------- OBJEKT -------------------- //
 
