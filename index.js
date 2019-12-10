@@ -20,8 +20,14 @@ $(document).ready(function() {
   //   };
   // });
 
-  $(".menu-toggle").on("click", function(){
-
+  $(".menu-toggle").click(function(){
+    if ($(".menu").hasClass("menu-hide")) {
+      $(".menu").removeClass("menu-hide");
+      $(".menu").addClass("menu-show");
+    } else {
+      $(".menu").addClass("menu-hide");
+      $(".menu").removeClass("menu-show");
+    }
   });
 
 
