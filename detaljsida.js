@@ -1,56 +1,34 @@
 $(document).ready(function() {
+    let cart = [];
 
-    /*listOfAllProducts = JSON.parse(localStorage.getItem("products-1")) || [];
+    detailproduct = JSON.parse(localStorage.getItem("products-1")) || {};
 
-    //listOfAllProducts = JSON.parse(localStorage.getItem("products-1")) || [];
+    $("#h3").html(detailproduct.title)
+    $("#detail-description").html(detailproduct.description)
+    $("#spaan").html(detailproduct.price)
+    imgSrc3 = detailproduct.src;
+    let detailImg = $("<img>").attr("src", imgSrc3);
+    $("#id-detail-innerbox-Img").append(detailImg)
 
-    let dataList = [];
-
-    function Lista() {
-
-        this.id;
-        this.title;
-        this.description;
-        this.src;
-        this.src2;
-        this.size1;
-        this.size2;
-        this.size3;
-    }
-
-    for (let v = 0; v < listOfAllProducts.length; v++) {
+    $("#detailButton").on("click", function() {
+        cart.push(detailproduct);
+        window.open("checkout.html")
+        window.close("detaljsida.html")
+        localStorage.setItem("cart", JSON.stringify(cart));
+        console.log("skicka vidare")
 
 
-        let newItem = new Lista();
-        newItem.id = listOfAllProducts[v].id;
-        newItem.title = listOfAllProducts[v].title;
-        newItem.description = listOfAllProducts[v].description;
-        newItem.src = listOfAllProducts[v].src;
-        newItem.src2 = listOfAllProducts[v].src2;
-        newItem.size1 = listOfAllProducts[v].size1;
-        newItem.size2 = listOfAllProducts[v].size2;
-        newItem.size3 = listOfAllProducts[v].size3;
-
-        dataList.push(newItem);
-
-    }
-
-
-
-    for (let v; v < dataList.length; v++) {
-        if (dataList[v].id === id) {
-
-            dataList[v].description;
-            console.log(dataList[v].description)
-            console.log("hej")
-        }
-    }
-
-
+    });
     /*
-                $("button").on("click", function() {
-                    window.open("checkout.html")
-                    window.close("detaljsida.html")
-                });*/
+        for (let p = 0; p < cart.length; p++) {
+
+
+            console.log(cart[p].price)
+
+        }
+    */
+
+
+
 
 })
