@@ -21,6 +21,10 @@
     padding: 0 40px;
     display: flex;
     align-items: center; }
+    #header div span:hover {
+      cursor: pointer; }
+    #header div i:hover {
+      cursor: pointer; }
   #header .header-left {
     justify-content: flex-start;
     font-size: 1.6rem;
@@ -43,11 +47,31 @@
 #hero .menu {
   height: 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   background-color: white;
   position: fixed;
   top: 59px;
   transition: 0.5s;
   border-bottom: 1px solid rgba(128, 128, 128, 0.2); }
+  #hero .menu .menu-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: inherit;
+    color: black; }
+    #hero .menu .menu-section ul .dropdown-header {
+      color: black;
+      font-weight: bold;
+      padding-left: 0;
+      font-size: 1.1rem; }
+    #hero .menu .menu-section ul li {
+      list-style: none; }
+    #hero .menu .menu-section ul li:hover {
+      text-decoration-line: underline;
+      cursor: pointer; }
 
 #hero .menu-show {
   height: 200px; }

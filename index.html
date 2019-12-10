@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <script src="index.js" charset="utf-8"></script>
-    <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Vollkorn:700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/3387f41f9e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <title></title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script src="index.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Vollkorn:700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3387f41f9e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/main.css">
+  <title></title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
 
     <header class="borderWhite" id="header">
       <div class="header-left">
-          <span class="menu-toggle">Knapp</span>
+        <span class="menu-toggle">Knapp</span>
       </div>
       <div class="header-middle">
         <span>Company name</span>
@@ -27,63 +27,83 @@
         <i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i>
       </div>
     </header>
+    
     <div class="menu">
+      <div class="menu-section">
+        <ul>
+          <li class="dropdown-header">Kläder</li>
+          <li>Kappor & Jackor</li>
+          <li>Klänningar</li>
+          <li>Skor</li>
+          <li>Skjortor & Tröjor</li>
+        </ul>
+      </div>
+      <div class="menu-section">
+        <ul>
+          <li class="dropdown-header">Kläder</li>
+          <li>Kappor & Jackor</li>
+          <li>Klänningar</li>
+          <li>Skor</li>
+          <li>Skjortor & Tröjor</li>
+        </ul>
+      </div>
     </div>
 
     <video id="movie" autoplay="autoplay" playsinline="" muted="muted" loop="loop" preload="" data-v-58d7402a="">
       <source src="images/snow.mp4" data-v-58d7402a=""></video>
-        <p class="winter-collection">New winter collection</p>
-    </section>
+    <p class="winter-collection">New winter collection</p>
 
-    <section id="filter">
-        <button id="Coat" class="filter-button btn btn-light" type="button" name="button">Kappor</button>
-        <button id="Dress" class="filter-button btn btn-light" type="button" name="button">Klänningar</button>
-        <button id="Shoe" class="filter-button btn btn-light" type="button" name="button">Skor</button>
-        <button id="Shirts" class="filter-button btn btn-light" type="button" name="button">Skjortor</button>
-    </section>
+  </section>
 
-    <section id="productSection">
-        <div class="flex-container">
+  <section id="filter">
+    <button id="Coat" class="filter-button btn btn-light" type="button" name="button">Kappor</button>
+    <button id="Dress" class="filter-button btn btn-light" type="button" name="button">Klänningar</button>
+    <button id="Shoe" class="filter-button btn btn-light" type="button" name="button">Skor</button>
+    <button id="Shirts" class="filter-button btn btn-light" type="button" name="button">Skjortor</button>
+  </section>
 
-        </div>
-    </section>
-    <div class="number-of-items">
-        <div class="number-of-items-span">
+  <section id="productSection">
+    <div class="flex-container">
 
-        </div>
     </div>
+  </section>
+  <div class="number-of-items">
+    <div class="number-of-items-span">
+
+    </div>
+  </div>
+  </div>
+
+  <section id="recommended">
+    <div class="hr-header">
+      <div class="hr-column">
+        <hr>
+      </div>
+      <div class="hr-column-middle">
+        <h5>Rekommenderas för dig</h3>
+      </div>
+      <div class="hr-column">
+        <hr>
+      </div>
     </div>
 
-    <section id="recommended">
-        <div class="hr-header">
-            <div class="hr-column">
-                <hr>
-            </div>
-            <div class="hr-column-middle">
-                <h5>Rekommenderas för dig</h3>
-            </div>
-            <div class="hr-column">
-                <hr>
-            </div>
-        </div>
+    <div class="recommended-flex">
+      <div class="recommended-flex-left">
+        <i class="fas nextPrevious fa-chevron-left"></i>
+      </div>
+      <div id="recommended-middle-flex">
 
-        <div class="recommended-flex">
-            <div class="recommended-flex-left">
-                <i class="fas nextPrevious fa-chevron-left"></i>
-            </div>
-            <div id="recommended-middle-flex">
+      </div>
+      <div class="recommended-flex-right">
+        <i class="fas nextPrevious fa-chevron-right"></i>
+      </div>
+    </div>
 
-            </div>
-            <div class="recommended-flex-right">
-                <i class="fas nextPrevious fa-chevron-right"></i>
-            </div>
-        </div>
+  </section>
 
-    </section>
-
-    <footer>
-        Footer
-    </footer>
+  <footer>
+    Footer
+  </footer>
 </body>
 
 </html>

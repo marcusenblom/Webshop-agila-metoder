@@ -25,6 +25,13 @@
     padding: 0 40px;
     display: flex;
     align-items: center;
+
+    span:hover {
+      cursor: pointer;
+    }
+    i:hover {
+      cursor: pointer;
+    }
   }
 
   .header-left {
@@ -60,11 +67,44 @@
   .menu {
     height: 0;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     background-color: white;
     position: fixed;
     top: 59px;
     transition: 0.5s;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+
+    .menu-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25%;
+      height: inherit;
+      color: black;
+
+
+      ul {
+
+        .dropdown-header {
+          color: black;
+          font-weight: bold;
+          padding-left: 0;
+          font-size: 1.1rem;
+        }
+
+        li {
+          list-style: none;
+        }
+        li:hover {
+          text-decoration-line: underline;
+          cursor: pointer;
+        }
+      }
+
+    }
+
   }
 
   .menu-show {
