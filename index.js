@@ -1,167 +1,216 @@
 $(document).ready(function() {
+    //hej
+    // Funktion som ändrar backgrunden på #header beroende på scroll position //
+    $(document).scroll(function() {
+        if (window.pageYOffset < 60) {
+            $("#header").removeClass("borderTransparent").addClass("borderWhite");
 
-  // Funktion som ändrar backgrunden på #header beroende på scroll position //
-  // $(document).scroll(function() {
-  //   if (window.pageYOffset < 60) {
-  //     $("#header").removeClass("borderShadow");
-  //
-  //   } else {
-  //     if (window.pageYOffset < 340) {
-  //       $("#header").removeClass("borderShadow").css({
-  //         "background-color": "transparent",
-  //         "color": "white"
-  //       });
-  //     } else {
-  //       $("#header").css({
-  //         "background-color": "white",
-  //         "color": "black"
-  //       }).addClass("borderShadow");
-  //     };
-  //   };
-  // });
-
-  $(".menu-toggle").click(function(){
-    if ($(".menu").hasClass("menu-hide")) {
-      $(".menu").removeClass("menu-hide");
-      $(".menu").addClass("menu-show");
-    } else {
-      $(".menu").addClass("menu-hide");
-      $(".menu").removeClass("menu-show");
-    }
-  });
+        } else {
+            if (window.pageYOffset < 400) {
+                $("#header").removeClass("borderWhite borderTransparent").css({
+                    "background-color": "transparent",
+                    "color": "white"
+                });
+            } else {
+                $("#header").css({
+                    "background-color": "white",
+                    "color": "black"
+                }).addClass("borderShadow");
+            };
+        };
+    });
 
 
+    //hej hej nej
+    // Array med alla objekt
+    // Funktion som ändrar backgrunden på #header beroende på scroll position //
+    $(document).scroll(function() {
+        if (window.pageYOffset < 60) {
+            $("#header").removeClass("borderShadow");
 
-  // Array med alla objekt //
+        } else {
+            if (window.pageYOffset < 340) {
+                $("#header").removeClass("borderShadow").css({
+                    "background-color": "transparent",
+                    "color": "white"
+                });
+            } else {
+                $("#header").css({
+                    "background-color": "white",
+                    "color": "black"
+                }).addClass("borderShadow");
+            };
+        };
+    });
 
-  let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
-  console.log(listOfAllProducts);
-  // Funktion som skapar upp produkter på förstasidan //
+    // Array med alla objekt //
 
-  for (var i = 0; i < listOfAllProducts.length; i++) {
+    let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
-    let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+    localStorage.setItem("products-1", JSON.stringify(listOfAllProducts))
+    console.log(listOfAllProducts);
+    // Funktion som skapar upp produkter på förstasidan //
 
-    let imgSrc = listOfAllProducts[i].src;
-    let imgSrc2 = listOfAllProducts[i].src2;
-    let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-      image.attr("src", imgSrc2);
-    }).mouseout(function() {
-      image.attr("src", imgSrc);
-    }).appendTo(productContainer);
-
-    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
-    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-
-    $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
-  };
-
-  // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
-
-  $(".filter-button").on("click", function() {
-    $(".flex-container").empty();
-
-    let category = this.id;
-    console.log(category);
-
-    let numberOfItemsAdded = 0;
 
     for (var i = 0; i < listOfAllProducts.length; i++) {
-
-      if (listOfAllProducts[i].category === category) {
-
-        numberOfItemsAdded++;
 
         let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
 
         let imgSrc = listOfAllProducts[i].src;
         let imgSrc2 = listOfAllProducts[i].src2;
         let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-          image.attr("src", imgSrc2);
+            image.attr("src", imgSrc2);
         }).mouseout(function() {
-          image.attr("src", imgSrc);
+            image.attr("src", imgSrc);
         }).appendTo(productContainer);
+
+        image.on("click", function() {
+            window.open("detaljsida.html")
+            window.close("index.html")
+                /*let numberOfItemsAdded2 = 0;
+                for (i = 0; i < listOfAllProducts.length; i++) {
+                    numberOfItemsAdded2++;
+                    if (listOfAllProducts[i].id === id) {
+
+                        $("#spaan").append(listOfAllProducts[i].title)
+                    }
+                }*/
+        })
 
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
         let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-      }
-      $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
+
+        $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
     };
-  });
+
+    // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
+
+    $(".filter-button").on("click", function() {
+        $(".flex-container").empty();
+
+        let category = this.id;
+        console.log(category);
+
+        let numberOfItemsAdded = 0;
+
+        for (var i = 0; i < listOfAllProducts.length; i++) {
+
+            if (listOfAllProducts[i].category === category) {
+
+                numberOfItemsAdded++;
+
+                let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+
+                let imgSrc = listOfAllProducts[i].src;
+                let imgSrc2 = listOfAllProducts[i].src2;
+                let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+                    image.attr("src", imgSrc2);
+                }).mouseout(function() {
+                    image.attr("src", imgSrc);
+                }).appendTo(productContainer);
+                image.on("click", function() {
+                    window.open("detaljsida.html")
+                    window.close("index.html")
+                })
 
 
-  // Winter-collection //
+                let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+                let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+                let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+            }
+            $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
+        };
+    });
 
-  $(".winter-collection").on("click", function() {
-    $(".flex-container").empty();
 
-    let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
+    // Winter-collection //
 
-    for (var i = 0; i < objectsToUse.length; i++) {
+    $(".winter-collection").on("click", function() {
+        $(".flex-container").empty();
 
-      let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+        let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
 
-      let imgSrc = objectsToUse[i].src;
-      let imgSrc2 = objectsToUse[i].src2;
-      let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-        image.attr("src", imgSrc2);
-      }).mouseout(function() {
-        image.attr("src", imgSrc);
-      }).appendTo(productContainer);
+        for (var i = 0; i < objectsToUse.length; i++) {
 
-      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-      let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
-      let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+            let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
 
-    };
-    $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
-  });
+            let imgSrc = objectsToUse[i].src;
+            let imgSrc2 = objectsToUse[i].src2;
+            let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+                image.attr("src", imgSrc2);
+            }).mouseout(function() {
+                image.attr("src", imgSrc);
+            }).appendTo(productContainer);
 
-  // Funktion som skapar upp produkter under sektionen: "recommended" //
+            let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+            let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
+            let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
-  function recommend() {
-    for (var i = 0; i < 3; i++) {
-      let randomNumber = Math.floor((Math.random() * 32));
+        };
+        $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
+    });
 
-      let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
+    // Funktion som skapar upp produkter under sektionen: "recommended" //
 
-      let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
-    };
-  }
-  // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
-  recommend();
 
-  // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
-  $(".nextPrevious").on("click", function() {
-    $("#recommended-middle-flex").empty();
+
+
+    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+
+    // Funktion som skapar upp produkter under sektionen: "recommended" //
+
+    function recommend() {
+        for (var i = 0; i < 3; i++) {
+            let randomNumber = Math.floor((Math.random() * 32));
+
+            let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
+
+            let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+        };
+    }
+    // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan
     recommend();
-  });
 
-
+    // Sätter en eventListener på framåt- och bakåtpilarna som först tömmer allt under "recommended" och sedan skapar upp 3 nya objekt
+    $(".nextPrevious").on("click", function() {
+        $("#recommended-middle-flex").empty();
+        recommend();
+    });
 
 
 });
-
-
 
 // --------------------- OBJEKT -------------------- //
 
 
 function ProductClass() {
-  this.id;
-  this.category;
-  this.title;
-  this.price;
-  this.size1;
-  this.size2;
-  this.size3;
-  this.description;
-  this.src;
-  this.src2;
-  this.favorite;
+    this.id;
+    this.category;
+    this.titel;
+    this.price;
+    this.size1;
+    this.size2;
+    this.size3;
+    this.description;
+    this.src;
+    this.src2;
+    this.favorite;
+    this.id;
+    this.category;
+    this.title;
+    this.price;
+    this.size1;
+    this.size2;
+    this.size3;
+    this.description;
+    this.src;
+    this.src2;
+    this.favorite;
+    //2 a3591195c03ec67ea92ea40e12a84762735b430
 };
 
 let productCoat1 = new ProductClass();
