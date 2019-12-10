@@ -1,48 +1,34 @@
 $(document).ready(function() {
-    //hej
-    // Funktion som ändrar backgrunden på #header beroende på scroll position //
-    $(document).scroll(function() {
-        if (window.pageYOffset < 60) {
-            $("#header").removeClass("borderTransparent").addClass("borderWhite");
 
-        } else {
-            if (window.pageYOffset < 400) {
-                $("#header").removeClass("borderWhite borderTransparent").css({
-                    "background-color": "transparent",
-                    "color": "white"
-                });
-            } else {
-                $("#header").css({
-                    "background-color": "white",
-                    "color": "black"
-                }).addClass("borderShadow");
-            };
-        };
-    });
+  // Funktion som ändrar backgrunden på #header beroende på scroll position //
+  // $(document).scroll(function() {
+  //   if (window.pageYOffset < 60) {
+  //     $("#header").removeClass("borderShadow");
+  //
+  //   } else {
+  //     if (window.pageYOffset < 340) {
+  //       $("#header").removeClass("borderShadow").css({
+  //         "background-color": "transparent",
+  //         "color": "white"
+  //       });
+  //     } else {
+  //       $("#header").css({
+  //         "background-color": "white",
+  //         "color": "black"
+  //       }).addClass("borderShadow");
+  //     };
+  //   };
+  // });
 
-
-    //hej hej nej
-    // Array med alla objekt
-    // Funktion som ändrar backgrunden på #header beroende på scroll position //
-    $(document).scroll(function() {
-        if (window.pageYOffset < 60) {
-            $("#header").removeClass("borderShadow");
-
-        } else {
-            if (window.pageYOffset < 340) {
-                $("#header").removeClass("borderShadow").css({
-                    "background-color": "transparent",
-                    "color": "white"
-                });
-            } else {
-                $("#header").css({
-                    "background-color": "white",
-                    "color": "black"
-                }).addClass("borderShadow");
-            };
-        };
-    });
-
+  $(".menu-toggle").click(function(){
+    if ($(".menu").hasClass("menu-hide")) {
+      $(".menu").removeClass("menu-hide");
+      $(".menu").addClass("menu-show");
+    } else {
+      $(".menu").addClass("menu-hide");
+      $(".menu").removeClass("menu-show");
+    }
+  });
 
     // Array med alla objekt //
 
@@ -50,9 +36,9 @@ $(document).ready(function() {
 
     localStorage.setItem("products-1", JSON.stringify(listOfAllProducts))
     console.log(listOfAllProducts);
+
+
     // Funktion som skapar upp produkter på förstasidan //
-
-
     for (var i = 0; i < listOfAllProducts.length; i++) {
 
         let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
@@ -76,7 +62,7 @@ $(document).ready(function() {
                         $("#spaan").append(listOfAllProducts[i].title)
                     }
                 }*/
-        })
+        });
 
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
@@ -152,14 +138,6 @@ $(document).ready(function() {
         $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
     });
 
-    // Funktion som skapar upp produkter under sektionen: "recommended" //
-
-
-
-
-    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
-    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
     // Funktion som skapar upp produkter under sektionen: "recommended" //
 
