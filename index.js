@@ -47,8 +47,10 @@ $(document).ready(function() {
         let imgSrc2 = listOfAllProducts[i].src2;
         let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
             image.attr("src", imgSrc2);
+            image.addClass("highlight");
         }).mouseout(function() {
             image.attr("src", imgSrc);
+            image.removeClass("highlight");
         }).appendTo(productContainer);
 
         image.on("click", function() {
