@@ -1,60 +1,76 @@
 // PRODUKTER //
 
-
 #productSection {
   width: 100%;
-  margin: 100px 0 0 0;
-  display: flex;
-  justify-content: center;
+  margin: 60px 0 0;
 
-  .flex-container {
+  .product-navbar {
     width: 100%;
-    max-width: 1400px;
+    padding: 40px;
+
+    .product-header {
+      width: 100%;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+
+  .product-container {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-content: space-around;
 
-    .productContainer {
-      width: 48%;
-      margin: 2px;
+    .flex-container {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
 
-      .productImage {
-        width: 100%;
-      }
-      .highlight {
-        -webkit-box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
-        -moz-box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
-        box-shadow: 0px 2px 10px 0px rgba(166,166,166,0.4);
-      }
-
-      .productTitleContainer {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 5px;
-
-        span {
-          text-align: center;
-        }
-        .priceSpan {
-          margin-top: 5px;
-        }
-        .titleFont {
-          font-family: 'Baskervville', serif;
-          // letter-spacing: 1px;
-          font-size: 1.2rem;
-        }
-      }
-    }
-    @media screen and (min-width: 600px) {
       .productContainer {
-        width: 31%;
+        width: 48%;
+        margin: 2px;
+
+        .productImage {
+          width: 100%;
+        }
+
+        .highlight {
+          -webkit-box-shadow: 0 2px 10px 0 rgba(166,166,166,0.4);
+          -moz-box-shadow: 0 2px 10px 0 rgba(166,166,166,0.4);
+          box-shadow: 0 2px 10px 0 rgba(166,166,166,0.4);
+        }
+
+        .productTitleContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 5px;
+
+          span {
+            text-align: center;
+          }
+
+          .priceSpan {
+            margin-top: 5px;
+          }
+
+          .titleFont {
+            font-family: 'Baskervville', serif;
+            // letter-spacing: 1px;
+            font-size: 1.2rem;
+          }
+        }
       }
-    }
-    @media screen and (min-width: 800px) {
-      .productContainer {
-        width: 23%;
+      @media screen and (min-width: 600px) {
+        .productContainer {
+          width: 31%;
+        }
+      }
+      @media screen and (min-width: 800px) {
+        .productContainer {
+          width: 23%;
+        }
       }
     }
   }

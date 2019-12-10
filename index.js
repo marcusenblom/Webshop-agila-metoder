@@ -28,9 +28,9 @@ $(document).ready(function() {
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
-
     }
   });
+
 
   // Array med alla objekt //
 
@@ -86,6 +86,8 @@ $(document).ready(function() {
 
     let category = this.id;
     console.log(category);
+    let header = $("#" + category).text().toUpperCase();
+    $(".product-header").html(header);
 
     let numberOfItemsAdded = 0;
 
