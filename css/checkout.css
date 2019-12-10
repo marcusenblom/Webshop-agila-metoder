@@ -43,18 +43,18 @@ body {
     body #checkout_container_form_payment #checkout_container_form {
       flex-direction: row;
       flex-wrap: wrap; }
-      body #checkout_container_form_payment #checkout_container_form #checkout_form_1 {
+      body #checkout_container_form_payment #checkout_container_form #checkout_form {
         flex-direction: column;
         display: inline;
         margin: 0 20px 0 20px; }
-        body #checkout_container_form_payment #checkout_container_form #checkout_form_1 p {
+        body #checkout_container_form_payment #checkout_container_form #checkout_form #form p {
           margin-bottom: 0; }
-      body #checkout_container_form_payment #checkout_container_form #checkout_form_2 {
-        flex-direction: column;
-        display: inline;
-        margin: 0 20px 0 20px; }
-        body #checkout_container_form_payment #checkout_container_form #checkout_form_2 p {
-          margin-bottom: 0; }
+        body #checkout_container_form_payment #checkout_container_form #checkout_form #form .error {
+          color: red;
+          font-style: italic; }
+        body #checkout_container_form_payment #checkout_container_form #checkout_form #form input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0; }
     body #checkout_container_form_payment #checkout_container_payment_options {
       flex-direction: column;
       justify-content: space-evenly; }

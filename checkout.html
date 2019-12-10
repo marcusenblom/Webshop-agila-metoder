@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/checkout.css"/>
     <script src="checkout.js"></script>
@@ -64,32 +68,28 @@
     </div>
     <div id="checkout_container_form_payment" class="flex-container">
         <div id="checkout_container_form" class="flex-container">
-            <div id="checkout_form_1" class="flex-container">
-                <form action="/action_page.php" method="post" id="form">
+            <div id="checkout_form" class="flex-container">
+                <form action="confirmation.html" method="get" id="form" name="checkout_registration">
                     <p>Förnamn:</p>
-                    <input type="text" name="firstName" required>
+                    <input type="text" name="firstname" id="firstname" required>
                     <p>Efternamn:</p>
-                    <input type="text" name="lastName" required>
+                    <input type="text" name="lastname" id="lastname"required>
                     <p>E-postadress:</p>
-                    <input type="email" name="email" required>
+                    <input type="email" name="email" id="email" required>
                     <p>Telefonnummer:</p>
-                    <input type="tel" name="phone" required>
-                </form>
-            </div>
-            <div id="checkout_form_2" class="flex-container">
-                <form action="/action_page.php" method="post" id="form">
+                    <input type="tel" name="phone" id="phone" required>
                     <p>Gatuadress:</p>
-                    <input type="text" name="street" required>
+                    <input type="text" name="street" id="street" required>
                     <p>C/O:</p>
                     <input type="text" name="c/o">
                     <p>Postnummer:</p>
-                    <input type="text" name="zipcode" required>
+                    <input type="text" name="zipcode" id="zipcode" required>
                     <p>Ort:</p>
-                    <input type="text" name="city" required>
+                    <input type="text" name="city" id="city" required>
                 </form>
             </div>
         </div>
-        <div id="checkout_container_payment_options" class="flex-container">
+        <form id="checkout_container_payment_options" class="flex-container" name=>
             <div id="checkout_payment_options" class="flex-container">
                 <span><input type="radio" name="payment_option" id="radio" value="1">Swish</span>
             </div>
@@ -99,7 +99,7 @@
             <div id="checkout_payment_options" class="flex-container">
                 <span><input type="radio" name="payment_option" id="radio">Faktura</span>
             </div> 
-        </div>  
+        </form>  
     </div>
 
     <div id="checkout_container_confirmation" class="flex-container">
@@ -107,7 +107,7 @@
             <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
             <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
         </div>
-        <button type="submit" value="Submit" id="checkout_button" form="form"><a href="confirmation.html">Slutför köp</a></button>
+        <button type="submit" value="Submit" id="checkout_button" form="form">Slutför köp</button>  <!--<a href="confirmation.html"></a>-->
     </div>
     <div id="checkout_container_footer" class="flex-container">
         <div id="checkout_footer">

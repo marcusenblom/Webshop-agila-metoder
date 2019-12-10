@@ -96,21 +96,28 @@ body {
             flex-direction: row;
             flex-wrap: wrap;
 
-            #checkout_form_1 {
+            #checkout_form {
                 flex-direction: column;
                 display: inline;   
                 margin: 0 20px 0 20px;
-                p {
-                    margin-bottom: 0;
-                }        
-            }
-            #checkout_form_2{
-                flex-direction: column;
-                display: inline; 
-                margin: 0 20px 0 20px;
-                p {
-                    margin-bottom: 0;
-                }   
+                #form {
+
+                    p {
+                        margin-bottom: 0;
+                    } 
+                    .error {
+                        color: red;
+                        font-style: italic;
+                    }
+                    input[type=number]::-webkit-inner-spin-button {
+
+                    }
+                    input[type=number]::-webkit-outer-spin-button { 
+                        -webkit-appearance: none; 
+                        margin: 0; 
+                    }  
+                }
+                     
             }
         }
         #checkout_container_payment_options {
