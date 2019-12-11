@@ -84,8 +84,6 @@ $(document).ready(function() {
                 }).mouseout(function() {
                     image.attr("src", imgSrc);
                 }).appendTo(productContainer);
-
-
                 image.attr("type", "button")
                     .on("click", {
                         bought: listOfAllProducts[i]
@@ -155,7 +153,6 @@ $(document).ready(function() {
 
         console.log("du köper", event.data.bought);
         console.log(detailproduct, "test")
-
 
         localStorage.setItem("products-1", JSON.stringify(detailproduct))
         window.open("detaljsida.html")
