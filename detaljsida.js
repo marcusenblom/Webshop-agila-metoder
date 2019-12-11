@@ -30,7 +30,7 @@ $(document).ready(function() {
     $("#detailButton").on("click", function() {
         let cart3 = cart.push(detailproduct)
         let number = 1;
-        cart2.push(h)
+        cart2.push(number)
 
         counter()
 
