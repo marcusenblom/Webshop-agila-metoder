@@ -18,7 +18,6 @@ $(document).ready(function() {
 
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
-
   console.log(listOfAllProducts);
 
 
@@ -45,8 +44,9 @@ $(document).ready(function() {
       }, detailProducts);
 
 
+    $("#spaan").append(listOfAllProducts[i].title);
 
-    $("#spaan").append(listOfAllProducts[i].title)
+    $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
   }
 
 
@@ -180,6 +180,7 @@ function ProductClass() {
   this.size1;
   this.size2;
   this.size3;
+  this.display;
   this.description;
   this.src;
   this.src2;
@@ -195,6 +196,7 @@ productCoat1.price = 3400;
 productCoat1.size1 = "S";
 productCoat1.size2 = "M";
 productCoat1.size3 = "L";
+productCoat1.display = 0;
 productCoat1.description = "PU jacka från Glamorous Rak modell med krage i glansigt material Dekorativa vita sömmar Försluts framtill med dragkedja Fyra fickor framtill Skärp samt hällor i midjan";
 productCoat1.src = "images/coat1.jpg";
 productCoat1.src2 = "images/coat1_2.jpg";

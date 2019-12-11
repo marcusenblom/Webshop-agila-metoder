@@ -14,7 +14,11 @@
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 99; }
+  z-index: 99;
+  font-family: 'Montserrat', sans-serif; }
+  #navbar #header a {
+    text-decoration: none;
+    color: inherit; }
   #navbar #header div {
     width: 50%;
     height: 59px;
@@ -27,11 +31,10 @@
       cursor: pointer; }
   #navbar #header .header-left {
     justify-content: flex-start;
-    font-family: 'Barlow', sans-serif; }
+    font-size: 0.9rem; }
   #navbar #header .header-middle {
     justify-content: center;
-    font-size: 1.6rem;
-    font-family: 'Barlow', sans-serif; }
+    font-size: 1.4rem; }
   #navbar #header .header-right {
     justify-content: flex-end; }
     #navbar #header .header-right .fa-shopping-cart {
@@ -40,8 +43,7 @@
         position: relative;
         top: -18px;
         right: 0;
-        font-size: 8px;
-        font-family: 'Barlow', sans-serif; }
+        font-size: 8px; }
 
 #navbar .menu {
   height: 0;
@@ -72,6 +74,8 @@
     #navbar .menu .menu-section ul li:hover {
       text-decoration-line: underline;
       cursor: pointer; }
+    #navbar .menu .menu-section ul a {
+      color: inherit; }
 
 @media screen and (min-width: 800px) {
   #navbar .menu {
@@ -258,7 +262,8 @@ body {
   font-family: 'Vollkorn', serif;
   font-family: 'Baskervville', serif;
   font-family: 'Barlow', sans-serif;
-  font-family: Helvetica,Arial,sans-serif; }
+  font-family: Helvetica,Arial,sans-serif;
+  font-family: 'Montserrat', sans-serif; }
 
 html {
   scroll-behavior: smooth; }
