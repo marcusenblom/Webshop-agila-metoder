@@ -26,42 +26,25 @@ $(document).ready(function() {
     $("#id-detail-innerbox-Img").append(detailImg)
 
     $("#detailButton").on("click", function() {
-        let hej = cart.push(detailproduct)
-        let h = 1;
+        let cart3 = cart.push(detailproduct)
+        let number = 1;
         cart2.push(h)
 
-        ränkare()
+        counter()
         localStorage.setItem("cart", JSON.stringify(cart));
-        console.log("skicka vidare", hej)
+        console.log("skicka vidare", cart3)
     });
-
-
 
     let i = 0;
 
-
-    function ränkare() {
+    function counter() {
 
         for (i; i < cart2.length; i++) {
-
 
         }
         $(".badge-info").html(i)
 
-
-
-
     }
-
-    $("#buttonShoppingCart").on("click", function() {
-        window.open("checkout.html")
-        window.close("detaljsida.html")
-    })
-
-
-
-
-
 
 
 })
