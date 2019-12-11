@@ -39,12 +39,11 @@ $(document).ready(function() {
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
         let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
-        $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
-
         image.attr("type", "button")
             .on("click", {
                 bought: listOfAllProducts[i]
             }, detailProducts);
+
 
 
         $("#spaan").append(listOfAllProducts[i].title)
@@ -92,6 +91,8 @@ $(document).ready(function() {
                         bought: listOfAllProducts[i]
                     }, detailProducts);
 
+
+
                 let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
                 let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
                 let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
@@ -100,7 +101,6 @@ $(document).ready(function() {
             $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
         };
     });
-
 
     // Winter-collection //
 
