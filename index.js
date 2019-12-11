@@ -45,11 +45,7 @@ $(document).ready(function() {
       .on("click", {
         bought: listOfAllProducts[i]
       }, detailProducts);
-    image.on("click", function() {
-      window.open("detaljsida.html")
-      window.close("index.html")
 
-    });
 
     $("#spaan").append(listOfAllProducts[i].title)
   }
@@ -100,7 +96,7 @@ $(document).ready(function() {
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
         let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-        
+
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
     };
