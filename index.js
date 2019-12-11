@@ -81,10 +81,7 @@ $(document).ready(function() {
         }).mouseout(function() {
           image.attr("src", imgSrc);
         }).appendTo(productContainer);
-        image.on("click", function() {
-          window.open("detaljsida.html")
-          window.close("index.html")
-        });
+
 
         image.attr("type", "button")
           .on("click", {

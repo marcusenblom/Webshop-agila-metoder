@@ -7,20 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/checkout.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/checkout.css"/>
+
     <script src="checkout.js"></script>
     <title>Gruppuppgift JS</title>
 </head>
 
 <body>
-    <header class="flex-container" id="checkout_container_header">
-        <div id="checkout_header_left">
-            <span>Clothing</span>
-        </div>
-        <div id="checkout_header_right">
-            <i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i>
-        </div>
-    </header>
+  <section id="navbar">
+
+      <header class="borderWhite" id="header">
+          <div class="header-left">
+              <span class="menu-toggle">Shop</span>
+          </div>
+          <div class="header-middle">
+              <a href="index.html"><span>Company</span></a>
+          </div>
+          <div class="header-right">
+              <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i></a>
+          </div>
+      </header>
+
+      <div class="menu menu-hide">
+          <div class="menu-section">
+              <ul>
+                  <li class="dropdown-header">Kläder</li>
+                  <li id="Coat" class="filter-button">Kappor & Jackor</li>
+                  <li id="Dress" class="filter-button">Klänningar</li>
+                  <li id="Shoe" class="filter-button">Skor</li>
+                  <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
+              </ul>
+          </div>
+          <div class="menu-section">
+              <ul>
+                  <li class="dropdown-header">Accessoarer</li>
+                  <li>Smycken</li>
+                  <li>Mössor & vantar</li>
+                  <li>Underkläder</li>
+                  <li>Väskor</li>
+              </ul>
+          </div>
+      </div>
+  </section>
+
     <div id="checkout_headline">
         <h1>Din varukorg</h1>
     </div>
