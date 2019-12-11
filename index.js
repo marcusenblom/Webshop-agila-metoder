@@ -47,10 +47,8 @@ $(document).ready(function() {
             }, detailProducts);
 
 
-
         $("#spaan").append(listOfAllProducts[i].title)
     }
-
 
 
     // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
@@ -84,10 +82,20 @@ $(document).ready(function() {
                 }).mouseout(function() {
                     image.attr("src", imgSrc);
                 }).appendTo(productContainer);
+                image.on("click", function() {
+                    window.open("detaljsida.html")
+                    window.close("index.html")
+                });
+
                 image.attr("type", "button")
                     .on("click", {
                         bought: listOfAllProducts[i]
                     }, detailProducts);
+
+                let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+                let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+                let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+
             };
             $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
         };
@@ -104,10 +112,11 @@ $(document).ready(function() {
 
         for (var i = 0; i < objectsToUse.length; i++) {
 
+            numberOfItemsAdded++;
+
             let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
             let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
             let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-            let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
 
             let imgSrc = objectsToUse[i].src;
             let imgSrc2 = objectsToUse[i].src2;
@@ -153,6 +162,7 @@ $(document).ready(function() {
 
         console.log("du köper", event.data.bought);
         console.log(detailproduct, "test")
+
 
         localStorage.setItem("products-1", JSON.stringify(detailproduct))
         window.open("detaljsida.html")

@@ -27,7 +27,6 @@
       cursor: pointer; }
   #navbar #header .header-left {
     justify-content: flex-start;
-    font-size: 1.1rem;
     font-family: 'Barlow', sans-serif; }
   #navbar #header .header-middle {
     justify-content: center;
