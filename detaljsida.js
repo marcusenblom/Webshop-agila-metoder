@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
     let cart = [];
     let cart2 = [];
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -31,6 +33,7 @@ $(document).ready(function() {
         cart2.push(h)
 
         ränkare()
+
         localStorage.setItem("cart", JSON.stringify(cart));
         console.log("skicka vidare", hej)
     });
@@ -64,4 +67,4 @@ $(document).ready(function() {
 
 
 
-})
+});

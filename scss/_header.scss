@@ -20,6 +20,7 @@
     position: fixed;
     top: 0;
     z-index: 99;
+    font-family: 'Montserrat', sans-serif;
 
     a {
       text-decoration: none;
@@ -44,13 +45,12 @@
 
     .header-left {
       justify-content: flex-start;
-      font-family: 'Barlow', sans-serif;
+      font-size: 0.9rem;
     }
 
     .header-middle {
       justify-content: center;
-      font-size: 1.6rem;
-      font-family: 'Barlow', sans-serif;
+      font-size: 1.4rem;
     }
 
     .header-right {
@@ -64,7 +64,6 @@
           top: -18px;
           right: 0;
           font-size: 8px;
-          font-family: 'Barlow', sans-serif;
         }
       }
     }
@@ -106,6 +105,10 @@
         li:hover {
           text-decoration-line: underline;
           cursor: pointer;
+        }
+
+        a {
+          color: inherit;
         }
       }
     }

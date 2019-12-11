@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    //Gör alla varor synliga
     cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     for (let p = 0; p < cart.length; p++) {
@@ -12,12 +11,13 @@ $(document).ready(function() {
 
     }
 
-    // let checkoutButton = $("#checkout_button");
-    // let checkBoxes = $("#checkout_checkbox");
-    // checkoutButton.addEventListener("click", function () {
-    //     $("#checkout_button").prop('disabled', checkBoxes.filter(':checked').length < 1);
-    // });
-    // checkBoxes.change();  
+
+    let checkoutButton = $("#checkout_button");
+    let checkBoxes = $("#checkout_checkbox");
+    checkoutButton.addEventListener("click", function () {
+        $("#checkout_button").prop('disabled', checkBoxes.filter(':checked').length < 1);
+    });
+    checkBoxes.change();
 
     $("#checkout_checkbox").on("change", function(e) {
         if ($("#checkout_checkbox").attr("checked")) {
