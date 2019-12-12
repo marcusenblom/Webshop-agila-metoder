@@ -33,7 +33,6 @@ $(document).ready(function() {
         newArray.push(detailProduct);
         localStorage.setItem("cart", JSON.stringify(newArray));
 
-
     });
 
 
