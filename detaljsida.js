@@ -20,6 +20,7 @@ $(document).ready(function() {
       let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
       console.log(currentCartItems);
     }
+    
     });
     // let currentCartItems = localStorage.getItem("cart");
     // console.log(currentCartItems);
