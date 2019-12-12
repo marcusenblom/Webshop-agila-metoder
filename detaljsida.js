@@ -51,8 +51,8 @@ $(document).ready(function() {
 
     if (localStorage.getItem("cart")) {
       let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
-      console.log(currentCartItems);
-      for (var i = 0; i < currentCartItems.length; i++) {
+
+      for (let i = 0; i < currentCartItems.length; i++) {
         newArray.push(currentCartItems[i]);
       }
     }
