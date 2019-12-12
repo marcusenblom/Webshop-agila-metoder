@@ -7,8 +7,7 @@ $(document).ready(function() {
 
     $(".badge-info").html(cartLength);
   };
-  counter();
-
+  counter();  // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
 
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
@@ -163,15 +162,10 @@ $(document).ready(function() {
 
   // skickar i väg till varukorgen
   function detailProducts(event) {
-    let detailproduct = event.data.bought
+    let detailproduct = event.data.bought;
 
-    console.log("du köper", event.data.bought);
-    console.log(detailproduct, "test")
-
-
-    localStorage.setItem("products-1", JSON.stringify(detailproduct))
-    window.open("detaljsida.html")
-    window.close("index.html")
+    localStorage.setItem("products-1", JSON.stringify(detailproduct));
+    window.open("detaljsida.html", "_self");
   };
 
 
