@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+  function counter(){
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+    let cartLength = currentCartItems.length;
+    console.log(cartLength);
+
+    $(".badge-info").html(cartLength);
+  };
+  counter();
 
 
   $(".menu-toggle").click(function() {

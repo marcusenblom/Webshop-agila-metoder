@@ -1,57 +1,39 @@
 $(document).ready(function() {
 
+  function counter(){
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+    let cartLength = currentCartItems.length;
+    console.log(cartLength);
 
-  detailproduct = JSON.parse(localStorage.getItem("products-1")) || {};
+    $(".badge-info").html(cartLength);
+  };
+  counter();
 
-  $("#h3").html(detailproduct.title)
-  $("#detail-description").html(detailproduct.description)
-  $("#spaan").html(detailproduct.price)
-  imgSrc3 = detailproduct.src;
+  detailProduct = JSON.parse(localStorage.getItem("products-1")) || {};
+
+  $("#h3").html(detailProduct.title)
+  $("#detail-description").html(detailProduct.description)
+  $("#spaan").html(detailProduct.price)
+  imgSrc3 = detailProduct.src;
   let detailImg = $("<img>").attr("src", imgSrc3);
   $("#id-detail-innerbox-Img").append(detailImg);
 
-  localStorage.setItem("cart", JSON.stringify(detailproduct));
 
   $("#detailButton").on("click", function() {
-
-    let list = [];
+    let newArray = [];
 
     if (localStorage.getItem("cart")) {
-      let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+      let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
       console.log(currentCartItems);
+      for (var i = 0; i < currentCartItems.length; i++) {
+        newArray.push(currentCartItems[i]);
+      }
     }
-    
+    newArray.push(detailProduct);
+    localStorage.setItem("cart", JSON.stringify(newArray));
+
+    counter();
     });
-    // let currentCartItems = localStorage.getItem("cart");
-    // console.log(currentCartItems);
-    //
-    // list.push(currentCartItems);
-    // list.push(JSON.stringify(detailproduct));
-    //
-    // localStorage.setItem("cart", list);
-    //
-    // console.log(localStorage.getItem("cart"));
-
-    //
-    // $("#detailButton").on("click", function() {
-    //     let cart3 = cart.push(detailproduct)
-    //     let number = 1;
-    //     cart2.push(number)
-    //
-    //     counter()
-    //
-    //     localStorage.setItem("cart", JSON.stringify(cart));
-    //     console.log("skicka vidare", cart3)
-    // });
-    //
-    // let i = 0;
-    //
-    // function counter() {
-    //
-    //
-    //     }
-    //     $(".badge-info").html(i);
-
 
 
 });
