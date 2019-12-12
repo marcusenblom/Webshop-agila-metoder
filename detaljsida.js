@@ -49,6 +49,7 @@ $(document).ready(function() {
     $("#detailButton").on("click", function() {
         let newArray = [];
 
+<<<<<<< HEAD
     if (localStorage.getItem("cart")) {
       let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
@@ -58,8 +59,23 @@ $(document).ready(function() {
     }
     newArray.push(detailProduct);
     localStorage.setItem("cart", JSON.stringify(newArray));
+=======
+        if (localStorage.getItem("cart")) {
+            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+            console.log(currentCartItems);
+            for (var i = 0; i < currentCartItems.length; i++) {
+                newArray.push(currentCartItems[i]);
+            }
+        }
+        newArray.push(detailProduct);
+        localStorage.setItem("cart", JSON.stringify(newArray));
+>>>>>>> f1c71ecb023da75c2f68f0ddd1d5d05e64413f1e
 
         $(".badge-info").html(cartLength);
     });
     counter();
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> f1c71ecb023da75c2f68f0ddd1d5d05e64413f1e
