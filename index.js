@@ -11,16 +11,21 @@ $(document).ready(function() {
     }
   });
 
-  function counter(){
+  $(".home").on("click", function(){
+    localStorage.setItem("filter", 0);
+    window.open("index.html", "_self");
+  });
+
+  function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
     let cartLength = currentCartItems.length;
     console.log(cartLength);
 
     $(".badge-info").html(cartLength);
   };
-  counter();  // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
+  counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
 
-  
+
 
 
   // Array med alla objekt //
@@ -31,32 +36,91 @@ $(document).ready(function() {
 
 
   // Funktion som skapar upp produkter på förstasidan //
-  for (var i = 0; i < listOfAllProducts.length; i++) {
 
-    let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
-
-    let imgSrc = listOfAllProducts[i].src;
-    let imgSrc2 = listOfAllProducts[i].src2;
-    let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-      image.attr("src", imgSrc2);
-    }).mouseout(function() {
-      image.attr("src", imgSrc);
-    }).appendTo(productContainer);
-
-    let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-    let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
-    let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-
-    image.attr("type", "button")
-      .on("click", {
-        bought: listOfAllProducts[i]
-      }, detailProducts);
-
-
-    $("#spaan").append(listOfAllProducts[i].title);
-
-    $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
+  if (!localStorage.getItem("filter")) {
+    localStorage.setItem("filter", 0);
   }
+
+  if (localStorage.getItem("filter") == 0) {
+
+    for (var i = 0; i < 4; i++) {
+
+      let frontPageContainer = $("<div>").addClass("frontPageContainer").appendTo($(".flex-container"));
+
+      let imgSrc = listOfAllProducts[i].src;
+      let image = $("<img>").attr("src", imgSrc).addClass("productImage").appendTo(frontPageContainer);
+
+
+    // for (var i = 0; i < listOfAllProducts.length; i++) {
+    //
+    //   let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+    //
+    //   let imgSrc = listOfAllProducts[i].src;
+    //   let imgSrc2 = listOfAllProducts[i].src2;
+    //   let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+    //     image.attr("src", imgSrc2);
+    //   }).mouseout(function() {
+    //     image.attr("src", imgSrc);
+    //   }).appendTo(productContainer);
+    //
+    //   let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+    //   let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+    //   let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+    //
+    //   image.attr("type", "button")
+    //     .on("click", {
+    //       bought: listOfAllProducts[i]
+    //     }, detailProducts);
+    //
+    //
+    //   $("#spaan").append(listOfAllProducts[i].title);
+    //
+    //   $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
+    }
+  } else {
+
+    $("#hero").empty().css("height", "0"); // döljer hero
+    $(".flex-container").empty();
+
+    let category = localStorage.getItem("filter");
+
+    let header = $("#" + category).text().toUpperCase();
+    $(".product-header").html(header);
+
+    let numberOfItemsAdded = 0;
+
+    for (var i = 0; i < listOfAllProducts.length; i++) {
+
+      if (listOfAllProducts[i].category === category) {
+
+        numberOfItemsAdded++;
+
+        let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+
+        let imgSrc = listOfAllProducts[i].src;
+        let imgSrc2 = listOfAllProducts[i].src2;
+        let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
+          image.attr("src", imgSrc2);
+        }).mouseout(function() {
+          image.attr("src", imgSrc);
+        }).appendTo(productContainer);
+
+
+        image.attr("type", "button")
+          .on("click", {
+            bought: listOfAllProducts[i]
+          }, detailProducts);
+
+
+
+        let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+        let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
+        let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+
+      };
+      $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
+    };
+  };
 
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
@@ -69,7 +133,8 @@ $(document).ready(function() {
     $(".flex-container").empty();
 
     let category = this.id;
-    console.log(category);
+    localStorage.setItem("filter", category);
+
     let header = $("#" + category).text().toUpperCase();
     $(".product-header").html(header);
 
