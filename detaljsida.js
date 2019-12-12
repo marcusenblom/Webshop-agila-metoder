@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+    //hej
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
     let cartLength = currentCartItems.length;
     console.log(cartLength);
