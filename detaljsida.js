@@ -10,16 +10,17 @@ $(document).ready(function() {
   let detailImg = $("<img>").attr("src", imgSrc3);
   $("#id-detail-innerbox-Img").append(detailImg);
 
-  $("#detailButton").on("click", function() {
+  localStorage.setItem("cart", JSON.stringify(detailproduct));
 
-    let cart = [detailproduct, detailproduct];
+  $("#detailButton").on("click", function() {
 
     let list = [];
 
-    if (!localStorage.getItem("cart")) {
+    if (localStorage.getItem("cart")) {
       let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
       console.log(currentCartItems);
     }
+    });
     // let currentCartItems = localStorage.getItem("cart");
     // console.log(currentCartItems);
     //
@@ -30,27 +31,26 @@ $(document).ready(function() {
     //
     // console.log(localStorage.getItem("cart"));
 
+    //
+    // $("#detailButton").on("click", function() {
+    //     let cart3 = cart.push(detailproduct)
+    //     let number = 1;
+    //     cart2.push(number)
+    //
+    //     counter()
+    //
+    //     localStorage.setItem("cart", JSON.stringify(cart));
+    //     console.log("skicka vidare", cart3)
+    // });
+    //
+    // let i = 0;
+    //
+    // function counter() {
+    //
+    //
+    //     }
+    //     $(".badge-info").html(i);
 
-    $("#detailButton").on("click", function() {
-        let cart3 = cart.push(detailproduct)
-        let number = 1;
-        cart2.push(number)
-
-        counter()
-
-        localStorage.setItem("cart", JSON.stringify(cart));
-        console.log("skicka vidare", cart3)
-    });
-
-    let i = 0;
-
-    function counter() {
-
-
-        }
-        $(".badge-info").html(i)
-
-    }
 
 
 });
