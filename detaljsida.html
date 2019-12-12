@@ -10,20 +10,60 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="detaljsida.js" charset="utf-8"></script>
     <link rel="stylesheet" type="text/css" href="css/detaljsida-style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/3387f41f9e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <section id="navbar">
+
+        <header class="borderWhite" id="header">
+            <div class="header-left">
+                <span class="menu-toggle">SHOP</span>
+            </div>
+            <div class="header-middle">
+                <a href="index.html"><span>COMPANY</span></a>
+            </div>
+            <div class="header-right">
+                <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i></a>
+                <div>
+
+        </header>
+
+        <div class="menu menu-hide">
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Kläder</li>
+                    <li id="Coat" class="filter-button">Kappor & Jackor</li>
+                    <li id="Dress" class="filter-button">Klänningar</li>
+                    <li id="Shoe" class="filter-button">Skor</li>
+                    <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Accessoarer</li>
+                    <li>Smycken</li>
+                    <li>Mössor & vantar</li>
+                    <li>Underkläder</li>
+                    <li>Väskor</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
     <div class="detail-box2">
         <div class="detail-box">
             <div class="detail-box-Img">
-                <div class="detail-innerbox-Img">
-                    <img src="" alt="">
+                <div class="detail-innerbox-Img" id="id-detail-innerbox-Img">
+
                 </div>
             </div>
             <div class="detail-innerbox2">
                 <div class="detail-h3-price-radiosize-Box">
-                    <h3>Missguided</h3>
-                    <p>Pris:<span id="spaan"></span></p>
+                    <div id="h3"></div>
+                    <p>Pris:<span id="spaan"> </span></p>
                     <div class="detail-radiosize-Box">
                         <div class="detail-radiosize-innebox">
                             <input type="radio" name="size" value="small">Small
@@ -36,11 +76,11 @@
                         </div>
                     </div>
 
-                    <button>Lägg i varukorgen</button>
+                    <button id="detailButton">Lägg i varukorgen</button>
                     <div class="detail-description-text">
                         <h4>Beskrivning</h4>
-                        <p>
-                            Klänning i mesh från NLY Trend Stretchigt material Mini-längd Liten polokrage med knappar bak Fodrad
+                        <p id="detail-description">
+
                         </p>
                     </div>
 
@@ -49,7 +89,7 @@
         </div>
 
     </div>
-    <footer>hej</footer>
+
 </body>
 
 </html

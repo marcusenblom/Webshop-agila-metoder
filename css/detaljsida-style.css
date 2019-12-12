@@ -1,6 +1,6 @@
     body {
         margin: 0px;
-        background: rgb(128, 130, 133);
+        background: gainsboro;
     }
     
     * {
@@ -10,28 +10,29 @@
     .detail-box2 {
         display: flex;
         justify-content: center;
+        margin-top: 80px;
     }
     
     .detail-box {
         display: flex;
         flex-direction: column;
         width: 100%;
-        background: chartreuse;
-        margin: 40px;
+        background: white;
+        margin: 0px;
     }
     
     .detail-box-Img {
         display: flex;
         width: 100%;
         justify-content: center;
-        background: darkslateblue;
+        background: white;
     }
     
     .detail-innerbox-Img {
         display: flex;
         justify-content: center;
         width: 70%;
-        background: crimson;
+        background: black;
     }
     
     img {
@@ -42,13 +43,13 @@
     .detail-innerbox2 {
         display: flex;
         justify-content: center;
-        background-color: chocolate;
+        background-color: white;
     }
     
     .detail-h3-price-radiosize-Box {
         display: flex;
         width: 70%;
-        background: rgb(148, 137, 156);
+        background: white;
         flex-direction: column;
         padding: 10px;
     }
@@ -82,7 +83,7 @@
             margin: 10px;
         }
         .detail-box-Img {
-            background: orchid;
+            background: white;
             width: 100%;
             margin: 10px;
         }
@@ -94,7 +95,7 @@
         }
         .detail-innerbox2 {
             justify-content: center;
-            background: darkorchid;
+            background: white;
         }
         .detail-h3-price-radiosize-Box {
             width: 70%;

@@ -1,24 +1,14 @@
 $(document).ready(function() {
 
-  // Funktion som ändrar backgrunden på #header beroende på scroll position //
-  // $(document).scroll(function() {
-  //   if (window.pageYOffset < 60) {
-  //     $("#header").removeClass("borderShadow");
-  //
-  //   } else {
-  //     if (window.pageYOffset < 340) {
-  //       $("#header").removeClass("borderShadow").css({
-  //         "background-color": "transparent",
-  //         "color": "white"
-  //       });
-  //     } else {
-  //       $("#header").css({
-  //         "background-color": "white",
-  //         "color": "black"
-  //       }).addClass("borderShadow");
-  //     };
-  //   };
-  // });
+  function counter(){
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+    let cartLength = currentCartItems.length;
+    console.log(cartLength);
+
+    $(".badge-info").html(cartLength);
+  };
+  counter();
+
 
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
@@ -28,15 +18,14 @@ $(document).ready(function() {
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
-
     }
   });
+
 
   // Array med alla objekt //
 
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
-  localStorage.setItem("products-1", JSON.stringify(listOfAllProducts))
   console.log(listOfAllProducts);
 
 
@@ -49,31 +38,25 @@ $(document).ready(function() {
     let imgSrc2 = listOfAllProducts[i].src2;
     let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
       image.attr("src", imgSrc2);
-      image.addClass("highlight");
     }).mouseout(function() {
       image.attr("src", imgSrc);
-      image.removeClass("highlight");
     }).appendTo(productContainer);
-
-    image.on("click", function() {
-      window.open("detaljsida.html")
-      window.close("index.html")
-      /*let numberOfItemsAdded2 = 0;
-      for (i = 0; i < listOfAllProducts.length; i++) {
-          numberOfItemsAdded2++;
-          if (listOfAllProducts[i].id === id) {
-
-              $("#spaan").append(listOfAllProducts[i].title)
-          }
-      }*/
-    });
 
     let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
     let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
     let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
+    image.attr("type", "button")
+      .on("click", {
+        bought: listOfAllProducts[i]
+      }, detailProducts);
+
+
+    $("#spaan").append(listOfAllProducts[i].title);
+
     $(".number-of-items").html("- Visar " + listOfAllProducts.length + " av " + listOfAllProducts.length + " produkter -");
-  };
+  }
+
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
 
@@ -86,6 +69,8 @@ $(document).ready(function() {
 
     let category = this.id;
     console.log(category);
+    let header = $("#" + category).text().toUpperCase();
+    $(".product-header").html(header);
 
     let numberOfItemsAdded = 0;
 
@@ -104,20 +89,23 @@ $(document).ready(function() {
         }).mouseout(function() {
           image.attr("src", imgSrc);
         }).appendTo(productContainer);
-        image.on("click", function() {
-          window.open("detaljsida.html")
-          window.close("index.html")
-        })
+
+
+        image.attr("type", "button")
+          .on("click", {
+            bought: listOfAllProducts[i]
+          }, detailProducts);
+
 
 
         let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
         let title = $("<span>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(productTitleContainer);
         let price = $("<span>").html(listOfAllProducts[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
-      }
+
+      };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
     };
   });
-
 
   // Winter-collection //
 
@@ -129,7 +117,11 @@ $(document).ready(function() {
 
     for (var i = 0; i < objectsToUse.length; i++) {
 
-      let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
+      numberOfItemsAdded++;
+
+      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+      let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
+      let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
 
       let imgSrc = objectsToUse[i].src;
       let imgSrc2 = objectsToUse[i].src2;
@@ -139,9 +131,10 @@ $(document).ready(function() {
         image.attr("src", imgSrc);
       }).appendTo(productContainer);
 
-      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-      let title = $("<span>").html(objectsToUse[i].title).addClass("titleFont").appendTo(productTitleContainer);
-      let price = $("<span>").html(objectsToUse[i].price + " SEK").addClass("priceSpan").appendTo(productTitleContainer);
+      image.attr("type", "button")
+        .on("click", {
+          bought: listOfAllProducts[i]
+        }, detailProducts);
 
     };
     $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
@@ -168,6 +161,19 @@ $(document).ready(function() {
     recommend();
   });
 
+  // skickar i väg till varukorgen
+  function detailProducts(event) {
+    let detailproduct = event.data.bought
+
+    console.log("du köper", event.data.bought);
+    console.log(detailproduct, "test")
+
+
+    localStorage.setItem("products-1", JSON.stringify(detailproduct))
+    window.open("detaljsida.html")
+    window.close("index.html")
+  };
+
 
 });
 
@@ -182,22 +188,11 @@ function ProductClass() {
   this.size1;
   this.size2;
   this.size3;
+  this.display;
   this.description;
   this.src;
   this.src2;
   this.favorite;
-  this.id;
-  this.category;
-  this.title;
-  this.price;
-  this.size1;
-  this.size2;
-  this.size3;
-  this.description;
-  this.src;
-  this.src2;
-  this.favorite;
-  //2 a3591195c03ec67ea92ea40e12a84762735b430
 };
 
 let productCoat1 = new ProductClass();
@@ -209,6 +204,7 @@ productCoat1.price = 3400;
 productCoat1.size1 = "S";
 productCoat1.size2 = "M";
 productCoat1.size3 = "L";
+productCoat1.display = 0;
 productCoat1.description = "PU jacka från Glamorous Rak modell med krage i glansigt material Dekorativa vita sömmar Försluts framtill med dragkedja Fyra fickor framtill Skärp samt hällor i midjan";
 productCoat1.src = "images/coat1.jpg";
 productCoat1.src2 = "images/coat1_2.jpg";

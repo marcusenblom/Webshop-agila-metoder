@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
     $("#checkout_button").click(function() {
         $("#form").submit();
     });
@@ -46,8 +47,50 @@ $(function() {
       }
     });
   });
+=======
+
+  function counter() {
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+    let cartLength = currentCartItems.length;
+    console.log(cartLength);
+
+    $(".badge-info").html(cartLength);
+  };
+  counter();
 
 
+  cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  for (let p = 0; p < cart.length; p++) {
+>>>>>>> 17d88624c12ce2bdd9fd67eaf377fe75b8179eb3
+
+    $("#checkout_items_titel1").html(cart[p].title)
+    $("#checkout_items_price1").html(cart[p].price)
+
+    console.log("kom och hjälp mig!")
 
 
+<<<<<<< HEAD
   
+=======
+  }
+
+
+  let checkoutButton = $("#checkout_button");
+  let checkBoxes = $("#checkout_checkbox");
+  checkoutButton.addEventListener("click", function() {
+    $("#checkout_button").prop('disabled', checkBoxes.filter(':checked').length < 1);
+  });
+  checkBoxes.change();
+
+  $("#checkout_checkbox").on("change", function(e) {
+    if ($("#checkout_checkbox").attr("checked")) {
+      $("#checkout_button").button("enable");
+    } else {
+      $(".submit").button("disable");
+    }
+
+  });
+
+});
+>>>>>>> 17d88624c12ce2bdd9fd67eaf377fe75b8179eb3

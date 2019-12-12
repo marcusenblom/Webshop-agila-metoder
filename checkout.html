@@ -1,60 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="vendor/jquery/dist/jquery.min.js"></script>
     <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+=======
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+>>>>>>> 17d88624c12ce2bdd9fd67eaf377fe75b8179eb3
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/checkout.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/checkout.css"/>
+
     <script src="checkout.js"></script>
     <title>Gruppuppgift JS</title>
 </head>
+
 <body>
-    <header class="flex-container" id="checkout_container_header">
-      <div id="checkout_header_left">
-        <span>Clothing</span>
+  <section id="navbar">
+
+      <header class="borderWhite" id="header">
+          <div class="header-left">
+              <span class="menu-toggle">SHOP</span>
+          </div>
+          <div class="header-middle">
+              <a href="index.html"><span>COMPANY</span></a>
+          </div>
+          <div class="header-right">
+              <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i></a>
+          </div>
+      </header>
+
+      <div class="menu menu-hide">
+          <div class="menu-section">
+              <ul>
+                  <li class="dropdown-header">Kläder</li>
+                  <li id="Coat" class="filter-button">Kappor & Jackor</li>
+                  <li id="Dress" class="filter-button">Klänningar</li>
+                  <li id="Shoe" class="filter-button">Skor</li>
+                  <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
+              </ul>
+          </div>
+          <div class="menu-section">
+              <ul>
+                  <li class="dropdown-header">Accessoarer</li>
+                  <li>Smycken</li>
+                  <li>Mössor & vantar</li>
+                  <li>Underkläder</li>
+                  <li>Väskor</li>
+              </ul>
+          </div>
       </div>
-      <div id="checkout_header_right">
-        <i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info">2</span></i>
-      </div>
-    </header>
+  </section>
+
     <div id="checkout_headline">
         <h1>Din varukorg</h1>
     </div>
     <div id="checkout_container_subheading" class="flex-container">
-        <div id="name" class="checkout_subheading">Namn</div> 
-        <div id="size" class="checkout_subheading">Storlek </div>
+        <div id="name" class="checkout_subheading">Namn</div>
+        <div id="Size" class="checkout_subheading">Storlek </div>
         <div id="quantity" class="checkout_subheading">Antal</div>
-        <div id="price" class="checkout_subheading">Pris</div>
+        <div id="checkOutPrice" class="checkout_subheading">Pris</div>
         <div id="remove" class="checkout_subheading">Ta bort</div>
     </div>
     <div id="checkout_container_cart" class="flex-container">
-            <div id="checkout_container_items" class="flex-container">
-            <div id="checkout_items_name" class="checkout">Tröja</div>
-            <div id="checkout_items_size" class="checkout">Medium</div>
-            <div id="checkout_items_quantity" class="checkout">1</div>
-            <div id="checkout_items_price" class="checkout">399:-</div>
+        <div id="checkout_container_items" class="flex-container">
+            <div id="checkout_items_titel1" class="checkout">Tröja</div>
+            <div id="checkout_items_size1" class="checkout">Medium</div>
+            <div id="checkout_items_quantity1" class="checkout">1</div>
+            <div id="checkout_items_price1" class="checkout">399:-</div>
             <i class="fas fa-trash-alt"></i>
         </div>
         <hr>
         <br>
         <div id="checkout_container_items" class="flex-container">
-            <div id="checkout_items_name" class="checkout">Tröja</div>
-            <div id="checkout_items_size" class="checkout">Medium</div>
-            <div id="checkout_items_quantity" class="checkout">1</div>
-            <div id="checkout_items_price" class="checkout">399:-</div>
+            <div id="checkout_items_name2" class="checkout">Tröja</div>
+            <div id="checkout_items_size2" class="checkout">Medium</div>
+            <div id="checkout_items_quantity2" class="checkout">1</div>
+            <div id="checkout_items_price2" class="checkout">399:-</div>
             <i class="fas fa-trash-alt"></i>
         </div>
         <hr>
         <br>
         <div id="checkout_container_items" class="flex-container">
-            <div id="checkout_items_name" class="checkout">Tröja</div>
+            <div id="checkout_items_name2" class="checkout">Tröja</div>
             <div id="checkout_items_size" class="checkout">Medium</div>
             <div id="checkout_items_quantity" class="checkout">1</div>
             <div id="checkout_items_price" class="checkout">399:-</div>
@@ -62,7 +98,7 @@
         </div>
     </div>
     <div id="checkout_container_sum" class="flex-container">
-        <div id="checkout_to_pay">Att betala:</div> 
+        <div id="checkout_to_pay">Att betala:</div>
         <div id="checkout_sum">Summa</div>
     </div>
     </div>
@@ -97,9 +133,15 @@
                 <span><input type="radio" name="payment_option" id="radio">Kortbetalning</span>
             </div>
             <div id="checkout_payment_options" class="flex-container">
+<<<<<<< HEAD
                 <span><input type="radio" name="payment_option" id="radio">Faktura</span>
             </div> 
         </form>  
+=======
+                <input type="radio" name="payment_option">Faktura
+            </div>
+        </div>
+>>>>>>> 17d88624c12ce2bdd9fd67eaf377fe75b8179eb3
     </div>
 
     <div id="checkout_container_confirmation" class="flex-container">
@@ -111,6 +153,7 @@
     </div>
     <div id="checkout_container_footer" class="flex-container">
         <div id="checkout_footer">
+<<<<<<< HEAD
             <h4>Kontakta oss</h4>
             <u>Adress</u><br>
             Tulegatan 41<br>
@@ -119,6 +162,13 @@
             08-673 32 20<br>
             <u>Mail</u><br>
             clothing@info.se<br>
+=======
+            <h3>Kontakta oss</h3>
+            Tulegatan 41<br> 113 53 Stockholm<br> Telefon
+            <br> 08-673 32 20<br> Mail
+            <br> clothing@info.se
+            <br>
+>>>>>>> 17d88624c12ce2bdd9fd67eaf377fe75b8179eb3
 
         </div>
         <div id="checkout_footer_map" class="flex-container">
@@ -128,4 +178,5 @@
         </div>
     </div>
 </body>
+
 </html>
