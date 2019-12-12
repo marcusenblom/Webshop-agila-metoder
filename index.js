@@ -1,14 +1,5 @@
 $(document).ready(function() {
 
-  function counter(){
-    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
-    let cartLength = currentCartItems.length;
-    console.log(cartLength);
-
-    $(".badge-info").html(cartLength);
-  };
-  counter();  // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
-
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
@@ -19,6 +10,17 @@ $(document).ready(function() {
       $(".menu").removeClass("menu-show");
     }
   });
+
+  function counter(){
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+    let cartLength = currentCartItems.length;
+    console.log(cartLength);
+
+    $(".badge-info").html(cartLength);
+  };
+  counter();  // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
+
+  
 
 
   // Array med alla objekt //

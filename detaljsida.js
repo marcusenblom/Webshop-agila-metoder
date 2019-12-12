@@ -8,6 +8,7 @@ $(document).ready(function() {
     $(".badge-info").html(cartLength);
   };
   counter();
+  
 
   detailProduct = JSON.parse(localStorage.getItem("products-1")) || {};
 
