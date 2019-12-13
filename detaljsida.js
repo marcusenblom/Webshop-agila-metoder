@@ -46,15 +46,15 @@ $(document).ready(function() {
 
     $("#detailButtontoCart").attr("disabled", "disabled")
     let inputSize = $("input:checked").val();
-    console.log(inputSize);
+
 
     $("input").on("click", function() {
-        $("#detailButtontoCart").removeAttr("disabled");
+            $("#detailButtontoCart").removeAttr("disabled");
 
-    })
-
-    // if (inputSize !== undefined) {
-    //     $("#detailButtontoCart").removeAttr("disabled");
+        })
+        // ett annat sätt att göra valdringen på knapopen
+        // if (inputSize !== undefined) {
+        //     $("#detailButtontoCart").removeAttr("disabled");
 
     //     console.log("Du klarade att välja en storlek")
     // } else {
@@ -75,7 +75,7 @@ $(document).ready(function() {
         detailProduct.size = inputSize
 
         if (localStorage.getItem("cart")) {
-            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
             for (let i = 0; i < currentCartItems.length; i++) {
                 newArray.push(currentCartItems[i]);
@@ -84,6 +84,7 @@ $(document).ready(function() {
             };
         };
         newArray.push(detailProduct);
+
         localStorage.setItem("cart", JSON.stringify(newArray));
 
         $(".badge-info").html(newArray.length);
