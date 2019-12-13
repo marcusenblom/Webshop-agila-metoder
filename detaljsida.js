@@ -15,9 +15,7 @@ $(document).ready(function() {
         $(".menu").removeClass("menu-show");
 
         let newFilter = this.id;
-
         localStorage.setItem("filter", newFilter);
-
         window.open("index.html", "_self");
     });
 
@@ -44,31 +42,32 @@ $(document).ready(function() {
     imgSrc3 = detailProduct.src;
     let detailImg = $("<img>").attr("src", imgSrc3);
     $("#id-detail-innerbox-Img").append(detailImg);
-    $(this).prop("disabled", true);
 
 
     $("#detailButtontoCart").attr("disabled", "disabled")
     let inputSize = $("input").val()
-    detailProduct.size = inputSize
+
     $("input").on("click", function() {
         $("#detailButtontoCart").removeAttr("disabled");
 
     })
 
-    // if ($(inputSize == true)) {
-    //     $("#detailButtontoCart").removeAttr("disabled");
+    if ($(inputSize == true)) {
+        $("#detailButtontoCart").removeAttr("disabled");
 
-    //     console.log("Du klarade att välja en storlek")
-    // } else {
-    //     $("#detailButtontoCart").attr("disabled", "disabled")
-    //     console.log("Du måste välja en storlek")
-    // }
+        console.log("Du klarade att välja en storlek")
+    } else {
+        $("#detailButtontoCart").attr("disabled", "disabled")
+        console.log("Du måste välja en storlek")
+    }
+
+
 
     $("#detailButtontoCart").on("click", function() {
 
         let newArray = [];
-
-
+        let inputSize = $("input:checked").val();
+        detailProduct.size = inputSize
 
         if (localStorage.getItem("cart")) {
             let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
@@ -77,14 +76,12 @@ $(document).ready(function() {
                 newArray.push(currentCartItems[i]);
 
 
-            }
-        }
-
+            };
+        };
         newArray.push(detailProduct);
-
         localStorage.setItem("cart", JSON.stringify(newArray));
-        $(".badge-info").html(newArray.length);
 
+        $(".badge-info").html(newArray.length);
     });
     counter();
 
