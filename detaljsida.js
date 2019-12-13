@@ -44,29 +44,32 @@ $(document).ready(function() {
     imgSrc3 = detailProduct.src;
     let detailImg = $("<img>").attr("src", imgSrc3);
     $("#id-detail-innerbox-Img").append(detailImg);
-    /*
+    $(this).prop("disabled", true);
 
-        let inputSize = $("input:checked").val()
-        if (inputSize == false) {
-            $("#detailButtontoCart").attr("disabled", true)
-            console.log("Du klarade att välja en storlek")
-        } else {
 
-            $("#detailButtontoCart").attr("disabled", false)
-            console.log("Du måste välja en storlek")
+    $("#detailButtontoCart").attr("disabled", "disabled")
+    let inputSize = $("input").val()
+    detailProduct.size = inputSize
+    $("input").on("click", function() {
+        $("#detailButtontoCart").removeAttr("disabled");
 
-        }
-    */
+    })
 
+    // if ($(inputSize == true)) {
+    //     $("#detailButtontoCart").removeAttr("disabled");
+
+    //     console.log("Du klarade att välja en storlek")
+    // } else {
+    //     $("#detailButtontoCart").attr("disabled", "disabled")
+    //     console.log("Du måste välja en storlek")
+    // }
 
     $("#detailButtontoCart").on("click", function() {
-        $("#detailButtontoCart").attr("disabled", false)
+
         let newArray = [];
-        // let inputSizeUnchecked = $("input:unchecked").val()
 
 
 
-        detailProduct.size = inputSize
         if (localStorage.getItem("cart")) {
             let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
@@ -80,11 +83,9 @@ $(document).ready(function() {
         newArray.push(detailProduct);
 
         localStorage.setItem("cart", JSON.stringify(newArray));
-
-
         $(".badge-info").html(newArray.length);
+
     });
     counter();
-
 
 });
