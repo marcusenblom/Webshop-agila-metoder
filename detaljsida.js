@@ -45,22 +45,27 @@ $(document).ready(function() {
 
 
     $("#detailButtontoCart").attr("disabled", "disabled")
-    let inputSize = $("input").val()
+    let inputSize = $("input:checked").val();
+    console.log(inputSize);
 
     $("input").on("click", function() {
         $("#detailButtontoCart").removeAttr("disabled");
 
     })
 
-    if ($(inputSize == true)) {
-        $("#detailButtontoCart").removeAttr("disabled");
+    // if (inputSize !== undefined) {
+    //     $("#detailButtontoCart").removeAttr("disabled");
 
-        console.log("Du klarade att välja en storlek")
-    } else {
-        $("#detailButtontoCart").attr("disabled", "disabled")
-        console.log("Du måste välja en storlek")
-    }
+    //     console.log("Du klarade att välja en storlek")
+    // } else {
+    //     $("#detailButtontoCart").attr("disabled", "disabled")
+    //     console.log("Du måste välja en storlek")
+    // }
 
+
+    // $("input").on("change", function() {
+    //     $("#detailButtontoCart").removeAttr("disabled");
+    // });
 
 
     $("#detailButtontoCart").on("click", function() {
