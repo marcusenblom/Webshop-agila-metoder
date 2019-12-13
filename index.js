@@ -10,6 +10,14 @@ $(document).ready(function() {
       $(".menu").removeClass("menu-show");
     }
   });
+  $(".filter-button").on("click", function() {
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+
+    let newFilter = this.id;
+
+    localStorage.setItem("filter", newFilter);
+  });
 
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
