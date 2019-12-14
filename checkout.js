@@ -4,6 +4,7 @@ $(document).ready(function() {
         $("#form").submit();
     });
 
+
  });
 
 // Wait for the DOM to be ready
