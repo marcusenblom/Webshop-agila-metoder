@@ -90,8 +90,7 @@
     <!--start-->
 
     <div id="checkout_form_container" class="flex-container">
-        <form id="msform" method="POST" action="abc.php">
-            <!-- progressbar -->
+        <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
                 <li>Kassa</li>
                 <li>Kunduppgifter</li>
@@ -103,6 +102,7 @@
 
             <!-- fieldsets -->
             <fieldset>
+<<<<<<< HEAD
                 <div class="row">
                     <div class="col-md-6 my-2">
                         <div class='btns'>
@@ -130,6 +130,28 @@
                     </div>
                 </div>
                 <input type="button" name="next" class="next action-button" value="NEXT" />
+=======
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
+                        <span class='btn first'>Swish</span>
+                    </label>
+                </div>
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
+                        <span class='btn'>Kortbetalning</span>
+                    </label>
+                </div>    
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
+                        <span class='btn'>Faktura</span>
+                    </label>
+                </div>
+                <input type="button" name="next" class="next action-button" value="NEXT"/>
+            
+>>>>>>> 6dc7748a3e7149886f307ed75b4533403a11b14a
             </fieldset>
             <fieldset>
 
