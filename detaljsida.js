@@ -61,6 +61,34 @@ $(document).ready(function() {
         $("#detailButtontoCart").removeAttr("disabled");
     });
     // Skickar objekt till cart i localStorage
+    $("#detailButtontoCart").on("click", function() {
+        let newArray = [];
+        let inputSize = $("input:checked").val();
+        detailProduct.size = inputSize;
 
+        if (localStorage.getItem("cart")) {
+            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            for (let i = 0; i < currentCartItems.length; i++) {
+                newArray.push(currentCartItems[i]);
+            };
+
+            let alreadyExist = false;
+            for (let i = 0; i < newArray.length; i++) {
+                if (detailProduct.id == newArray[i].id && inputSize == newArray[i].size) {
+                    alreadyExist = true;
+                    newArray[i].quantity++;
+                }
+            };
+            if (!alreadyExist) {
+                newArray.push(detailProduct);
+            }
+        } else {
+            newArray.push(detailProduct);
+        };
+
+        localStorage.setItem("cart", JSON.stringify(newArray));
+        counter();
+    });
 
 });
