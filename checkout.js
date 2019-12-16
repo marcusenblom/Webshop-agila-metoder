@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-<<<<<<< HEAD
-=======
-    //hejj
->>>>>>> 2daae621dca0e5d4910df690c793fe62a593efbe
     $(".menu-toggle").click(function() {
         if ($(".menu").hasClass("menu-hide")) {
             $(".menu").removeClass("menu-hide");

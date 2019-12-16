@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-<<<<<<< HEAD
     $(".menu-toggle").click(function() {
         if ($(".menu").hasClass("menu-hide")) {
             $(".menu").removeClass("menu-hide");
@@ -43,24 +42,6 @@ $(document).ready(function() {
         $(".badge").html(totalAmount);
     };
     counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
-=======
-  $(".menu-toggle").click(function() {
-    if ($(".menu").hasClass("menu-hide")) {
-      $(".menu").removeClass("menu-hide");
-      $(".menu").addClass("menu-show");
-      $(".menu-toggle-container").css("border-bottom", "2px solid black");
-
-    } else {
-      $(".menu").addClass("menu-hide");
-      $(".menu").removeClass("menu-show");
-      $(".menu-toggle-container").css("border-bottom", "0");
-    }
-  });
-  $(".filter-button").on("click", function() {
-    $(".menu").addClass("menu-hide");
-    $(".menu").removeClass("menu-show");
-    $(".menu-toggle-container").css("border-bottom", "0");
->>>>>>> ec2ffca5e7aceae26caf803e387832c87bbc74eb
 
 
     // Array med alla objekt //
