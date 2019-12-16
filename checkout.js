@@ -1,6 +1,5 @@
 $(document).ready(function() {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     $("#checkout_button").click(function() {
         $("#form").submit();
     });
