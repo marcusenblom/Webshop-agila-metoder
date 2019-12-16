@@ -15,6 +15,7 @@ $(document).ready(function() {
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
 
     let newFilter = this.id;
     localStorage.setItem("filter", newFilter);
@@ -50,7 +51,7 @@ $(document).ready(function() {
     for (var i = 0; i < currentCartItems.length; i++) {
       totalAmount = totalAmount + currentCartItems[i].quantity;
     }
-    console.log(totalAmount);
+
     if (totalAmount > 0) {
       $(".badge").css("visibility", "visible");
     }

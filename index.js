@@ -15,6 +15,7 @@ $(document).ready(function() {
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
 
     let newFilter = this.id;
 
