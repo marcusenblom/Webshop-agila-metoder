@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+  // Öppnar upp/stänger menyn (accordion)
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
@@ -13,6 +13,7 @@ $(document).ready(function() {
       $(".menu-toggle-container").css("border-bottom", "0");
     }
   });
+  // Stänger menyn samt skickar filter till localStorage
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
@@ -22,15 +23,13 @@ $(document).ready(function() {
     localStorage.setItem("filter", newFilter);
     window.open("index.html", "_self");
   });
-
+  // Skickar användaren till index-html och sätter filter till 0
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
 
-
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
-
+  // Visar antal produkter i varukorgen (badge)
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
@@ -46,10 +45,8 @@ $(document).ready(function() {
     $(".badge").html(totalAmount);
   };
   counter();
-
+  // Hämtar cart från localStorage
   cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  console.log(cart);
 
   let items_div = $("#checkout_container_items");
 

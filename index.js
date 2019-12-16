@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // Öppnar upp/stänger menyn (accordion)
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
@@ -12,16 +12,17 @@ $(document).ready(function() {
       $(".menu-toggle-container").css("border-bottom", "0");
     }
   });
+  // Stänger menyn samt skickar filter till localStorage
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
 
     let newFilter = this.id;
-
     localStorage.setItem("filter", newFilter);
+    window.open("index.html", "_self");
   });
-
+  // Skickar användaren till index-html och sätter filter till 0
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
