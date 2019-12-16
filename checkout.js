@@ -7,6 +7,18 @@ $(document).ready(function() {
             $(".menu").addClass("menu-show");
             $(".menu-toggle-container").css("border-bottom", "2px solid black");
 
+<<<<<<< HEAD
+    } else {
+      $(".menu").addClass("menu-hide");
+      $(".menu").removeClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "0");
+    }
+  });
+  $(".filter-button").on("click", function() {
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+=======
         } else {
             $(".menu").addClass("menu-hide");
             $(".menu").removeClass("menu-show");
@@ -16,6 +28,7 @@ $(document).ready(function() {
     $(".filter-button").on("click", function() {
         $(".menu").addClass("menu-hide");
         $(".menu").removeClass("menu-show");
+>>>>>>> 2daae621dca0e5d4910df690c793fe62a593efbe
 
         let newFilter = this.id;
         localStorage.setItem("filter", newFilter);

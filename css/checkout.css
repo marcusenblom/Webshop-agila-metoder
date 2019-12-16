@@ -1,5 +1,4 @@
 body {
-  width: 60%;
   margin: auto; }
   body h1 {
     text-align: center; }
@@ -8,6 +7,7 @@ body {
     padding: 10px; }
 
 body {
+  font-family: 'Montserrat', sans-serif;
   /*form styles*/ }
   body .flex-container {
     display: flex;
@@ -47,7 +47,7 @@ body {
       font-size: small;
       flex-direction: column; }
       body #checkout_container_footer #checkout_footer h3 {
-        padding: 0px; }
+        padding: 0; }
     body #checkout_container_footer #checkout_footer_map {
       padding: 10px;
       font-size: small;
