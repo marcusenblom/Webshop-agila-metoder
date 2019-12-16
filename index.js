@@ -134,10 +134,10 @@ $(document).ready(function() {
         let imgSrc = listOfAllProducts[i].src;
         let imgSrc2 = listOfAllProducts[i].src2;
         let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-          image.attr("src", imgSrc2);
-        }).mouseout(function() {
-          image.attr("src", imgSrc);
-        }).attr("type", "button")
+            image.attr("src", imgSrc2);
+          }).mouseout(function() {
+            image.attr("src", imgSrc);
+          }).attr("type", "button")
           .on("click", {
             bought: listOfAllProducts[i]
           }, detailProducts).appendTo(productContainer);
@@ -175,21 +175,21 @@ $(document).ready(function() {
       let imgSrc = objectsToUse[i].src;
       let imgSrc2 = objectsToUse[i].src2;
       let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-        image.attr("src", imgSrc2);
-      }).mouseout(function() {
-        image.attr("src", imgSrc);
-      }).attr("type", "button")
+          image.attr("src", imgSrc2);
+        }).mouseout(function() {
+          image.attr("src", imgSrc);
+        }).attr("type", "button")
         .on("click", {
           bought: listOfAllProducts[i]
         }, detailProducts).appendTo(productContainer);
 
-        let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-        let leftTitleContainer = $("<div>").addClass("leftInnerTitleContainer").appendTo(productTitleContainer);
-        let rightTitleContainer = $("<div>").addClass("rightInnerTitleContainer").appendTo(productTitleContainer);
-        let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
-        let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
+      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+      let leftTitleContainer = $("<div>").addClass("leftInnerTitleContainer").appendTo(productTitleContainer);
+      let rightTitleContainer = $("<div>").addClass("rightInnerTitleContainer").appendTo(productTitleContainer);
+      let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
+      let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+      let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
 
     };
     $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
