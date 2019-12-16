@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+<<<<<<< HEAD
     $(".menu-toggle").click(function() {
         if ($(".menu").hasClass("menu-hide")) {
             $(".menu").removeClass("menu-hide");
@@ -38,6 +39,70 @@ $(document).ready(function() {
 
 
     $("#detailButtontoCart").attr("disabled", "disabled")
+=======
+  $(".menu-toggle").click(function() {
+    if ($(".menu").hasClass("menu-hide")) {
+      $(".menu").removeClass("menu-hide");
+      $(".menu").addClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "2px solid black");
+
+    } else {
+      $(".menu").addClass("menu-hide");
+      $(".menu").removeClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "0");
+    }
+  });
+  $(".filter-button").on("click", function() {
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+
+    let newFilter = this.id;
+    localStorage.setItem("filter", newFilter);
+    window.open("index.html", "_self");
+  });
+
+  $(".home").on("click", function() {
+    localStorage.setItem("filter", 0);
+    window.open("index.html", "_self");
+  });
+
+  detailProduct = JSON.parse(localStorage.getItem("products-1")) || [];
+
+  $("#h3").html(detailProduct.title)
+  $("#detail-description").html(detailProduct.description)
+  $("#spaan").html(detailProduct.price)
+  imgSrc3 = detailProduct.src;
+  let detailImg = $("<img>").attr("src", imgSrc3);
+  $("#id-detail-innerbox-Img").append(detailImg);
+
+
+  $("#detailButtontoCart").attr("disabled", "disabled")
+  let inputSize = $("input:checked").val();
+  $("input").on("click", function() {
+    $("#detailButtontoCart").removeAttr("disabled");
+
+  });
+
+  function counter() {
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+
+    let totalAmount = 0;
+    for (var i = 0; i < currentCartItems.length; i++) {
+      totalAmount = totalAmount + currentCartItems[i].quantity;
+    }
+
+    if (totalAmount > 0) {
+      $(".badge").css("visibility", "visible");
+    }
+
+    $(".badge").html(totalAmount);
+  };
+  counter();
+
+  $("#detailButtontoCart").on("click", function() {
+    let newArray = [];
+>>>>>>> ec2ffca5e7aceae26caf803e387832c87bbc74eb
     let inputSize = $("input:checked").val();
     $("input").on("click", function() {
         $("#detailButtontoCart").removeAttr("disabled");
