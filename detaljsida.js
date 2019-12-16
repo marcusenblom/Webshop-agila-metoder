@@ -4,10 +4,12 @@ $(document).ready(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "2px solid black");
 
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "0");
     }
   });
   $(".filter-button").on("click", function() {

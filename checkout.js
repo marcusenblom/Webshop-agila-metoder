@@ -4,16 +4,17 @@ $(document).ready(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "2px solid black");
 
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "0");
     }
   });
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
-
 
     let newFilter = this.id;
     localStorage.setItem("filter", newFilter);
@@ -24,9 +25,9 @@ $(document).ready(function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
+
+
   cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
