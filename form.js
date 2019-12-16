@@ -1,5 +1,11 @@
 $(document).ready(function() {		//Rätt fil 
 	   
+	let pLink = document.getElementById("terms_and_conditions");     	//Öppna terms and conditions
+    pLink.addEventListener("click", function(){
+
+		window.open("termsandconditions.html");
+		
+    });
 	//funkar
 	$(".next").click(function(agree) {								//Nextknappen för kunduppgifter
 	  var current_index = $(this).parent().index("fieldset");
@@ -74,7 +80,7 @@ $(document).ready(function() {		//Rätt fil
 				var value = $("#"+id).val();
 				if ($.trim(value).length === 0) {
 					document.getElementById(id).style.borderColor = "#E34234";
-					// let errorMessage = err.push('Please Enter Your '+id);				// koppla till HTML, se rad 106??? (denna funkar ej)
+					// let errorMessage = err.push('Please Enter Your '+id);				// koppla till HTML, se rad 113??? (denna funkar ej)
 					// let errorSpan = document.getElementsByClassName("fs-error");
 					// errorSpan.innerHTML=errorMessage;							
 					hasError = true;					

@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat|Vollkorn:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="stylesheet" href="css/form.css" />
     <script src="checkout.js"></script>
     <script src="form.js"></script>
     <title>Gruppuppgift JS</title>
@@ -82,7 +83,7 @@
         <div id="checkout_sum">Summa</div>
     </div>
 
-
+    <!--Liggger i form.js & checkout_form.scss-->
     <div id="checkout_form_container" class="flex-container">
         <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
@@ -97,62 +98,62 @@
             <fieldset>
 
                 <h2>Kunduppgifter</h2>
-                <div class="row">
+                <div class="flex-container" id="checkout_form_innercontainer">
  
-                   <form action="confirmation.html" method="get" id="form" name="checkout_registration">
-                      <div class="col-md-6 my-2">
-                         <input type="text" name="firstname" id="firstname" class="event-details" placeholder="Förnamn" />
-                      </div>
-                      <div class="col-md-6 my-2">
-                         <input type="text" name="lastname" id="lastname" class="event-details" placeholder="Efternamn" />
-                      </div>
-                      <div class="col-md-6 my-2">
-                            <input type="email" name="email" id="email" class="event-details" placeholder="E-postadress" />
-                         </div>
-                      <div class="col-md-6 my-2">
-                         <input type="tel" name="phone" id="phone" class="event-details" placeholder="Telefonnummer" />
-                      </div>
-                      <div class="col-md-6 my-2">
-                         <input type="text" name="street" id="street" class="event-details" placeholder="Gatuadress" />
-                      </div>
-                      <div class="col-md-6 my-2">
-                         <input type="text" name="zipcode" id="zipcode" class="event-details" placeholder="Postnummer" />
-                      </div>
-                      <div class="col-md-6 my-2">
-                         <input type="text" name="city" id="city" class="event-details" placeholder="Ort" />
-                      </div>
+                   <form action="confirmation.html" method="get" id="customer_form" name="checkout_registration">
+                      <!--<div class="col-md-6 my-2">-->
+                         <input type="text" name="firstname" id="firstname" class="checkout_form_input" placeholder="Förnamn" />
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                         <input type="text" name="lastname" id="lastname" class="checkout_form_input" placeholder="Efternamn" />
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                            <input type="email" name="email" id="email" class="checkout_form_input" placeholder="E-postadress" />
+                         <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                         <input type="tel" name="phone" id="phone" class="checkout_form_input" placeholder="Telefonnummer" />
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                         <input type="text" name="street" id="street" class="checkout_form_input" placeholder="Gatuadress" />
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                         <input type="text" name="zipcode" id="zipcode" class="checkout_form_input" placeholder="Postnummer" />
+                      <!-- </div> -->
+                      <!-- <div class="col-md-6 my-2"> -->
+                         <input type="text" name="city" id="city" class="checkout_form_input" placeholder="Ort" />
+                      <!-- </div> -->
                     </form>  
                 </div>
-                <input type="button" name="next" class="next action-button" value="NEXT" />
+                <input type="button" name="next" class="next action-button" value="NEXT" id="next_button/>
                 
             </fieldset>
             <fieldset>
 
-                <div class='btns'>
+                <div class='radio_container'>
                     <label>
                         <input name="checkout_payment_options" type='radio' id="radio">
-                        <span class='btn first'>Swish</span>
+                        <span class='checkout_payment_info'>Swish</span>
                     </label>
                 </div>
-                <div class='btns'>
+                <div class='radio_container'>
                     <label>
                         <input name="checkout_payment_options" type='radio' id="radio">
-                        <span class='btn'>Kortbetalning</span>
+                        <span class='checkout_payment_info'>Kortbetalning</span>
                     </label>
                 </div>
-                <div class='btns'>
+                <div class='radio_container'>
                     <label>
                         <input name="checkout_payment_options" type='radio' id="radio">
-                        <span class='btn'>Faktura</span>
+                        <span class='checkout_payment_info'>Faktura</span>
                     </label>
                 </div>
-                <input type="button" name="next" class="next action-button" value="NEXT" />
+                <input type="button" name="next" class="next action-button" value="NEXT" id="next_button"/>
 
             </fieldset>
             <fieldset>
       
-                <form action="confirmation.html" method="get" id="form" name="checkout_registration">
-                    <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
+                <form action="confirmation.html" method="get" id="conditions_form" name="checkout_registration">
+                    <h4 id="checkout_conditions">Ja, jag godkänner <p id="terms_and_conditions">köpvillkoren</p></h4>
                     <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
                 </form>
                 
@@ -163,6 +164,7 @@
             
         </form>
     </div>
+    <!--Liggger i form.js & checkout_form.scss SLUT-->
 
     <div id="checkout_container_footer" class="flex-container">
 
