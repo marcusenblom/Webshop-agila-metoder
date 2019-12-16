@@ -9,8 +9,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <!-- <script src="vendor/jquery/dist/jquery.min.js"></script> -->
-    <!-- <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>  -->
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat|Vollkorn:700&display=swap" rel="stylesheet">
@@ -84,20 +82,18 @@
         <div id="checkout_sum">Summa</div>
     </div>
 
-    <!--start-->
 
     <div id="checkout_form_container" class="flex-container">
         <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
                 <li>Steg 1 av 3</li>
-                <li>Steg 2 av 3</li>                    <!--CSS ta bort prisck lägg till understeck-->
+                <li>Steg 2 av 3</li>                    
                 <li>Steg 3 av 3</li>
             </ul>
 
             <!-- error messages -->
             <span class="fs-error"></span>
 
-            <!-- fieldsets -->
             <fieldset>
 
                 <h2>Kunduppgifter</h2>
@@ -159,71 +155,14 @@
                     <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
                     <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
                 </form>
-                <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
-  
-                 <input type="button" name="previous" class="previous action-button" value="BACK" />
-                 <a href="confirmation.html" class="confirm" name="confirm">Slutför köp</a>
-
-            </fieldset>
-            <!-- <fieldset> -->
-
-                <!-- <form action="confirmation.html" method="get" id="form" name="checkout_registration">
-                    <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
-                    <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
-                </form>
-                <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
-
-                <input type="button" name="previous" class="previous action-button" value="BACK" />
-                <input type="button" name="next" class="next action-button" value="NEXT" />
-
-            </fieldset>
-            <fieldset> -->
-
-                <!--<h5 class="concierge-mobile desktop-view">Celeb Concierge</h5>-->
-                <!-- <h2 class="artist-type">Kunduppgifter</h2>
-                <div class="row"> -->
-                    <!-- <div class="col-md-12 my-2">
-                        <h6 class="budget">Budget</h6>
-                     </div> -->
-                    <!-- <form action="confirmation.html" method="get" id="form" name="checkout_registration">
-                        <div class="col-md-6 my-2">
-                            <input type="text" name="firstname" id="firstname" class="event-details" placeholder="Förnamn" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="text" name="lastname" id="lastname" class="event-details" placeholder="Efternamn" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="email" name="email" id="email" class="event-details" placeholder="E-postadress" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="tel" name="phone" id="phone" class="event-details" placeholder="Telefonnummer" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="text" name="street" id="street" class="event-details" placeholder="Gatuadress" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="text" name="zipcode" id="zipcode" class="event-details" placeholder="Postnummer" />
-                        </div>
-                        <div class="col-md-6 my-2">
-                            <input type="text" name="city" id="city" class="event-details" placeholder="Ort" />
-                        </div>
-                    </form> -->
-                <!-- </div>
-                <input type="button" name="previous" class="previous action-button" value="BACK" /> -->
-                <!-- <button class="next" form="form" id="checkout_button"><a href="confirmation.html" class="next">Slutför köp</a></button> -->
-                <!-- <a href="confirmation.html"><button name="submit" class="submit action-button" value="Slutför köp"></button></a> -->
-                <!-- <input type="button" name="submit" class="submit action-button" value="Slutför köp" /> -->
                 
+                <input type="button" name="previous" class="previous action-button" value="BACK" />
+                <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
 
-                <!-- <form action="confirmation.html">
-                    <input type="button" name="submit" class="submit action-button" value="Slutför köp" />
-                </form> -->
-
-            <!-- </fieldset> -->
+            </fieldset>
+            
         </form>
     </div>
-
-    <!--slut-->
 
     <div id="checkout_container_footer" class="flex-container">
 

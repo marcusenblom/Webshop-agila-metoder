@@ -1,13 +1,13 @@
-$(document).ready(function() {		//Rätt fil 
+$(document).ready(function() {		
               
 	//funkar
-	$(".next").click(function(agree) {
+	$(".next").click(function(agree) {								//Nextknappen för input text field
 	  var current_index = $(this).parent().index("fieldset");
 	  
 	  let validateSuccess = validateStep(current_index);
 	  console.log("Validering: ", validateSuccess);
-	  if(validateSuccess){						//current_index = sida 
-		  makeStepActive(current_index+1);		//Om sidan innan godkäns aktivera nextknappen
+	  if(validateSuccess){						
+		  makeStepActive(current_index+1);		
 	  }else{
 		  agree.preventDefault();
 	  }
@@ -15,11 +15,11 @@ $(document).ready(function() {		//Rätt fil
 	//funkar
 
 	  //orginal radio
-	  $(".next2").click(function(agree) {
+	  $(".next2").click(function(agree) {							//Nextknappen för input radiobutton 
 		var current_index = $(this).parent().index("fieldset");
   
-		if(validateStep(current_index)){			//current_index = sida
-			makeStepActive(current_index+1);		//Om sidan innan godkäns aktivera nextknappen
+		if(validateStep(current_index)){			
+			makeStepActive(current_index+1);		
 		}else{
 			agree.preventDefault();
 		}
