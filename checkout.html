@@ -106,8 +106,7 @@
     <!--start-->
     
     <div id="checkout_form_container" class="flex-container">
-        <form id="msform" method="POST" action="abc.php">
-            <!-- progressbar -->
+        <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
                <li>Kassa</li>
                <li>Kunduppgifter</li>
@@ -119,33 +118,26 @@
             
             <!-- fieldsets -->
             <fieldset>
-               <div class="row">
-                  <div class="col-md-6 my-2">
-                     <div class='btns'>
-                        <label>
-                        <input name="checkout_payment_options1" type='radio'>
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
                         <span class='btn first'>Swish</span>
-                        </label>
-                     </div>
-                  </div>
-                  <div class="col-md-6 my-2">
-                     <div class='btns'>
-                        <label>
-                        <input name="checkout_payment_options1" type='radio'>
+                    </label>
+                </div>
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
                         <span class='btn'>Kortbetalning</span>
-                        </label>
-                     </div>
-                  </div>
-                  <div class="col-md-6 my-2">
-                     <div class='btns'>
-                        <label>
-                        <input name="checkout_payment_options1" type='radio'>
+                    </label>
+                </div>    
+                <div class='btns'>
+                    <label>
+                        <input name="checkout_payment_options" type='radio' id="radio">
                         <span class='btn'>Faktura</span>
-                        </label>
-                     </div>
-                  </div>
-               </div>
-               <input type="button" name="next" class="next action-button" value="NEXT" />
+                    </label>
+                </div>
+                <input type="button" name="next" class="next action-button" value="NEXT"/>
+            
             </fieldset>
             <fieldset>
       

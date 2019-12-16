@@ -36,7 +36,7 @@ $(document).ready(function() {
 		  case 0:
 
 		  
-			  if(($("input[name='checkout_payment_options1']:checked").length === 0)){
+			  if(($("input[name='checkout_payment_options']:checked").length === 0)){
 				  alert('Välj ett betalningsalternativ');									//Modal betlaningsalternativ
 				  return false;
 			  }
