@@ -6,18 +6,6 @@ $(document).ready(function() {
             $(".menu").addClass("menu-show");
             $(".menu-toggle-container").css("border-bottom", "2px solid black");
 
-<<<<<<< HEAD
-    } else {
-      $(".menu").addClass("menu-hide");
-      $(".menu").removeClass("menu-show");
-      $(".menu-toggle-container").css("border-bottom", "0");
-    }
-  });
-  $(".filter-button").on("click", function() {
-    $(".menu").addClass("menu-hide");
-    $(".menu").removeClass("menu-show");
-    $(".menu-toggle-container").css("border-bottom", "0");
-=======
         } else {
             $(".menu").addClass("menu-hide");
             $(".menu").removeClass("menu-show");
@@ -27,7 +15,8 @@ $(document).ready(function() {
     $(".filter-button").on("click", function() {
         $(".menu").addClass("menu-hide");
         $(".menu").removeClass("menu-show");
->>>>>>> 2daae621dca0e5d4910df690c793fe62a593efbe
+        $(".menu-toggle-container").css("border-bottom", "0");
+
 
         let newFilter = this.id;
         localStorage.setItem("filter", newFilter);
@@ -67,12 +56,15 @@ $(document).ready(function() {
     for (let p = 0; p < cart.length; p++) {
         console.log(cart[p]);
 
-        let Tagdiv = $("<div>").append("<h4>").html(cart[p].title)
+        let tagDiv = $("<div>").append("<h4>").html(cart[p].title)
         let spanPrice = $("<span>").html(cart[p].price)
         let spanSize = $("<span>").html(cart[p].size)
-        items_div.append(Tagdiv).addClass("divClass")
-        Tagdiv.append(spanPrice)
-        Tagdiv.append(spanSize)
+            .html(cart[p].quantity)
+
+        items_div.append(tagDiv).addClass("divClass")
+
+        tagDiv.append(spanPrice)
+        tagDiv.append(spanSize)
     };
 
 });
