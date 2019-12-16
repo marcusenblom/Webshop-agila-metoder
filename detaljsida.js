@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 
     function counter() {
-        let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+        let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
         let cartLength = currentCartItems.length;
         console.log(cartLength);
 
@@ -34,7 +34,7 @@ $(document).ready(function() {
     counter();
 
 
-    detailProduct = JSON.parse(localStorage.getItem("products-1")) || {};
+    detailProduct = JSON.parse(localStorage.getItem("products-1")) || [];
 
     $("#h3").html(detailProduct.title)
     $("#detail-description").html(detailProduct.description)
@@ -74,6 +74,8 @@ $(document).ready(function() {
         let inputSize = $("input:checked").val();
         detailProduct.size = inputSize
 
+
+
         if (localStorage.getItem("cart")) {
             let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -90,5 +92,7 @@ $(document).ready(function() {
         $(".badge-info").html(newArray.length);
     });
     counter();
+
+
 
 });
