@@ -15,7 +15,7 @@
     height: 60px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
@@ -28,9 +28,9 @@
     }
 
     div {
-      width: 50%;
+      width: 33.33%;
       height: 59px;
-      padding: 0 40px;
+      padding: 0 20px;
       display: flex;
       align-items: center;
 
@@ -46,6 +46,12 @@
     .header-left {
       justify-content: flex-start;
       font-size: 0.9rem;
+
+      .menu-toggle-container {
+        padding: 0;
+        width: 80px;
+        justify-content: center;
+      }
     }
 
     .header-middle {
@@ -78,9 +84,10 @@
     background-color: white;
     position: fixed;
     top: 59px;
-    transition: 0.5s;
+    transition: 0.3s;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     overflow-x: hidden;
+    z-index: 98;
 
     .menu-section {
       display: flex;

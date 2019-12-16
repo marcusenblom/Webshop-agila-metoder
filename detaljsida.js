@@ -15,9 +15,7 @@ $(document).ready(function() {
         $(".menu").removeClass("menu-show");
 
         let newFilter = this.id;
-
         localStorage.setItem("filter", newFilter);
-
         window.open("index.html", "_self");
     });
 
@@ -46,6 +44,28 @@ $(document).ready(function() {
     $("#id-detail-innerbox-Img").append(detailImg);
 
 
+    $("#detailButtontoCart").attr("disabled", "disabled")
+    let inputSize = $("input:checked").val();
+
+
+    $("input").on("click", function() {
+            $("#detailButtontoCart").removeAttr("disabled");
+
+        })
+        // ett annat sätt att göra valdringen på knapopen
+        // if (inputSize !== undefined) {
+        //     $("#detailButtontoCart").removeAttr("disabled");
+
+    //     console.log("Du klarade att välja en storlek")
+    // } else {
+    //     $("#detailButtontoCart").attr("disabled", "disabled")
+    //     console.log("Du måste välja en storlek")
+    // }
+
+
+    // $("input").on("change", function() {
+    //     $("#detailButtontoCart").removeAttr("disabled");
+    // });
 
 
     $("#detailButtontoCart").on("click", function() {
@@ -54,27 +74,21 @@ $(document).ready(function() {
         let inputSize = $("input:checked").val();
         detailProduct.size = inputSize
 
-
-
-
         if (localStorage.getItem("cart")) {
-            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
             for (let i = 0; i < currentCartItems.length; i++) {
                 newArray.push(currentCartItems[i]);
 
 
-            }
-        }
-
+            };
+        };
         newArray.push(detailProduct);
 
         localStorage.setItem("cart", JSON.stringify(newArray));
 
-
         $(".badge-info").html(newArray.length);
     });
     counter();
-
 
 });
