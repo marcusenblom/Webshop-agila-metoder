@@ -27,7 +27,7 @@ $(document).ready(function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
-
+  // Visar antal produkter i varukorgen (badge)
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
