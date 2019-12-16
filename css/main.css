@@ -47,7 +47,8 @@
         position: relative;
         top: -18px;
         right: 0;
-        font-size: 8px; }
+        font-size: 8px;
+        visibility: hidden; }
 
 #navbar .menu {
   height: 0;

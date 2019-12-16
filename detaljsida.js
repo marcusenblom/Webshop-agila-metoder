@@ -15,9 +15,7 @@ $(document).ready(function() {
     $(".menu").removeClass("menu-show");
 
     let newFilter = this.id;
-
     localStorage.setItem("filter", newFilter);
-
     window.open("index.html", "_self");
   });
 
@@ -28,10 +26,17 @@ $(document).ready(function() {
 
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
-    let cartLength = currentCartItems.length;
-    console.log(cartLength);
+    console.log(currentCartItems);
 
-    $(".badge-info").html(cartLength);
+    let totalAmount = 0;
+    for (var i = 0; i < currentCartItems.length; i++) {
+      totalAmount = totalAmount + currentCartItems[i].quantity;
+    }
+    if (totalAmount > 0) {
+      $(".badge").css("visibility", "visible");
+    }
+
+    $(".badge-info").html(totalAmount);
   };
   counter();
 
@@ -46,26 +51,63 @@ $(document).ready(function() {
   $("#id-detail-innerbox-Img").append(detailImg);
 
 
+  $("#detailButtontoCart").attr("disabled", "disabled")
+  let inputSize = $("input:checked").val();
+
+
+  $("input").on("click", function() {
+    $("#detailButtontoCart").removeAttr("disabled");
+
+  })
+  // ett annat sätt att göra valdringen på knapopen
+  // if (inputSize !== undefined) {
+  //     $("#detailButtontoCart").removeAttr("disabled");
+
+  //     console.log("Du klarade att välja en storlek")
+  // } else {
+  //     $("#detailButtontoCart").attr("disabled", "disabled")
+  //     console.log("Du måste välja en storlek")
+  // }
+
+
+  // $("input").on("change", function() {
+  //     $("#detailButtontoCart").removeAttr("disabled");
+  // });
+
+
   $("#detailButtontoCart").on("click", function() {
 
     let newArray = [];
     let inputSize = $("input:checked").val();
-    detailProduct.size = inputSize
+    detailProduct.size = inputSize;
+
 
     if (localStorage.getItem("cart")) {
-      let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+      let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
 
       for (let i = 0; i < currentCartItems.length; i++) {
         newArray.push(currentCartItems[i]);
-
-
       };
+
+      let alreadyExist = false;
+      for (let i = 0; i < newArray.length; i++) {
+        if (detailProduct.id == newArray[i].id && inputSize == newArray[i].size) {
+          alreadyExist = true;
+          newArray[i].quantity++;
+        }
+      };
+      if (!alreadyExist) {
+        newArray.push(detailProduct);
+      }
+
+    } else {
+      newArray.push(detailProduct);
     };
-    newArray.push(detailProduct);
+
     localStorage.setItem("cart", JSON.stringify(newArray));
 
-    $(".badge-info").html(newArray.length);
+    counter();
   });
-  counter();
+
 
 });
