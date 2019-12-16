@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // Öppnar och stänger dropdown
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
@@ -12,6 +12,7 @@ $(document).ready(function() {
       $(".menu-toggle-container").css("border-bottom", "0");
     }
   });
+  // Stänger meny och sätter filter vid klick av kategori
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
@@ -21,12 +22,12 @@ $(document).ready(function() {
 
     localStorage.setItem("filter", newFilter);
   });
-
+  // Tar användaren till startsidan
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
-
+  // Håller koll på antal varor i varukorgen
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
@@ -45,7 +46,6 @@ $(document).ready(function() {
 
 
   // Array med alla objekt //
-
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
 
@@ -133,10 +133,10 @@ $(document).ready(function() {
         let imgSrc = listOfAllProducts[i].src;
         let imgSrc2 = listOfAllProducts[i].src2;
         let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-          image.attr("src", imgSrc2);
-        }).mouseout(function() {
-          image.attr("src", imgSrc);
-        }).attr("type", "button")
+            image.attr("src", imgSrc2);
+          }).mouseout(function() {
+            image.attr("src", imgSrc);
+          }).attr("type", "button")
           .on("click", {
             bought: listOfAllProducts[i]
           }, detailProducts).appendTo(productContainer);
@@ -174,21 +174,21 @@ $(document).ready(function() {
       let imgSrc = objectsToUse[i].src;
       let imgSrc2 = objectsToUse[i].src2;
       let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-        image.attr("src", imgSrc2);
-      }).mouseout(function() {
-        image.attr("src", imgSrc);
-      }).attr("type", "button")
+          image.attr("src", imgSrc2);
+        }).mouseout(function() {
+          image.attr("src", imgSrc);
+        }).attr("type", "button")
         .on("click", {
           bought: listOfAllProducts[i]
         }, detailProducts).appendTo(productContainer);
 
-        let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-        let leftTitleContainer = $("<div>").addClass("leftInnerTitleContainer").appendTo(productTitleContainer);
-        let rightTitleContainer = $("<div>").addClass("rightInnerTitleContainer").appendTo(productTitleContainer);
-        let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
-        let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
+      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
+      let leftTitleContainer = $("<div>").addClass("leftInnerTitleContainer").appendTo(productTitleContainer);
+      let rightTitleContainer = $("<div>").addClass("rightInnerTitleContainer").appendTo(productTitleContainer);
+      let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
+      let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+      let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
 
     };
     $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");

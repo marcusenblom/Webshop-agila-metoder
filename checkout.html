@@ -9,8 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-    <!--<script src="vendor/jquery/dist/jquery.min.js"></script>
-    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>-->
+    <!-- <script src="vendor/jquery/dist/jquery.min.js"></script> -->
+    <!-- <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>  -->
     <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat|Vollkorn:700&display=swap" rel="stylesheet">
@@ -22,43 +22,43 @@
 </head>
 
 <body>
-  <section id="navbar">
+    <section id="navbar">
 
-    <header class="borderWhite" id="header">
-        <div class="header-left">
-            <div class="menu-toggle-container">
-              <span class="menu-toggle">SHOP</span>
+        <header class="borderWhite" id="header">
+            <div class="header-left">
+                <div class="menu-toggle-container">
+                    <span class="menu-toggle">SHOP</span>
+                </div>
+            </div>
+            <div class="header-middle">
+                <span class="home">COMPANY</span>
+            </div>
+            <div class="header-right">
+                <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info"></span></i></a>
+            </div>
+        </header>
+
+        <div class="menu menu-hide">
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Kläder</li>
+                    <li id="Coat" class="filter-button">Kappor & Jackor</li>
+                    <li id="Dress" class="filter-button">Klänningar</li>
+                    <li id="Shoe" class="filter-button">Skor</li>
+                    <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Accessoarer</li>
+                    <li>Smycken</li>
+                    <li>Mössor & vantar</li>
+                    <li>Underkläder</li>
+                    <li>Väskor</li>
+                </ul>
             </div>
         </div>
-        <div class="header-middle">
-            <span class="home">COMPANY</span>
-        </div>
-        <div class="header-right">
-            <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info"></span></i></a>
-        </div>
-    </header>
-
-      <div class="menu menu-hide">
-          <div class="menu-section">
-              <ul>
-                  <li class="dropdown-header">Kläder</li>
-                  <li id="Coat" class="filter-button">Kappor & Jackor</li>
-                  <li id="Dress" class="filter-button">Klänningar</li>
-                  <li id="Shoe" class="filter-button">Skor</li>
-                  <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
-              </ul>
-          </div>
-          <div class="menu-section">
-              <ul>
-                  <li class="dropdown-header">Accessoarer</li>
-                  <li>Smycken</li>
-                  <li>Mössor & vantar</li>
-                  <li>Underkläder</li>
-                  <li>Väskor</li>
-              </ul>
-          </div>
-      </div>
-  </section>
+    </section>
 
     <div id="checkout_headline">
         <h1>Din varukorg</h1>
@@ -150,9 +150,14 @@
                         <span class='btn'>Faktura</span>
                     </label>
                 </div>
+<<<<<<< HEAD
                 <input type="button" name="previous" class="previous action-button" value="BACK" />
                 <input type="button" name="next2" class="next2 action-button" value="NEXT"/>
                
+=======
+                <input type="button" name="next" class="next action-button" value="NEXT" />
+
+>>>>>>> 9aec276c8604d0c3d3fd20edef30961f1361a761
             </fieldset>
             <fieldset>
       
