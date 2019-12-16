@@ -89,9 +89,9 @@
     <div id="checkout_form_container" class="flex-container">
         <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
-                <li>Kassa</li>
-                <li>Kunduppgifter</li>
-                <li>Köpvillkor</li>
+                <li>Steg 1 av 3</li>
+                <li>Steg 2 av 3</li>                    <!--CSS ta bort prisck lägg till understeck-->
+                <li>Steg 3 av 3</li>
             </ul>
 
             <!-- error messages -->
@@ -100,7 +100,7 @@
             <!-- fieldsets -->
             <fieldset>
 
-                <h2 class="artist-type">Kunduppgifter</h2>
+                <h2>Kunduppgifter</h2>
                 <div class="row">
  
                    <form action="confirmation.html" method="get" id="form" name="checkout_registration">
@@ -128,23 +128,10 @@
                     </form>  
                 </div>
                 <input type="button" name="next" class="next action-button" value="NEXT" />
-                <a href="confirmation.html" class="confirm" name="confirm">Slutför köp</a>
-                <form action="confirmation.html"><input type="submit" class="confirm" name="confirm">form</form>
+                
             </fieldset>
             <fieldset>
-      
-                  <form action="confirmation.html" method="get" id="form" name="checkout_registration">
-                        <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
-                        <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
-                     </form>
-                     <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
-      
-                     <input type="button" name="previous" class="previous action-button" value="BACK" />
-                     <input type="button" name="next" class="next action-button" value="NEXT" />
-               
-            </fieldset>
-            <fieldset>
-      
+
                 <div class='btns'>
                     <label>
                         <input name="checkout_payment_options" type='radio' id="radio">
@@ -163,12 +150,25 @@
                         <span class='btn'>Faktura</span>
                     </label>
                 </div>
-                <input type="button" name="next" class="next action-button" value="NEXT"/>
-
+                <input type="button" name="previous" class="previous action-button" value="BACK" />
+                <input type="button" name="next2" class="next2 action-button" value="NEXT"/>
+               
             </fieldset>
             <fieldset>
-
+      
                 <form action="confirmation.html" method="get" id="form" name="checkout_registration">
+                    <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
+                    <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
+                </form>
+                <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
+  
+                 <input type="button" name="previous" class="previous action-button" value="BACK" />
+                 <a href="confirmation.html" class="confirm" name="confirm">Slutför köp</a>
+
+            </fieldset>
+            <!-- <fieldset> -->
+
+                <!-- <form action="confirmation.html" method="get" id="form" name="checkout_registration">
                     <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
                     <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
                 </form>
@@ -178,15 +178,15 @@
                 <input type="button" name="next" class="next action-button" value="NEXT" />
 
             </fieldset>
-            <fieldset>
+            <fieldset> -->
 
                 <!--<h5 class="concierge-mobile desktop-view">Celeb Concierge</h5>-->
-                <h2 class="artist-type">Kunduppgifter</h2>
-                <div class="row">
+                <!-- <h2 class="artist-type">Kunduppgifter</h2>
+                <div class="row"> -->
                     <!-- <div class="col-md-12 my-2">
                         <h6 class="budget">Budget</h6>
                      </div> -->
-                    <form action="confirmation.html" method="get" id="form" name="checkout_registration">
+                    <!-- <form action="confirmation.html" method="get" id="form" name="checkout_registration">
                         <div class="col-md-6 my-2">
                             <input type="text" name="firstname" id="firstname" class="event-details" placeholder="Förnamn" />
                         </div>
@@ -208,19 +208,19 @@
                         <div class="col-md-6 my-2">
                             <input type="text" name="city" id="city" class="event-details" placeholder="Ort" />
                         </div>
-                    </form>
-                </div>
-                <input type="button" name="previous" class="previous action-button" value="BACK" />
+                    </form> -->
+                <!-- </div>
+                <input type="button" name="previous" class="previous action-button" value="BACK" /> -->
                 <!-- <button class="next" form="form" id="checkout_button"><a href="confirmation.html" class="next">Slutför köp</a></button> -->
                 <!-- <a href="confirmation.html"><button name="submit" class="submit action-button" value="Slutför köp"></button></a> -->
                 <!-- <input type="button" name="submit" class="submit action-button" value="Slutför köp" /> -->
-                <a href="confirmation.html" class="button">Slutför köp</a>
+                
 
                 <!-- <form action="confirmation.html">
                     <input type="button" name="submit" class="submit action-button" value="Slutför köp" />
                 </form> -->
 
-            </fieldset>
+            <!-- </fieldset> -->
         </form>
     </div>
 
