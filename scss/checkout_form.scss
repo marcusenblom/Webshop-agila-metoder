@@ -1,47 +1,64 @@
-/*custom font*/
-//@import url(http://fonts.googleapis.com/css?family=Montserrat);
 
-/*basic reset*/
-* {margin: 0; padding: 0;}
-
-html {
-	height: 100%;
-	/*Image only BG fallback*/
-	//background: url('http://thecodeplayer.com/uploads/media/gs.png');
-	/*background = gradient + image pattern combo*/
-	//background: 
-		//linear-gradient(rgba(196, 102, 0, 0.2), rgba(155, 89, 182, 0.2)), 
-		//url('http://thecodeplayer.com/uploads/media/gs.png');
-}
-
-body {
-	font-family: montserrat, arial, verdana;
-}
-/*form styles*/
-#msform {
-	width: 400px;
-	margin: 50px auto;
+.checkout_form_container {
+	flex-direction: row;
+	justify-content: space-between;
 	text-align: center;
-	position: relative;
-}
-#msform fieldset {
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
+
+
+	#checkout_form {
+		width: 400px;
+		margin: 50px auto;
+		text-align: center;
+		position: relative;
+		
+		ul {
+			text-align: center;
+			list-style: none;
+			li {
+
+			}
+		}
+		.fs-error {
+
+		}
+		fieldset {
+			background: white;
+			border: 0 none;
+			border-radius: 3px;
+			box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+			padding: 20px 30px;
+			
+			box-sizing: border-box;
+			width: 80%;
+			margin: 0 10%;
+			
+			/*stacking fieldsets above each other*/
+			position: absolute;
+			
+			:not(:first-of-type) {		/*Hide all except first fieldset*/
+				display: none;
+			}
+			.btns {
+				
+				label {
+					#radio {
+						.btn {
+
+						}
+					}
+
+				}
+
+			}
+			.next action-button {
+
+			}
+		}
 	
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	
-	/*stacking fieldsets above each other*/
-	position: absolute;
+
 }
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
-	display: none;
-}
+
+
 /*inputs*/
 #msform input, #msform textarea {
 	padding: 15px;
@@ -88,6 +105,7 @@ body {
 	overflow: hidden;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
+	list-style-type: none;
 }
 #checkout_headings_form li {
 	list-style-type: none;
@@ -130,4 +148,5 @@ body {
 #checkout_headings_form li.active:before,  #checkout_headings_form li.active:after{
 	background: #27AE60;
 	color: white;
+}
 }
