@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    //hej
     $(".menu-toggle").click(function() {
         if ($(".menu").hasClass("menu-hide")) {
             $(".menu").removeClass("menu-hide");
