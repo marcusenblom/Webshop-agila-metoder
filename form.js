@@ -1,10 +1,19 @@
 $(document).ready(function() {
+<<<<<<< HEAD
 
 
 	$(".next").click(function(agree) {
 	  var current_index = $(this).parent().index("fieldset");
 
 	  if(validateStep(current_index)){			//current_index = sida
+=======
+              
+	
+	$(".next").click(function(agree) {
+	  var current_index = $(this).parent().index("fieldset");
+	  
+	  if(validateStep(current_index)){			//current_index = sida 
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 		  makeStepActive(current_index+1);		//Om sidan innan godkäns aktivera nextknappen
 	  }else{
 		  agree.preventDefault();
@@ -12,12 +21,21 @@ $(document).ready(function() {
 	});
 
 	$(".previous").click(function() {
+<<<<<<< HEAD
 	  var current_index = $(this).parent().index("fieldset");		//Bakåtknappen
 	  makeStepActive(current_index - 1);
 	});
 
    makeStepActive(0);
 
+=======
+	  var current_index = $(this).parent().index("fieldset");		//Bakåtknappen 
+	  makeStepActive(current_index - 1);
+	});
+
+   makeStepActive(0);	
+   
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
   });
 
   function makeStepActive(index){
@@ -31,12 +49,21 @@ $(document).ready(function() {
 	  }
   }
 
+<<<<<<< HEAD
   function validateStep(step){
 	  switch(step){
 		  case 0:
 
 
 			  if(($("input[name='checkout_payment_options1']:checked").length === 0)){
+=======
+  function validateStep(step){				
+	  switch(step){
+		  case 0:
+
+		  
+			  if(($("input[name='checkout_payment_options']:checked").length === 0)){
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 				  alert('Välj ett betalningsalternativ');									//Modal betlaningsalternativ
 				  return false;
 			  }
@@ -49,8 +76,13 @@ $(document).ready(function() {
 				  var value = $("#"+id).val();
 				  if ($.trim(value).length === 0) {
 					document.getElementById(id).style.borderColor = "#E34234";
+<<<<<<< HEAD
 					err.push('Please Enter Your '+id);								//Fungerar ej ...?
 					return false;
+=======
+					err.push('Please Enter Your '+id);								//Fungerar ej ...? 
+					return false;							
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 				  }
 				  return true;
 			  });
@@ -61,7 +93,11 @@ $(document).ready(function() {
 				  return false;
 			  }
 			  return true;
+<<<<<<< HEAD
 
+=======
+			  
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 			  if(err.length > 0){
 				  $('.fs-error').html('<span style="color:red;">'+err.join('!<br>')+'</span>');
 				  $('.fs-error').show();
@@ -71,4 +107,8 @@ $(document).ready(function() {
 				  return true;
 			  }
 	  }
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec

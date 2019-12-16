@@ -47,6 +47,7 @@ $(document).ready(function() {
     $("#detailButtontoCart").attr("disabled", "disabled")
     let inputSize = $("input:checked").val();
 
+<<<<<<< HEAD
 
     $("input").on("click", function() {
             $("#detailButtontoCart").removeAttr("disabled");
@@ -65,11 +66,17 @@ $(document).ready(function() {
     $(".badge-info").html(totalAmount);
   };
   counter();
+=======
+
+    $("input").on("click", function() {
+            $("#detailButtontoCart").removeAttr("disabled");
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 
         })
         // ett annat sätt att göra valdringen på knapopen
         // if (inputSize !== undefined) {
         //     $("#detailButtontoCart").removeAttr("disabled");
+<<<<<<< HEAD
 
     //     console.log("Du klarade att välja en storlek")
     // } else {
@@ -104,10 +111,22 @@ $(document).ready(function() {
   // $("input").on("change", function() {
   //     $("#detailButtontoCart").removeAttr("disabled");
   // });
+=======
+
+    //     console.log("Du klarade att välja en storlek")
+    // } else {
+    //     $("#detailButtontoCart").attr("disabled", "disabled")
+    //     console.log("Du måste välja en storlek")
+    // }
+
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
+
+    // $("input").on("change", function() {
+    //     $("#detailButtontoCart").removeAttr("disabled");
+    // });
 
 
-  $("#detailButtontoCart").on("click", function() {
-
+<<<<<<< HEAD
     let newArray = [];
     let inputSize = $("input:checked").val();
     detailProduct.size = inputSize;
@@ -140,5 +159,33 @@ $(document).ready(function() {
     counter();
   });
 
+=======
+    $("#detailButtontoCart").on("click", function() {
+
+        let newArray = [];
+        let inputSize = $("input:checked").val();
+        detailProduct.size = inputSize
+
+
+
+        if (localStorage.getItem("cart")) {
+            let currentCartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+            for (let i = 0; i < currentCartItems.length; i++) {
+                newArray.push(currentCartItems[i]);
+
+
+            };
+        };
+        newArray.push(detailProduct);
+
+        localStorage.setItem("cart", JSON.stringify(newArray));
+
+        $(".badge-info").html(newArray.length);
+    });
+    counter();
+
+
+>>>>>>> ce24f4b054e45dedc49f745057f573bb469d1fec
 
 });
