@@ -1,4 +1,5 @@
 $(document).ready(function() {
+<<<<<<< HEAD
 
     $(".menu-toggle").click(function() {
         if ($(".menu").hasClass("menu-hide")) {
@@ -48,6 +49,39 @@ $(document).ready(function() {
 
     let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
 
+=======
+  // Öppnar upp/stänger menyn (accordion)
+  $(".menu-toggle").click(function() {
+    if ($(".menu").hasClass("menu-hide")) {
+      $(".menu").removeClass("menu-hide");
+      $(".menu").addClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "2px solid black");
+
+    } else {
+      $(".menu").addClass("menu-hide");
+      $(".menu").removeClass("menu-show");
+      $(".menu-toggle-container").css("border-bottom", "0");
+    }
+  });
+  // Stänger menyn samt skickar filter till localStorage
+  $(".filter-button").on("click", function() {
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+
+    let newFilter = this.id;
+    localStorage.setItem("filter", newFilter);
+    window.open("index.html", "_self");
+  });
+  // Skickar användaren till index-html och sätter filter till 0
+  $(".home").on("click", function() {
+    localStorage.setItem("filter", 0);
+    window.open("index.html", "_self");
+  });
+  // Visar antal produkter i varukorgen (badge)
+  function counter() {
+    let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
+>>>>>>> bb838d1975b26c287da945803b7a02670419fe21
 
     // Funktion som skapar upp produkter på förstasidan //
     if (!localStorage.getItem("filter")) {
