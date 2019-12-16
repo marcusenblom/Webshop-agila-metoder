@@ -15,6 +15,7 @@ $(document).ready(function() {
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
 
     let newFilter = this.id;
 
@@ -28,17 +29,17 @@ $(document).ready(function() {
 
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
-    console.log(currentCartItems);
 
     let totalAmount = 0;
     for (var i = 0; i < currentCartItems.length; i++) {
       totalAmount = totalAmount + currentCartItems[i].quantity;
     }
+    console.log(totalAmount);
     if (totalAmount > 0) {
       $(".badge").css("visibility", "visible");
     }
 
-    $(".badge-info").html(totalAmount);
+    $(".badge").html(totalAmount);
   };
   counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
 
