@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACD,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;CAWf;;AAbD,AAIG,IAJC,CAID,EAAE,CAAC;EACF,UAAU,EAAE,MAAM;CACjB;;AANL,AAOI,IAPA,CAOA,EAAE,CAAC;EACC,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "../scss/termsandconditions.scss"
+    ],
+    "names": [],
+    "file": "termsandconditions.css"
+}
