@@ -110,6 +110,34 @@
 #navbar .menu-hide {
   height: 0; }
 
+#navbar .favorites-show {
+  width: 300px; }
+
+#navbar .favorites-hide {
+  width: 0; }
+
+#navbar .favorites {
+  height: 800px;
+  width: 0;
+  background-color: white;
+  border-left: 1px solid rgba(128, 128, 128, 0.1);
+  right: 0;
+  top: 60px;
+  position: fixed;
+  transition: 0.5s;
+  z-index: 100;
+  overflow: hidden; }
+  #navbar .favorites .favorite-header {
+    height: 60px; }
+    #navbar .favorites .favorite-header div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #navbar .favorites .favorite-header div span {
+        text-align: center;
+        line-height: 60px;
+        border-bottom: 1px solid black; }
+
 #start-animation {
   width: 100%;
   display: flex;

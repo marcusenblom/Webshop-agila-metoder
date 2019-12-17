@@ -6,8 +6,11 @@
   box-shadow: 0 2px 10px 0 rgba(166, 166, 166, 0.15);
 }
 
+
+
 #navbar {
   #header {
+
     // background-color: transparent;
     background-color: white;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
@@ -154,5 +157,42 @@
   }
   .menu-hide {
     height: 0;
+  }
+  .favorites-show {
+    width: 300px;
+  }
+  .favorites-hide {
+    width: 0;
+  }
+
+  .favorites {
+    height: 800px;
+    width: 0;
+    background-color: white;
+    border-left: 1px solid rgba(128, 128, 128, 0.1);
+    right: 0;
+    top: 60px;
+    position: fixed;
+    transition: 0.5s;
+    z-index: 100;
+    overflow: hidden;
+
+    .favorite-header {
+      height: 60px;
+
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          text-align: center;
+          line-height: 60px;
+          border-bottom: 1px solid black;
+        }
+      }
+
+
+    }
   }
 }
