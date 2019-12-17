@@ -61,4 +61,13 @@ $(document).ready(function() {
         tagDiv.append(spanSize)
     };
 
+
+    if(cart[p].id == cart.id && cart[p].size == cart.size );{
+            []
+        console.log("Det läggs ihop")
+    }
+    {
+        console.log("skriver ut en ")
+    }
+
 });
