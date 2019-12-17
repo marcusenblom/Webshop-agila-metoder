@@ -24,19 +24,28 @@
 <body>
     <section id="navbar">
 
-        <header class="borderWhite" id="header">
-            <div class="header-left">
-                <div class="menu-toggle-container">
-                    <span class="menu-toggle">SHOP</span>
-                </div>
-            </div>
-            <div class="header-middle">
-                <span class="home">COMPANY</span>
-            </div>
-            <div class="header-right">
-                <a href="checkout.html"><i class="fas fa-shopping-cart"><span class="badge badge-pill badge-info"></span></i></a>
-            </div>
-        </header>
+      <header class="borderWhite" id="header">
+        <div class="header-left">
+          <div class="menu-toggle-container">
+            <span class="menu-toggle">SHOP</span>
+          </div>
+        </div>
+        <div class="header-middle">
+          <span class="home">COMPANY</span>
+        </div>
+        <div class="header-right">
+          <div class="">
+            <a href="checkout.html"><img src="images/user.png" alt=""></a>
+          </div>
+          <div class="">
+            <a href="#"><img src="images/star.png" alt=""></a>
+          </div>
+          <div class="">
+            <a href="checkout.html"><img src="images/shopping-bag.png" alt=""></a>
+            <span class="badge badge-pill badge-info"></span>
+          </div>
+        </div>
+      </header>
 
         <div class="menu menu-hide">
             <div class="menu-section">
@@ -102,7 +111,7 @@
 
                 <h2>Kunduppgifter</h2>
                 <div class="row">
- 
+
                    <form action="confirmation.html" method="get" id="form" name="checkout_registration">
                       <div class="col-md-6 my-2">
                          <input type="text" name="firstname" id="firstname" class="event-details" placeholder="Förnamn" />
@@ -125,10 +134,10 @@
                       <div class="col-md-6 my-2">
                          <input type="text" name="city" id="city" class="event-details" placeholder="Ort" />
                       </div>
-                    </form>  
+                    </form>
                 </div>
                 <input type="button" name="next" class="next action-button" value="NEXT" />
-                
+
             </fieldset>
             <fieldset>
 
@@ -154,13 +163,13 @@
 
             </fieldset>
             <fieldset>
-      
+
                 <form action="confirmation.html" method="get" id="form" name="checkout_registration">
                     <h4 id="checkout_conditions">Ja, jag godkänner <a href="termsandconditions.html">köpvillkoren</a></h4>
                     <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
                 </form>
                 <button class="next" type="submit" form="form" id="checkout_button">Slutför köp</button>
-  
+
                  <input type="button" name="previous" class="previous action-button" value="BACK" />
                  <a href="confirmation.html" class="confirm" name="confirm">Slutför köp</a>
 
@@ -213,7 +222,7 @@
                 <!-- <button class="next" form="form" id="checkout_button"><a href="confirmation.html" class="next">Slutför köp</a></button> -->
                 <!-- <a href="confirmation.html"><button name="submit" class="submit action-button" value="Slutför köp"></button></a> -->
                 <!-- <input type="button" name="submit" class="submit action-button" value="Slutför köp" /> -->
-                
+
 
                 <!-- <form action="confirmation.html">
                     <input type="button" name="submit" class="submit action-button" value="Slutför köp" />
