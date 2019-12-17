@@ -27,6 +27,17 @@ $(document).ready(function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
+
+  $(".frontCategory").on("click", function(){
+    let newFilter = this.id;
+    console.log(newFilter);
+    var newFilterMinusOne = newFilter.slice(0, -1);
+    localStorage.setItem("filter", newFilterMinusOne);
+    window.open("index.html", "_self");
+
+  });
+
+
   // Håller koll på antal varor i varukorgen
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
