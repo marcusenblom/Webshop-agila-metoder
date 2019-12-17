@@ -51,7 +51,8 @@
       position: relative; }
       #navbar #header .header-right div img {
         width: 20px;
-        margin: 0 10px; }
+        margin: 0 10px;
+        cursor: pointer; }
       #navbar #header .header-right div .badge {
         position: relative;
         top: -10px;
@@ -136,6 +137,7 @@
       #navbar .favorites .favorite-header div span {
         text-align: center;
         line-height: 60px;
+        padding: 0 14px;
         border-bottom: 1px solid black; }
 
 #start-animation {
