@@ -56,16 +56,18 @@ $(document).ready(function() {
 
   if (localStorage.getItem("filter") == 0) {
 
-    for (var i = 0; i < 4; i++) {
+    $("#start-animation").css("height", "auto");
+    $("#recommended").css("display", "none");
+    $("#productSection").css("display", "none");
+    $(".number-of-items").css("display", "none");
 
-      let frontPageContainer = $("<div>").addClass("frontPageContainer").appendTo($(".flex-container"));
-
-      let imgSrc = listOfAllProducts[i].src;
-      let image = $("<img>").attr("src", imgSrc).addClass("productImage").appendTo(frontPageContainer);
-    }
   } else {
 
     $("#hero").empty().css("height", "0"); // döljer hero
+    $("#start-animation").css("height", "0");
+    $("#recommended").css("display", "block");
+    $("#productSection").css("display", "block");
+    $(".number-of-items").css("display", "flex");
     $(".flex-container").empty();
     let category = localStorage.getItem("filter");
     let header = $("#" + category).text().toUpperCase();
@@ -112,6 +114,10 @@ $(document).ready(function() {
     $(".menu").removeClass("menu-show");
 
     $("#hero").empty().css("height", "0"); // döljer hero
+    $("#start-animation").css("height", "0");
+    $("#productSection").css("display", "block");
+    $("#recommended").css("display", "block");
+    $(".number-of-items").css("display", "flex");
     $(".flex-container").empty();
 
     let category = this.id;
@@ -157,6 +163,10 @@ $(document).ready(function() {
   // Winter-collection //
   $(".winter-collection").on("click", function() {
     $("#hero").empty().css("height", "0"); // döljer hero
+    $("#start-animation").css("height", "0");
+    $("#productSection").css("display", "block");
+    $("#recommended").css("display", "block");
+    $(".number-of-items").css("display", "flex");
     $(".flex-container").empty();
 
     let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
