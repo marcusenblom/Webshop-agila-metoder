@@ -120,3 +120,8 @@ $(document).ready(function() {		//Rätt fil
 				}
 	  }
   }
+  let newButton = document.getElementById("checkout_button");     
+  newButton.addEventListener("click", function(){
+
+	  window.open("confirmation.html");
+  });
