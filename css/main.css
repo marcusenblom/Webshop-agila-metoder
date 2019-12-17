@@ -86,7 +86,8 @@
       padding-left: 0;
       font-size: 1.1rem; }
     #navbar .menu .menu-section ul li {
-      list-style: none; }
+      list-style: none;
+      color: rgba(0, 0, 0, 0.7); }
     #navbar .menu .menu-section ul li:hover {
       text-decoration-line: underline;
       cursor: pointer; }
@@ -126,7 +127,7 @@
   top: 60px;
   position: fixed;
   transition: 0.5s;
-  z-index: 100;
+  z-index: 8;
   overflow: hidden; }
   #navbar .favorites .favorite-header {
     height: 60px; }
@@ -139,6 +140,15 @@
         line-height: 60px;
         padding: 0 14px;
         border-bottom: 1px solid black; }
+
+#navbar .dark {
+  position: fixed;
+  transition: 0.5s;
+  height: 100%;
+  width: 100%;
+  z-index: 7;
+  background-color: black;
+  opacity: 0; }
 
 #start-animation {
   width: 100%;

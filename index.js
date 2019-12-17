@@ -5,11 +5,13 @@ $(document).ready(function() {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "2px solid black");
+      $(".dark").css("opacity", "0.15");
 
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "0");
+      $(".dark").css("opacity", "0");
     }
   });
   // Stänger meny och sätter filter vid klick av kategori
@@ -44,12 +46,14 @@ $(document).ready(function() {
       $(".favorites").addClass("favorites-show");
       $(".favorites").css("width", "400px");
       $(".favorites-toggle").css("border-bottom", "2px solid black");
+      $(".dark").css("opacity", "0.15");
 
     } else {
       $(".favorites").addClass("favorites-hide");
       $(".favorites").removeClass("favorites-show");
       $(".favorites").css("width", "0");
       $(".favorites-toggle").css("border-bottom", "0");
+      $(".dark").css("opacity", "0");
     }
   });
 
