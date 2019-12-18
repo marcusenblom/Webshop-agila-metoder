@@ -58,6 +58,24 @@ $(document).ready(function() {
     }
   });
 
+  // Skapar upp HTML för favoriter
+  // function createFavorites(){
+  //   let listOfFavorites = JSON.parse(localStorage.getItem("favorites"));
+  //
+  //   $(".favoriteContainer").empty();
+  //
+  //   for (let i = 0; i < listOfFavorites.length; i++) {
+  //     let productContainer = $("<div>").addClass("favoriteProductContainer").appendTo($(".favoriteContainer"));
+  //
+  //     let imgSrc = listOfFavorites[i].src;
+  //     let image = $("<img>").attr("src", imgSrc).addClass("favoriteImage").appendTo(productContainer);
+  //
+  //     let heartImg = $("<img>").attr("src", "images/remove.png").addClass("favoriteImageLike").appendTo(productContainer);
+  //
+  //   }
+  // };
+  // createFavorites();
+
   // Håller koll på antal varor i varukorgen
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
@@ -159,18 +177,24 @@ $(document).ready(function() {
             newArray.push(listOfAllProducts[i]);
           };
 
+          let allProducts = JSON.parse(localStorage.getItem("allProducts")) || [];
+          for (let i = 0; i < newArray.length; i++) {
+            if (newArray[i].id == allProducts[i].id) {
+              allProducts[i].favorite = true;
+            }
+          }
+          localStorage.setItem("allProducts", JSON.stringify(allProducts));
+
           localStorage.setItem("favorites", JSON.stringify(newArray));
-        }).appendTo(rightTitleContainer);
+
+          createFavorites();
+        }
+      ).appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
     };
   };
-
-  function test(i) {
-    console.log(i);
-  }
-
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
   $(".filter-button").on("click", function() {

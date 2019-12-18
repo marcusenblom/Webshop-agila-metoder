@@ -162,44 +162,7 @@
   .menu-hide {
     height: 0;
   }
-  .favorites-show {
-    width: 300px;
-  }
-  .favorites-hide {
-    width: 0;
-  }
 
-  .favorites {
-    height: 800px;
-    width: 0;
-    background-color: white;
-    border-left: 1px solid rgba(128, 128, 128, 0.1);
-    right: 0;
-    top: 60px;
-    position: fixed;
-    transition: 0.5s;
-    z-index: 8;
-    overflow: hidden;
-
-    .favorite-header {
-      height: 60px;
-
-      div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        span {
-          text-align: center;
-          line-height: 60px;
-          padding: 0 14px;
-          border-bottom: 1px solid black;
-        }
-      }
-
-
-    }
-  }
 
   .dark {
     position: fixed;
