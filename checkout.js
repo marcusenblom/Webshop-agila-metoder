@@ -77,9 +77,9 @@ $(document).ready(function() {
   
     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
     //Helena
-    let imgSrc4 = currentCartItems[i].src4;
-    imgSrc4 = cart.src;
-    let cartImg = $("<img>").attr("src", imgSrc4);
+    // let imgSrc4 = currentCartItems[i].src4;
+    // imgSrc4 = cart.src;
+    // let cartImg = $("<img>").attr("src", imgSrc4);
 
     //Helena
 
@@ -89,7 +89,7 @@ $(document).ready(function() {
 
     items_div.append(tagDiv).addClass("divClass")
 
-    $("divClass").append(cartImg);
+    // $("divClass").append(cartImg);
     
   
  let button1=$("<button>").html("--").on("click",function() { handclick2(p)})        
