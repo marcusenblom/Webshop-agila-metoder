@@ -75,27 +75,10 @@ $(document).ready(function() {
   };
   counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
 
-  // skickar i väg till favorites
-  function favoriteProducts(event) {
-    let favoriteProduct = event.data.send;
-
-    let newArray = [];
-
-    if (localStorage.getItem("favorites")) {
-      let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
-
-      for (let i = 0; i < currentFavoriteItems.length; i++) {
-        newArray.push(currentFavoriteItems[i]);
-      };
-    } else {
-      newArray.push(favoriteProduct);
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(newArray));
-  };
 
   // Array med alla objekt //
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
+  localStorage.setItem("allProducts", JSON.stringify(listOfAllProducts));
 
 
   // Funktion som skapar upp produkter på förstasidan //
@@ -150,9 +133,31 @@ $(document).ready(function() {
         let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>")
-          .addClass("far fa-heart")
-          .appendTo(rightTitleContainer);
+        let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id).on("click", function() {
+          // console.log(i);
+          // let newArray = [];
+          // let thisId = listOfAllProducts[i].id;
+          //
+          // if (localStorage.getItem("favorites")) {
+          //
+          //   let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
+          //   for (let i = 0; i < currentFavoriteItems.length; i++) {
+          //     if (currentFavoriteItems[i] != ) {
+          //
+          //     }
+          //     newArray.push(currentFavoriteItems[i]);
+          //   };
+          //
+          //
+          //
+          //
+          //
+          // } else {
+          //   newArray.push(listOfAllProducts[i]);
+          // }
+          //
+          // localStorage.setItem("favorites", JSON.stringify(newArray));
+        }).appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
@@ -162,6 +167,7 @@ $(document).ready(function() {
   function test(i) {
     console.log(i);
   }
+
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
   $(".filter-button").on("click", function() {
@@ -183,7 +189,7 @@ $(document).ready(function() {
 
     let numberOfItemsAdded = 0;
 
-    for (var i = 0; i < listOfAllProducts.length; i++) {
+    for (let i = 0; i < listOfAllProducts.length; i++) {
 
       if (listOfAllProducts[i].category === category) {
 
@@ -316,7 +322,6 @@ productCoat1.title = "Glamorous - Coated Jacket";
 productCoat1.price = 3400;
 productCoat1.size = "M";
 productCoat1.quantity = 1;
-productCoat1.display = 0;
 productCoat1.description = "PU jacka från Glamorous Rak modell med krage i glansigt material Dekorativa vita sömmar Försluts framtill med dragkedja Fyra fickor framtill Skärp samt hällor i midjan";
 productCoat1.src = "images/coat1.jpg";
 productCoat1.src2 = "images/coat1_2.jpg";
@@ -406,7 +411,7 @@ productCoat7.favorite = false;
 
 let productCoat8 = new ProductClass();
 
-productCoat8.id = "idCoat7";
+productCoat8.id = "idCoat8";
 productCoat8.category = "Coat";
 productCoat8.title = "Gant - Full length coat";
 productCoat8.price = 1900;
