@@ -484,8 +484,10 @@ h3 {
           display: flex;
           justify-content: center;
           align-items: center; }
-          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div img {
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div .cartImage {
             height: 70%; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div .removeImage {
+            width: 10%; }
   #checkoutProductSection #checkout_container_sum {
     width: 100%;
     height: 100px;
