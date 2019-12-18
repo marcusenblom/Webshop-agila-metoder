@@ -28,7 +28,7 @@ $(document).ready(function() {
         localStorage.setItem("filter", 0);
         window.open("index.html", "_self");
     });
-
+  
     // Visar antal produkter i varukorgen (badge)
     function counter() {
         let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
@@ -43,31 +43,73 @@ $(document).ready(function() {
         }
 
         $(".badge").html(totalAmount);
+      
     };
+
     counter();
-    // Hämtar cart från localStorage
+
+    function cartList(){
     cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+   
+    // Hämtar cart från localStorage
+ 
+
     let items_div = $("#checkout_container_items");
-
+    
+   
     for (let p = 0; p < cart.length; p++) {
-        console.log(cart[p]);
-
+       
+       
         let tagDiv = $("<div>").append("<h4>").html(cart[p].title)
         let spanPrice = $("<span>").html(cart[p].price)
         let spanSize = $("<span>").html(cart[p].size)
+        let spanQuantity = $("<span>").html(cart[p].quantity)
         items_div.append(tagDiv).addClass("divClass")
+        tagDiv.append(spanQuantity)
+        spanQuantity.append($("<button>").html("--").on("click",handclick2))
+            
+        spanQuantity.append($("<button>").html("++").on("click",handclick1))
+        spanQuantity.append($("<button>").html("ta bort").on("click",handclick4))
+              
         tagDiv.append(spanPrice)
         tagDiv.append(spanSize)
+     
+       function handclick1(){
+      
+         let sum=cart[p].quantity++;
+             console.log("öka", sum,);
+           
+             cartList()
+            }
+        
+        function handclick2(){
+         
+            let sum2=cart[p].quantity--;
+          
+            console.log("minska",sum2);
+           
+            cartList()
+        }
+
+        function handclick4(){
+            let cartSplice=cart.splice(p,1);
+            console.log(p)
+    
+            console.log(cartSplice[p])
+           
+            cartList()
+           }
+      
     };
 
+  
+    }
 
-    if(cart[p].id == cart.id && cart[p].size == cart.size );{
-            []
-        console.log("Det läggs ihop")
-    }
-    {
-        console.log("skriver ut en ")
-    }
+cartList()
+
 
 });
+
+    
+
