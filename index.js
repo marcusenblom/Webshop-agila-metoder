@@ -35,7 +35,7 @@ $(document).ready(function() {
     window.open("index.html", "_self");
   });
   // Filtrerar startsidan baserat på vilken bild (startsidan) användaren klickar på
-  $(".frontCategory").on("click", function(){
+  $(".frontCategory").on("click", function() {
     let newFilter = this.id;
     console.log(newFilter);
     var newFilterMinusOne = newFilter.slice(0, -1);
@@ -63,7 +63,7 @@ $(document).ready(function() {
     }
   });
   //Stänger meny samt favorites vid klick på opacity-filtret .dark
-  $(".dark").on("click", function(){
+  $(".dark").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
@@ -89,6 +89,34 @@ $(document).ready(function() {
     $(".badge").html(totalAmount);
   };
   counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
+
+  // skickar i väg till favorites
+  function favoriteProducts(event) {
+    let favoriteProduct = event.data.send;
+
+    let newArray = [];
+
+    if (localStorage.getItem("favorites")) {
+      let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
+
+      for (let i = 0; i < currentFavoriteItems.length; i++) {
+        newArray.push(currentFavoriteItems[i]);
+      };
+
+
+      for (let i = 0; i < newArray.length; i++) {
+        if (favoriteProduct.id == newArray[i].id) {
+
+        } else {
+          newArray.push(favoriteProduct);
+        }
+      }
+    } else {
+      newArray.push(favoriteProduct);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(newArray));
+  };
 
   // Array med alla objekt //
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
@@ -145,7 +173,9 @@ $(document).ready(function() {
         let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+        let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id + "-fav").on("click", {
+          send: listOfAllProducts[i]
+        }, favoriteProducts).appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
@@ -197,7 +227,7 @@ $(document).ready(function() {
         let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+        let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id + "-fav").appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
@@ -242,7 +272,7 @@ $(document).ready(function() {
       let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
       let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-      let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+      let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id + "-fav").appendTo(rightTitleContainer);
 
     };
     $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
