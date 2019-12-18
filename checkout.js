@@ -77,37 +77,34 @@ $(document).ready(function () {
       console.log(cart[p]);
 
       let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-      let spanPrice = $("<div>").addClass("divPrice").html(cart[p].price)
-      let spanSize = $("<div>").addClass("divSize").html(cart[p].size)
-      let spanQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
+      let divPrice = $("<div>").addClass("divPrice").html(cart[p].price)
+      let divSize = $("<div>").addClass("divSize").html(cart[p].size)
+      let divQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
       items_div.append(tagDiv).addClass("divClass")
-      let button1 = $("<button>").html("--").on("click", function () {
-        handclick2(p)
-      })
-      let button2 = $("<button>").html("++").on("click", function () {
-        handclick1(p)
-      })
+      let button1 = $("<button>").html("--").on("click", function () { handclick2(p)})
+      let button2 = $("<button>").html("++").on("click", function (){handclick1(p)})
       //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
-      let buttonSpan = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
-      tagDiv.append(buttonSpan)
-      tagDiv.append(spanQuantity).append(spanPrice).append(spanSize)
-      // tagDiv.append(spanPrice)
-      // tagDiv.append(spanSize)
+      let divButton = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
+      
+      tagDiv.append(divQuantity)
+      tagDiv.append(divPrice)
+      tagDiv.append(divSize)
+      tagDiv.append(divButton)
 
-    }
+    };
 
-    function handclick1(i) {
-      if (localStorage.getItem("cart")) {
-        let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
-        for (i = 0; i < cart2.length; ++i) {
-          hej=cart2[i].quantity++;
+    // function handclick1(i) {
+    //   if (localStorage.getItem("cart")) {
+    //     let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
+    //     for (i = 0; i < cart2.length; ++i) {
+    //       hej=cart2[i].quantity++;
           
-          localStorage.setItem("cart3", JSON.stringify(hej));
-          console.log("hej på dig",hej)
-        }
-      }
+    //       localStorage.setItem("cart3", JSON.stringify(hej));
+    //       console.log("hej på dig",hej)
+    //     }
+    //   }
   
-    }
+    // }
 
     //  function handclick2(i){
     //   console.log(i);
