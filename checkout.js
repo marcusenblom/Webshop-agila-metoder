@@ -1,5 +1,5 @@
 $(document).ready(function() {
-//hej
+  //hej
   // Öppnar upp/stänger menyn (accordion)
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
@@ -140,7 +140,104 @@ $(document).ready(function() {
  
 cartlist()
 
+
+  function displayCart() {
+
+    let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    for (let i = 0; i < currentCart.length; i++) {
+
+      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($("#checkout_container_items"));
+
+      let imageDiv = $("<div>").appendTo(productContainer);
+      let imgSrc = currentCart[i].src;
+      let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
+
+      let nameContainer = $("<div>").html(currentCart[i].title).appendTo(productContainer);
+
+      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(productContainer);
+
+      let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
+
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(productContainer);
+
+      let removeContainer = $("<div>").appendTo(productContainer);
+      let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
+    }
+  };
+  displayCart();
+
+
+
+
+  // function cartlist() {
+  //
+  //
+  //   let items_div = $("#checkout_container_items");
+  //   items_div.html('');
+  //   for (let p = 0; p < cart.length; p++) {
+  //     console.log(cart[p]);
+  //
+  //     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
+  //     let divPrice = $("<div>").addClass("divPrice").html(cart[p].price)
+  //     let divSize = $("<div>").addClass("divSize").html(cart[p].size)
+  //     let divQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
+  //     items_div.append(tagDiv).addClass("divClass")
+  //     let button1 = $("<button>").html("--").on("click", function () { handclick2(p)})
+  //     let button2 = $("<button>").html("++").on("click", function (){handclick1(p)})
+  //     //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
+  //     let divButton = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
+  //
+  //     tagDiv.append(divQuantity)
+  //     tagDiv.append(divPrice)
+  //     tagDiv.append(divSize)
+  //     tagDiv.append(divButton)
+  //
+  //   };
+  //
+  //   // function handclick1(i) {
+  //   //   if (localStorage.getItem("cart")) {
+  //   //     let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
+  //   //     for (i = 0; i < cart2.length; ++i) {
+  //   //       hej=cart2[i].quantity++;
+  //
+  //   //       localStorage.setItem("cart3", JSON.stringify(hej));
+  //   //       console.log("hej på dig",hej)
+  //   //     }
+  //   //   }
+  //
+  //   // }
+  //
+  //   //  function handclick2(i){
+  //   //   console.log(i);
+  //   //   let sum2=cart[i].quantity++;
+  //
+  //   //   console.log("minska",sum2,"nej nej",i);
+  //   //   cartlist()
+  //   // }
+  //
+  //   /* function handclick1(i){
+  //         console.log(i);
+  //         let sum2=cart[i].quantity--;
+  //
+  //         console.log("minska",sum2,"nej nej",i);
+  //         cartlist()
+  //       }
+  //     }*/
+  //
+  //   // function handclick4(i){
+  //   //     let cartSplice=cart.splice(i,1);
+  //   //     console.log(i)
+  //
+  //   //     console.log(cartSplice);
+  //   //     $( "<div>" ).remove();
+  //
+  //   //     // cartlist()
+  //   //    }
+  //
+  //
+  // }
+  //
+  // cartlist()
+
 });
-
-
-

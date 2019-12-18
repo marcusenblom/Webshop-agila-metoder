@@ -1,14 +1,6 @@
-body {
-  width: 60%;
-  margin: auto;
-}
+h1 {
+  text-align: center; }
 
-body h1 {
+h3 {
   text-align: center;
-}
-
-body h3 {
-  text-align: center;
-  padding: 10px;
-}
-/*# sourceMappingURL=termsandconditions.css.map */
+  padding: 10px; }
