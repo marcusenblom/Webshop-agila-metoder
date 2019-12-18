@@ -63,7 +63,7 @@ $(document).ready(function() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
     let totalAmount = 0;
-    for (var i = 0; i < currentCartItems.length; i++) {
+    for (let i = 0; i < currentCartItems.length; i++) {
       totalAmount = totalAmount + currentCartItems[i].quantity;
     }
     console.log(totalAmount);
@@ -124,7 +124,7 @@ $(document).ready(function() {
     $(".product-header").html(header);
 
     let numberOfItemsAdded = 0;
-    for (var i = 0; i < listOfAllProducts.length; i++) {
+    for (let i = 0; i < listOfAllProducts.length; i++) {
 
       if (listOfAllProducts[i].category === category) {
         numberOfItemsAdded++;
@@ -150,13 +150,18 @@ $(document).ready(function() {
         let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
-        let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
+        let favorite = $("<i>")
+          .addClass("far fa-heart")
+          .appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
     };
   };
 
+  function test(i) {
+    console.log(i);
+  }
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
   $(".filter-button").on("click", function() {
@@ -225,7 +230,7 @@ $(document).ready(function() {
     let header = "this seasons winter collection".toUpperCase();
     $(".product-header").html(header);
 
-    for (var i = 0; i < objectsToUse.length; i++) {
+    for (let i = 0; i < objectsToUse.length; i++) {
 
       numberOfItemsAdded++;
 
@@ -258,7 +263,7 @@ $(document).ready(function() {
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
   function recommend() {
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       let randomNumber = Math.floor((Math.random() * 32));
 
       let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));

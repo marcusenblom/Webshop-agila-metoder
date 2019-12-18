@@ -66,6 +66,8 @@ $(document).ready(function() {
   };
   counter();
   // Hämtar cart från localStorage
+
+  function cartlist(){
   cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   let items_div = $("#checkout_container_items");
@@ -89,16 +91,11 @@ $(document).ready(function() {
     tagDiv.append(spanPrice)
     tagDiv.append(spanSize)
     
- 
-  
- 
- 
    function handclick1(i){
-  
      let sum=cart[i].quantity++;
          console.log("öka", sum,);
        
-        
+         cartlist()
         }
     
     function handclick2(i){
@@ -106,25 +103,23 @@ $(document).ready(function() {
         let sum2=cart[i].quantity--;
       
         console.log("minska",sum2);
-       
-        
+        cartlist()   
     }
 
     function handclick4(i){
         let cartSplice=cart.splice(i,1);
         console.log(i)
-
         console.log(cartSplice);
        
-       
+        cartlist()
        }
   
-
+      
 
 }
 
-
-
+}
+cartlist()
 
 });
 
