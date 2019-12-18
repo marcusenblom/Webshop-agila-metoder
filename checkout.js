@@ -92,28 +92,25 @@ $(document).ready(function() {
   // tagDiv.append(spanSize)
 
 }
-
+/*
       function handclick1(i){
         if (localStorage.getItem("cart")) {
           let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
-         
-          for(let i=0;i< cart2.length +ii){
-             cart[i].quantity++;
-          console.log("öka", sum,"hej hej");
-        }
-          else{
-          console.log(i);
-         
-        
-        }
+          for(let i=0;i< cart2.length; ++i){
+              cart[i].quantity++;
+            console.log("öka", sum,"hej hej");
+              } else {
+            console.log(i);
+            let sum2=cart[i].quantity--;
+          }
       
         console.log(i);
         let sum2=cart[i].quantity--;
       
         console.log("minska",sum2,"nej nej",i);
         cartlist() 
-        
-    }
+      }
+    }*/
     
     // function handclick4(i){
     //     let cartSplice=cart.splice(i,1);
