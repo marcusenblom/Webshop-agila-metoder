@@ -5,11 +5,17 @@ $(document).ready(function() {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "2px solid black");
+      $(".dark").css("display", "block");
+      $(".favorites").removeClass("favorites-show");
+      $(".favorites").addClass("favorites-hide");
+      $(".favorites").css("width", "0");
+      $(".favorites-toggle").css("border-bottom", "0");
 
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "0");
+      $(".dark").css("display", "none");
     }
   });
   // Stänger meny och sätter filter vid klick av kategori
@@ -17,6 +23,7 @@ $(document).ready(function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
+    $(".dark").css("display", "none");
 
     let newFilter = this.id;
 
@@ -27,7 +34,7 @@ $(document).ready(function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
-
+  // Filtrerar startsidan baserat på vilken bild (startsidan) användaren klickar på
   $(".frontCategory").on("click", function(){
     let newFilter = this.id;
     console.log(newFilter);
@@ -36,8 +43,36 @@ $(document).ready(function() {
     window.open("index.html", "_self");
 
   });
+  // Öppnar och stänger favorites
+  $(".favorites-toggle").click(function() {
+    if ($(".favorites").hasClass("favorites-hide")) {
+      $(".favorites").removeClass("favorites-hide");
+      $(".favorites").addClass("favorites-show");
+      $(".favorites").css("width", "400px");
+      $(".favorites-toggle").css("border-bottom", "2px solid black");
+      $(".dark").css("display", "block");
+      $(".menu").addClass("menu-hide");
+      $(".menu-toggle-container").css("border-bottom", "0");
 
-
+    } else {
+      $(".favorites").addClass("favorites-hide");
+      $(".favorites").removeClass("favorites-show");
+      $(".favorites").css("width", "0");
+      $(".favorites-toggle").css("border-bottom", "0");
+      $(".dark").css("display", "none");
+    }
+  });
+  //Stänger meny samt favorites vid klick på opacity-filtret .dark
+  $(".dark").on("click", function(){
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+    $(".favorites").removeClass("favorites-show");
+    $(".favorites").addClass("favorites-hide");
+    $(".favorites").css("width", "0");
+    $(".favorites-toggle").css("border-bottom", "0");
+    $(".dark").css("display", "none");
+  });
   // Håller koll på antal varor i varukorgen
   function counter() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
@@ -55,10 +90,8 @@ $(document).ready(function() {
   };
   counter(); // Kallar på funktionen counter() som ändrar siffran på cart-ikonen
 
-
   // Array med alla objekt //
   let listOfAllProducts = [productCoat1, productCoat2, productCoat3, productCoat4, productCoat5, productCoat6, productCoat7, productCoat8, productDress1, productDress2, productDress3, productDress4, productDress5, productDress6, productDress7, productDress8, productShoe1, productShoe2, productShoe3, productShoe4, productShoe5, productShoe6, productShoe7, productShoe8, productShirts1, productShirts2, productShirts3, productShirts4, productShirts5, productShirts6, productShirts7, productShirts8];
-
 
   // Funktion som skapar upp produkter på förstasidan //
   if (!localStorage.getItem("filter")) {
@@ -71,6 +104,7 @@ $(document).ready(function() {
     $("#recommended").css("display", "none");
     $("#productSection").css("display", "none");
     $(".number-of-items").css("display", "none");
+    $("#header").addClass("transparent");
 
   } else {
 
@@ -117,7 +151,6 @@ $(document).ready(function() {
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
     };
   };
-
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
   $(".filter-button").on("click", function() {
