@@ -147,8 +147,9 @@ $(document).ready(function() {
 
             let alreadyExist = false;
             for (let i = 0; i < newArray.length; i++) {
-              if (listOfAllProducts[i].id == newArray[i].id) {
+              if (thisId == newArray[i].id) {
                 alreadyExist = true;
+                newArray.splice(i, 1);
               }
             };
             if (!alreadyExist) {
