@@ -76,9 +76,11 @@ $(document).ready(function() {
     console.log(cart[p]);
 
     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
+    //let imgImg = $("<img>").html(cart[p].src)
     let spanPrice = $("<span>").html(cart[p].price)
     let spanSize = $("<span>").html(cart[p].size)
     let spanQuantity= $("<span>").html(cart[p].quantity)
+
     items_div.append(tagDiv).addClass("divClass")
     
   
@@ -87,6 +89,7 @@ $(document).ready(function() {
  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
  let buttonSpan=$("<span>").append(button1).append(button2).append(button3)
   tagDiv.append(buttonSpan)
+  //tagDiv.append(imgImg);
   tagDiv.append(spanQuantity);
   tagDiv.append(spanPrice)
   tagDiv.append(spanSize)
