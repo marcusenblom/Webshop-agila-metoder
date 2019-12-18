@@ -350,21 +350,23 @@ footer {
     margin: 0px; }
     .detail-box2 .detail-box .detail-box-Img {
       display: flex;
-      width: 100%;
+      width: 50%;
       justify-content: center;
       background: white; }
       .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 70%;
+        width: 50%;
         background: black; }
+      .detail-box2 .detail-box .detail-box-Img img {
+        width: 50%; }
     .detail-box2 .detail-box .detail-innerbox2 {
       display: flex;
       justify-content: center;
       background-color: white; }
       .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
         display: flex;
-        width: 70%;
+        width: 50%;
         background: white;
         flex-direction: column;
         padding: 10px; }
@@ -381,7 +383,7 @@ footer {
           display: flex;
           flex-direction: column; }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
   .detail-box2 {
     justify-content: center; }
     .detail-box2 .detail-box {
