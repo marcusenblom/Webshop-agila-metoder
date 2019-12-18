@@ -134,29 +134,31 @@ $(document).ready(function() {
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
         let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id).on("click", function() {
-          // console.log(i);
-          // let newArray = [];
-          // let thisId = listOfAllProducts[i].id;
-          //
-          // if (localStorage.getItem("favorites")) {
-          //
-          //   let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
-          //   for (let i = 0; i < currentFavoriteItems.length; i++) {
-          //     if (currentFavoriteItems[i] != ) {
-          //
-          //     }
-          //     newArray.push(currentFavoriteItems[i]);
-          //   };
-          //
-          //
-          //
-          //
-          //
-          // } else {
-          //   newArray.push(listOfAllProducts[i]);
-          // }
-          //
-          // localStorage.setItem("favorites", JSON.stringify(newArray));
+          console.log(i);
+          let newArray = [];
+          let thisId = listOfAllProducts[i].id;
+
+          if (localStorage.getItem("favorites")) {
+            let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            for (let i = 0; i < currentFavoriteItems.length; i++) {
+              newArray.push(currentFavoriteItems[i]);
+            };
+
+            let alreadyExist = false;
+            for (let i = 0; i < newArray.length; i++) {
+              if (listOfAllProducts[i].id == newArray[i].id) {
+                alreadyExist = true;
+              }
+            };
+            if (!alreadyExist) {
+              newArray.push(listOfAllProducts[i]);
+            }
+          } else {
+            newArray.push(listOfAllProducts[i]);
+          };
+
+          localStorage.setItem("favorites", JSON.stringify(newArray));
         }).appendTo(rightTitleContainer);
 
       };
