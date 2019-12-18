@@ -460,6 +460,12 @@ h3 {
       align-items: center;
       width: 15%;
       height: 60px; }
+  #checkoutProductSection #checkout_container_cart #checkout_container_items div {
+    width: 15%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
 
 body {
   font-family: 'Slabo 27px', serif;
