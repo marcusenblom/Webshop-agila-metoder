@@ -79,7 +79,7 @@ $(document).ready(function() {
 
       let imageDiv = $("<div>").appendTo(productContainer);
       let imgSrc = currentCart[i].src;
-      let image = $("<img>").attr("src", imgSrc).appendTo(imageDiv);
+      let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
 
       let nameContainer = $("<div>").html(currentCart[i].title).appendTo(productContainer);
 
@@ -87,9 +87,10 @@ $(document).ready(function() {
 
       let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
 
-      let priceContainer = $("<div>").html(currentCart[i].price).appendTo(productContainer);
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(productContainer);
 
-      let removeContainer = $("<div>").html("Ta bort").appendTo(productContainer);
+      let removeContainer = $("<div>").appendTo(productContainer);
+      let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
     }
   };
   displayCart();
