@@ -59,22 +59,22 @@ $(document).ready(function() {
   });
 
   // Skapar upp HTML för favoriter
-  function createFavorites(){
-    let listOfFavorites = JSON.parse(localStorage.getItem("favorites"));
-
-    $(".favoriteContainer").empty();
-
-    for (let i = 0; i < listOfFavorites.length; i++) {
-      let productContainer = $("<div>").addClass("favoriteProductContainer").appendTo($(".favoriteContainer"));
-
-      let imgSrc = listOfFavorites[i].src;
-      let image = $("<img>").attr("src", imgSrc).addClass("favoriteImage").appendTo(productContainer);
-
-      let heartImg = $("<img>").attr("src", "images/remove.png").addClass("favoriteImageLike").appendTo(productContainer);
-
-    }
-  };
-  createFavorites();
+  // function createFavorites(){
+  //   let listOfFavorites = JSON.parse(localStorage.getItem("favorites"));
+  //
+  //   $(".favoriteContainer").empty();
+  //
+  //   for (let i = 0; i < listOfFavorites.length; i++) {
+  //     let productContainer = $("<div>").addClass("favoriteProductContainer").appendTo($(".favoriteContainer"));
+  //
+  //     let imgSrc = listOfFavorites[i].src;
+  //     let image = $("<img>").attr("src", imgSrc).addClass("favoriteImage").appendTo(productContainer);
+  //
+  //     let heartImg = $("<img>").attr("src", "images/remove.png").addClass("favoriteImageLike").appendTo(productContainer);
+  //
+  //   }
+  // };
+  // createFavorites();
 
   // Håller koll på antal varor i varukorgen
   function counter() {
@@ -188,7 +188,8 @@ $(document).ready(function() {
           localStorage.setItem("favorites", JSON.stringify(newArray));
 
           createFavorites();
-        }).appendTo(rightTitleContainer);
+        }
+      ).appendTo(rightTitleContainer);
 
       };
       $(".number-of-items").html("- Visar " + numberOfItemsAdded + " av " + numberOfItemsAdded + " produkter -");
