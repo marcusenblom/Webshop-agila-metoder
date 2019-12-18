@@ -111,14 +111,15 @@ $(document).ready(function() {
     }
 
     function handclick4(i){
-        let cartSplice=cart.splice(i,1);
-        console.log(i)
+        // let cartSplice=cart.splice(i,1);
+        // console.log(i)
 
-        console.log(cartSplice);
+        // console.log(cartSplice);
+        $( "<div>" ).remove();  
        
        
        }
-  
+       
 
 
 }
