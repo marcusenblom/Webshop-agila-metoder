@@ -73,52 +73,57 @@ $(document).ready(function() {
   for (let p = 0; p < cart.length; p++) {
     console.log(cart[p]);
 
-    let tagDiv = $("<div>").append("<h4>").html(cart[p].title)
+    let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
     let spanPrice = $("<span>").html(cart[p].price)
     let spanSize = $("<span>").html(cart[p].size)
+    let spanQuantity= $("<span>").html(cart[p].quantity)
     items_div.append(tagDiv).addClass("divClass")
-    tagDiv.append(spanPrice)
-    tagDiv.append(spanSize)
-
-    spanQuantity.append($("<button>").html("--").on("click",handclick2))
-            
-    spanQuantity.append($("<button>").html("++").on("click",handclick1))
-    spanQuantity.append($("<button>").html("ta bort").on("click",handclick4))
-          
-    tagDiv.append(spanPrice)
-    tagDiv.append(spanSize)
- 
-   function handclick1(){
+    
   
-     let sum=cart[p].quantity++;
+ let button1=$("<button>").html("--").on("click",function() { handclick2(p)})        
+ let button2=($("<button>").html("++").on("click",function() { handclick1(p)}))
+ let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
+ let buttonSpan=$("<span>").append(button1).append(button2).append(button3)
+ tagDiv.append(buttonSpan)
+  tagDiv.append(spanQuantity);
+    tagDiv.append(spanPrice)
+    tagDiv.append(spanSize)
+    
+ 
+  
+ 
+ 
+   function handclick1(i){
+  
+     let sum=cart[i].quantity++;
          console.log("öka", sum,);
        
-         cartList()
+        
         }
     
-    function handclick2(){
+    function handclick2(i){
      
-        let sum2=cart[p].quantity--;
+        let sum2=cart[i].quantity--;
       
         console.log("minska",sum2);
        
-        cartList()
+        
     }
 
-    function handclick4(){
-        let cartSplice=cart.splice(p,1);
-        console.log(p)
+    function handclick4(i){
+        let cartSplice=cart.splice(i,1);
+        console.log(i)
 
-        console.log(cartSplice[p])
+        console.log(cartSplice);
        
-        cartList()
+       
        }
   
 
 
 }
 
-cartList()
+
 
 
 });

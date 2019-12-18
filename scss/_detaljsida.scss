@@ -1,8 +1,3 @@
-body {
-    margin: 0px;
-    font-family: 'Montserrat', sans-serif;
-    background: yellow;
-}
 
 * {
     box-sizing: border-box;
@@ -112,6 +107,7 @@ body {
         .detail-box {
             width: 100%;
             justify-content: center;
+            // flex-direction: row;
          
             .detail-box-Img {
                 width: 40%;
