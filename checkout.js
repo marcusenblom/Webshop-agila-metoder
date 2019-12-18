@@ -86,10 +86,10 @@ $(document).ready(function() {
  let button2=($("<button>").html("++").on("click",function() { handclick1(p)}))
  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
  let buttonSpan=$("<span>").append(button1).append(button2).append(button3)
- tagDiv.append(buttonSpan)
+  tagDiv.append(buttonSpan)
   tagDiv.append(spanQuantity);
-    tagDiv.append(spanPrice)
-    tagDiv.append(spanSize)
+  tagDiv.append(spanPrice)
+  tagDiv.append(spanSize)
     
    function handclick1(i){
      let sum=cart[i].quantity++;
@@ -105,7 +105,7 @@ $(document).ready(function() {
         console.log("minska",sum2);
         cartlist()   
     }
-
+    /*
     function handclick4(i){
         // let cartSplice=cart.splice(i,1);
         // console.log(i)
@@ -114,7 +114,7 @@ $(document).ready(function() {
         $( "<div>" ).remove();  
        
         cartlist()
-       }
+       }*/
   
       
 
