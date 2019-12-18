@@ -6,6 +6,10 @@ $(document).ready(function() {
       $(".menu").addClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "2px solid black");
       $(".dark").css("display", "block");
+      $(".favorites").removeClass("favorites-show");
+      $(".favorites").addClass("favorites-hide");
+      $(".favorites").css("width", "0");
+      $(".favorites-toggle").css("border-bottom", "0");
 
     } else {
       $(".menu").addClass("menu-hide");
@@ -48,6 +52,8 @@ $(document).ready(function() {
       $(".favorites").css("width", "400px");
       $(".favorites-toggle").css("border-bottom", "2px solid black");
       $(".dark").css("display", "block");
+      $(".menu").addClass("menu-hide");
+      $(".menu-toggle-container").css("border-bottom", "0");
 
     } else {
       $(".favorites").addClass("favorites-hide");
@@ -56,6 +62,18 @@ $(document).ready(function() {
       $(".favorites-toggle").css("border-bottom", "0");
       $(".dark").css("display", "none");
     }
+  });
+
+  //Stänger meny samt favorites vid klick på opacity-filtret .dark
+  $(".dark").on("click", function(){
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+    $(".favorites").removeClass("favorites-show");
+    $(".favorites").addClass("favorites-hide");
+    $(".favorites").css("width", "0");
+    $(".favorites-toggle").css("border-bottom", "0");
+    $(".dark").css("display", "none");
   });
 
   // Håller koll på antal varor i varukorgen

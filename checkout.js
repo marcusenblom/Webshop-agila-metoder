@@ -1,25 +1,29 @@
 $(document).ready(function() {
-
-  // Öppnar upp/stänger menyn (accordion)
+  // Öppnar och stänger dropdown
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "2px solid black");
-      $(".dark").css("opacity", "0.15");
+      $(".dark").css("display", "block");
+      $(".favorites").removeClass("favorites-show");
+      $(".favorites").addClass("favorites-hide");
+      $(".favorites").css("width", "0");
+      $(".favorites-toggle").css("border-bottom", "0");
 
     } else {
       $(".menu").addClass("menu-hide");
       $(".menu").removeClass("menu-show");
       $(".menu-toggle-container").css("border-bottom", "0");
-      $(".dark").css("opacity", "0");
+      $(".dark").css("display", "none");
     }
   });
-  // Stänger menyn samt skickar filter till localStorage
+  // Stänger meny och sätter filter vid klick av kategori
   $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
+    $(".dark").css("display", "none");
 
     let newFilter = this.id;
     localStorage.setItem("filter", newFilter);
@@ -38,15 +42,29 @@ $(document).ready(function() {
       $(".favorites").addClass("favorites-show");
       $(".favorites").css("width", "400px");
       $(".favorites-toggle").css("border-bottom", "2px solid black");
-      $(".dark").css("opacity", "0.15");
+      $(".dark").css("display", "block");
+      $(".menu").addClass("menu-hide");
+      $(".menu-toggle-container").css("border-bottom", "0");
 
     } else {
       $(".favorites").addClass("favorites-hide");
       $(".favorites").removeClass("favorites-show");
       $(".favorites").css("width", "0");
       $(".favorites-toggle").css("border-bottom", "0");
-      $(".dark").css("opacity", "0");
+      $(".dark").css("display", "none");
     }
+  });
+
+  //Stänger meny samt favorites vid klick på opacity-filtret .dark
+  $(".dark").on("click", function(){
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+    $(".favorites").removeClass("favorites-show");
+    $(".favorites").addClass("favorites-hide");
+    $(".favorites").css("width", "0");
+    $(".favorites-toggle").css("border-bottom", "0");
+    $(".dark").css("display", "none");
   });
 
   // Visar antal produkter i varukorgen (badge)
@@ -81,27 +99,27 @@ $(document).ready(function() {
     tagDiv.append(spanSize)
 
     spanQuantity.append($("<button>").html("--").on("click",handclick2))
-            
+
     spanQuantity.append($("<button>").html("++").on("click",handclick1))
     spanQuantity.append($("<button>").html("ta bort").on("click",handclick4))
-          
+
     tagDiv.append(spanPrice)
     tagDiv.append(spanSize)
- 
+
    function handclick1(){
-  
+
      let sum=cart[p].quantity++;
          console.log("öka", sum,);
-       
+
          cartList()
         }
-    
+
     function handclick2(){
-     
+
         let sum2=cart[p].quantity--;
-      
+
         console.log("minska",sum2);
-       
+
         cartList()
     }
 
@@ -110,10 +128,10 @@ $(document).ready(function() {
         console.log(p)
 
         console.log(cartSplice[p])
-       
+
         cartList()
        }
-  
+
 
 
 }
@@ -122,6 +140,3 @@ cartList()
 
 
 });
-
-
-
