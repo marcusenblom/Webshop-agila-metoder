@@ -102,15 +102,6 @@ $(document).ready(function() {
       for (let i = 0; i < currentFavoriteItems.length; i++) {
         newArray.push(currentFavoriteItems[i]);
       };
-
-
-      for (let i = 0; i < newArray.length; i++) {
-        if (favoriteProduct.id == newArray[i].id) {
-
-        } else {
-          newArray.push(favoriteProduct);
-        }
-      }
     } else {
       newArray.push(favoriteProduct);
     }
