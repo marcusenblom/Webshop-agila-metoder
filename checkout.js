@@ -1,7 +1,7 @@
-$(document).ready(function () {
+$(document).ready(function() {
   //hej
   // Öppnar upp/stänger menyn (accordion)
-  $(".menu-toggle").click(function () {
+  $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
@@ -16,7 +16,7 @@ $(document).ready(function () {
     }
   });
   // Stänger menyn samt skickar filter till localStorage
-  $(".filter-button").on("click", function () {
+  $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
@@ -26,13 +26,13 @@ $(document).ready(function () {
     window.open("index.html", "_self");
   });
   // Skickar användaren till index-html och sätter filter till 0
-  $(".home").on("click", function () {
+  $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
 
   // Öppnar och stänger favorites
-  $(".favorites-toggle").click(function () {
+  $(".favorites-toggle").click(function() {
     if ($(".favorites").hasClass("favorites-hide")) {
       $(".favorites").removeClass("favorites-hide");
       $(".favorites").addClass("favorites-show");
@@ -68,7 +68,35 @@ $(document).ready(function () {
   // Hämtar cart från localStorage
   cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-<<<<<<< HEAD
+
+  function displayCart() {
+
+    let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    for (let i = 0; i < currentCart.length; i++) {
+
+      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($("#checkout_container_items"));
+
+      let imageDiv = $("<div>").appendTo(productContainer);
+      let imgSrc = currentCart[i].src;
+      let image = $("<img>").attr("src", imgSrc).appendTo(imageDiv);
+
+      let nameContainer = $("<div>").html(currentCart[i].title).appendTo(productContainer);
+
+      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(productContainer);
+
+      let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
+
+      let priceContainer = $("<div>").html(currentCart[i].price).appendTo(productContainer);
+
+      let removeContainer = $("<div>").html("Ta bort").appendTo(productContainer);
+    }
+  };
+  displayCart();
+
+
+
+
   // function cartlist() {
   //
   //
@@ -78,37 +106,34 @@ $(document).ready(function () {
   //     console.log(cart[p]);
   //
   //     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-  //     let spanPrice = $("<div>").addClass("divPrice").html(cart[p].price)
-  //     let spanSize = $("<div>").addClass("divSize").html(cart[p].size)
-  //     let spanQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
+  //     let divPrice = $("<div>").addClass("divPrice").html(cart[p].price)
+  //     let divSize = $("<div>").addClass("divSize").html(cart[p].size)
+  //     let divQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
   //     items_div.append(tagDiv).addClass("divClass")
-  //     let button1 = $("<button>").html("--").on("click", function () {
-  //       handclick2(p)
-  //     })
-  //     let button2 = $("<button>").html("++").on("click", function () {
-  //       handclick1(p)
-  //     })
+  //     let button1 = $("<button>").html("--").on("click", function () { handclick2(p)})
+  //     let button2 = $("<button>").html("++").on("click", function (){handclick1(p)})
   //     //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
-  //     let buttonSpan = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
-  //     tagDiv.append(buttonSpan)
-  //     tagDiv.append(spanQuantity).append(spanPrice).append(spanSize)
-  //     // tagDiv.append(spanPrice)
-  //     // tagDiv.append(spanSize)
+  //     let divButton = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
   //
-  //   }
+  //     tagDiv.append(divQuantity)
+  //     tagDiv.append(divPrice)
+  //     tagDiv.append(divSize)
+  //     tagDiv.append(divButton)
   //
-  //   function handclick1(i) {
-  //     if (localStorage.getItem("cart")) {
-  //       let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
-  //       for (i = 0; i < cart2.length; ++i) {
-  //         hej=cart2[i].quantity++;
+  //   };
   //
-  //         localStorage.setItem("cart3", JSON.stringify(hej));
-  //         console.log("hej på dig",hej)
-  //       }
-  //     }
+  //   // function handclick1(i) {
+  //   //   if (localStorage.getItem("cart")) {
+  //   //     let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
+  //   //     for (i = 0; i < cart2.length; ++i) {
+  //   //       hej=cart2[i].quantity++;
   //
-  //   }
+  //   //       localStorage.setItem("cart3", JSON.stringify(hej));
+  //   //       console.log("hej på dig",hej)
+  //   //     }
+  //   //   }
+  //
+  //   // }
   //
   //   //  function handclick2(i){
   //   //   console.log(i);
@@ -143,76 +168,3 @@ $(document).ready(function () {
   // cartlist()
 
 });
-=======
-  function cartlist() {
-
-
-    let items_div = $("#checkout_container_items");
-    items_div.html('');
-    for (let p = 0; p < cart.length; p++) {
-      console.log(cart[p]);
-
-      let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-      let divPrice = $("<div>").addClass("divPrice").html(cart[p].price)
-      let divSize = $("<div>").addClass("divSize").html(cart[p].size)
-      let divQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
-      items_div.append(tagDiv).addClass("divClass")
-      let button1 = $("<button>").html("--").on("click", function () { handclick2(p)})
-      let button2 = $("<button>").html("++").on("click", function (){handclick1(p)})
-      //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
-      let divButton = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
-      
-      tagDiv.append(divQuantity)
-      tagDiv.append(divPrice)
-      tagDiv.append(divSize)
-      tagDiv.append(divButton)
-
-    };
-
-    // function handclick1(i) {
-    //   if (localStorage.getItem("cart")) {
-    //     let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
-    //     for (i = 0; i < cart2.length; ++i) {
-    //       hej=cart2[i].quantity++;
-          
-    //       localStorage.setItem("cart3", JSON.stringify(hej));
-    //       console.log("hej på dig",hej)
-    //     }
-    //   }
-  
-    // }
-
-    //  function handclick2(i){
-    //   console.log(i);
-    //   let sum2=cart[i].quantity++;
-
-    //   console.log("minska",sum2,"nej nej",i);
-    //   cartlist() 
-    // }
-
-    /* function handclick1(i){
-          console.log(i);
-          let sum2=cart[i].quantity--;
-        
-          console.log("minska",sum2,"nej nej",i);
-          cartlist() 
-        }
-      }*/
-
-    // function handclick4(i){
-    //     let cartSplice=cart.splice(i,1);
-    //     console.log(i)
-
-    //     console.log(cartSplice);
-    //     $( "<div>" ).remove();  
-
-    //     // cartlist()
-    //    }
-
-
-  }
-
-  cartlist()
-
-});
->>>>>>> c8f456aae393598042232835808bd3f6e9149d49

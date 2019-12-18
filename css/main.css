@@ -461,12 +461,26 @@ h3 {
       align-items: center;
       width: 15%;
       height: 60px; }
-  #checkoutProductSection #checkout_container_cart #checkout_container_items div {
-    width: 15%;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+  #checkoutProductSection #checkout_container_cart {
+    width: 100%; }
+    #checkoutProductSection #checkout_container_cart #checkout_container_items {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around; }
+        #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div {
+          width: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div img {
+            height: 90%; }
   #checkoutProductSection #checkout_container_sum {
     width: 100%;
     height: 100px;
