@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+//hej
   // Öppnar upp/stänger menyn (accordion)
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
