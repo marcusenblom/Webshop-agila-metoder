@@ -74,7 +74,7 @@ $(document).ready(function() {
     items_div.html('');
   for (let p = 0; p < cart.length; p++) {
     console.log(cart[p]);
-  
+
     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
     //Helena
     // let imgSrc4 = currentCartItems[i].src4;
@@ -90,9 +90,9 @@ $(document).ready(function() {
     items_div.append(tagDiv).addClass("divClass")
 
     // $("divClass").append(cartImg);
-    
-  
- let button1=$("<button>").html("--").on("click",function() { handclick2(p)})        
+
+
+ let button1=$("<button>").html("--").on("click",function() { handclick2(p)})
  let button2=$("<button>").html("++").on("click",function() { handclick1(p)})
   //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
  let buttonSpan=$("<span>").append(button1).append(button2) //.append(button3)
@@ -113,32 +113,32 @@ $(document).ready(function() {
             console.log(i);
             let sum2=cart[i].quantity--;
           }
-      
+
         console.log(i);
         let sum2=cart[i].quantity--;
-      
+
         console.log("minska",sum2,"nej nej",i);
-        cartlist() 
+        cartlist()
       }
     }*/
-    
+
     // function handclick4(i){
     //     let cartSplice=cart.splice(i,1);
     //     console.log(i)
 
     //     console.log(cartSplice);
-    //     $( "<div>" ).remove();  
-       
+    //     $( "<div>" ).remove();
+
     //     // cartlist()
     //    }
-  
-      
-   
+
+
+
 
 
 }
- 
-cartlist()
+
+// cartlist()
 
 
   function displayCart() {
