@@ -66,15 +66,15 @@ $(document).ready(function() {
   };
   counter();
   // Hämtar cart från localStorage
-
-  function cartlist(){
   cart = JSON.parse(localStorage.getItem("cart")) || [];
+  function cartlist(){
+
 
   let items_div = $("#checkout_container_items");
-
+    items_div.html('');
   for (let p = 0; p < cart.length; p++) {
     console.log(cart[p]);
-
+  
     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
     //let imgImg = $("<img>").html(cart[p].src)
     let spanPrice = $("<span>").html(cart[p].price)
@@ -85,45 +85,51 @@ $(document).ready(function() {
     
   
  let button1=$("<button>").html("--").on("click",function() { handclick2(p)})        
- let button2=($("<button>").html("++").on("click",function() { handclick1(p)}))
- let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
- let buttonSpan=$("<span>").append(button1).append(button2).append(button3)
+ let button2=$("<button>").html("++").on("click",function() { handclick1(p)})
+  //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
+ let buttonSpan=$("<span>").append(button1).append(button2) //.append(button3)
   tagDiv.append(buttonSpan)
-  //tagDiv.append(imgImg);
-  tagDiv.append(spanQuantity);
-  tagDiv.append(spanPrice)
-  tagDiv.append(spanSize)
-    
-   function handclick1(i){
-     let sum=cart[i].quantity++;
-         console.log("öka", sum,);
-       
-         cartlist()
-        }
-    
-    function handclick2(i){
-     
+  tagDiv.append(spanQuantity).append(spanPrice).append(spanSize)
+  // tagDiv.append(spanPrice)
+  // tagDiv.append(spanSize)
+
+}
+/*
+      function handclick1(i){
+        if (localStorage.getItem("cart")) {
+          let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
+          for(let i=0;i< cart2.length; ++i){
+              cart[i].quantity++;
+            console.log("öka", sum,"hej hej");
+              } else {
+            console.log(i);
+            let sum2=cart[i].quantity--;
+          }
+      
+        console.log(i);
         let sum2=cart[i].quantity--;
       
-        console.log("minska",sum2);
-        cartlist()   
-    }
-    /*
-    function handclick4(i){
-        // let cartSplice=cart.splice(i,1);
-        // console.log(i)
+        console.log("minska",sum2,"nej nej",i);
+        cartlist() 
+      }
+    }*/
+    
+    // function handclick4(i){
+    //     let cartSplice=cart.splice(i,1);
+    //     console.log(i)
 
-        // console.log(cartSplice);
-        $( "<div>" ).remove();  
+    //     console.log(cartSplice);
+    //     $( "<div>" ).remove();  
        
-        cartlist()
-       }*/
+    //     // cartlist()
+    //    }
   
       
+   
+
 
 }
-
-}
+ 
 cartlist()
 
 });
