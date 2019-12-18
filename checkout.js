@@ -65,18 +65,19 @@ $(document).ready(function() {
     $(".badge").html(totalAmount);
   };
   counter();
-  // Hämtar cart från localStorage
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // // Hämtar cart från localStorage
+  // cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
   function displayCart() {
-
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-
+   
+    
+    let hej=$("#checkout_container_items")
+    $("#checkout_container_items").html(" ");
     for (let i = 0; i < currentCart.length; i++) {
-
-      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($("#checkout_container_items"));
-
+      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(hej));
+     
       let imageDiv = $("<div>").appendTo(productContainer);
       let imgSrc = currentCart[i].src;
       let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
@@ -87,85 +88,61 @@ $(document).ready(function() {
 
       let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
 
-      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(productContainer);
-
       let removeContainer = $("<div>").appendTo(productContainer);
+
+      let buttonRemove = $("<button>").html("--").appendTo(removeContainer).on("click", function () {handclick1(i)})
+  
+      let increase= $("<button>").appendTo(removeContainer).html("++").on("click", function (){handclick2(i)})
+     
+      let buttonRemoveItems=$("<button>").appendTo(removeContainer).html("ta bort").on("click",function(){ handclick4(i)})
+      
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(removeContainer);
+
+  
       let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
+ 
     }
-  };
-  displayCart();
-
-
-
-
-  // function cartlist() {
-  //
-  //
-  //   let items_div = $("#checkout_container_items");
-  //   items_div.html('');
-  //   for (let p = 0; p < cart.length; p++) {
-  //     console.log(cart[p]);
-  //
-  //     let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-  //     let divPrice = $("<div>").addClass("divPrice").html(cart[p].price)
-  //     let divSize = $("<div>").addClass("divSize").html(cart[p].size)
-  //     let divQuantity = $("<div>").addClass("divQuantity").html(cart[p].quantity)
-  //     items_div.append(tagDiv).addClass("divClass")
-  //     let button1 = $("<button>").html("--").on("click", function () { handclick2(p)})
-  //     let button2 = $("<button>").html("++").on("click", function (){handclick1(p)})
-  //     //  let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
-  //     let divButton = $("div").addClass("divButton").append(button1).append(button2) //.append(button3)
-  //
-  //     tagDiv.append(divQuantity)
-  //     tagDiv.append(divPrice)
-  //     tagDiv.append(divSize)
-  //     tagDiv.append(divButton)
-  //
-  //   };
-  //
-  //   // function handclick1(i) {
-  //   //   if (localStorage.getItem("cart")) {
-  //   //     let cart2 = JSON.parse(localStorage.getItem("cart")) || [];
-  //   //     for (i = 0; i < cart2.length; ++i) {
-  //   //       hej=cart2[i].quantity++;
-  //
-  //   //       localStorage.setItem("cart3", JSON.stringify(hej));
-  //   //       console.log("hej på dig",hej)
-  //   //     }
-  //   //   }
-  //
-  //   // }
-  //
-  //   //  function handclick2(i){
-  //   //   console.log(i);
-  //   //   let sum2=cart[i].quantity++;
-  //
-  //   //   console.log("minska",sum2,"nej nej",i);
-  //   //   cartlist()
-  //   // }
-  //
-  //   /* function handclick1(i){
-  //         console.log(i);
-  //         let sum2=cart[i].quantity--;
-  //
-  //         console.log("minska",sum2,"nej nej",i);
-  //         cartlist()
+  // function handclick1(i) {
+  //    if (localStorage.getItem("cart")) {
+  //       let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  //       for (i = 0; i < cart2.length; ++i) {
+  //         hej=cart2[i].quantity++;
+  
+  //         localStorage.setItem("cart3", JSON.stringify(hej));
+  //         console.log("hej på dig",hej)
   //       }
-  //     }*/
-  //
-  //   // function handclick4(i){
-  //   //     let cartSplice=cart.splice(i,1);
-  //   //     console.log(i)
-  //
-  //   //     console.log(cartSplice);
-  //   //     $( "<div>" ).remove();
-  //
-  //   //     // cartlist()
-  //   //    }
-  //
-  //
-  // }
-  //
-  // cartlist()
+  //     }
+  
+    
+  
+     function handclick2(i){
+      console.log(i);
+      let sum1=currentCart[i].quantity++;
+      console.log("öka",sum1,i);
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+      
+      displayCart()
+    }
 
+
+     function handclick1(i){
+          console.log(i);
+         currentCart[i].quantity--;
+          localStorage.setItem("cart", JSON.stringify(currentCart));
+         
+          displayCart()
+        }
+      
+  
+    function handclick4(i){
+        let cartSplice=currentCart.splice(i,1);
+        console.log(i)
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+  
+        displayCart()
+       }
+      
+}
+    displayCart()
+  
 });
