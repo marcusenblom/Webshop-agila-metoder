@@ -435,6 +435,32 @@ footer {
         top: 5px;
         right: 14px; }
 
+h1 {
+  text-align: center; }
+
+h3 {
+  text-align: center;
+  padding: 10px; }
+
+#checkoutProductSection {
+  margin-top: 60px; }
+  #checkoutProductSection #checkout_headline {
+    padding: 60px 0;
+    width: 100%;
+    text-align: center; }
+  #checkoutProductSection #checkout_container_subheading {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around; }
+    #checkoutProductSection #checkout_container_subheading .checkout_subheading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15%;
+      height: 60px; }
+
 body {
   font-family: 'Slabo 27px', serif;
   font-family: 'Roboto Condensed', sans-serif;
