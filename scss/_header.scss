@@ -201,11 +201,12 @@
 
   .dark {
     position: fixed;
-    transition: 0.5s;
+    display: none;
+    // transition: 0.5s;
     height: 100%;
     width: 100%;
     z-index: 7;
     background-color: black;
-    opacity: 0;
+    opacity: 0.15;
   }
 }
