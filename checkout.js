@@ -84,8 +84,8 @@ $(document).ready(function() {
   
  let button1=$("<button>").html("--").on("click",function() { handclick2(p)})        
  let button2=($("<button>").html("++").on("click",function() { handclick1(p)}))
- let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
- let buttonSpan=$("<span>").append(button1).append(button2).append(button3)
+ //let button3=$("<button>").html("ta bort").on("click",function() { handclick4(p)})
+ let buttonSpan=$("<span>").append(button1).append(button2)//.append(button3)
   tagDiv.append(buttonSpan)
   tagDiv.append(spanQuantity);
   tagDiv.append(spanPrice)
