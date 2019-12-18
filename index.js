@@ -63,7 +63,7 @@ $(document).ready(function() {
     let currentCartItems = JSON.parse(localStorage.getItem("cart")) || {};
 
     let totalAmount = 0;
-    for (var i = 0; i < currentCartItems.length; i++) {
+    for (let i = 0; i < currentCartItems.length; i++) {
       totalAmount = totalAmount + currentCartItems[i].quantity;
     }
     console.log(totalAmount);
@@ -166,6 +166,9 @@ $(document).ready(function() {
     };
   };
 
+  function test(i) {
+    console.log(i);
+  }
 
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //

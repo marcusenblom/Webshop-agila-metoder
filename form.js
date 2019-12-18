@@ -55,7 +55,7 @@ $(document).ready(function() {		//Rätt fil
 
    makeStepActive(0);	
    
-  });
+
 
   function makeStepActive(index){
 	  console.log("Making step " + index + " active");
@@ -120,3 +120,10 @@ $(document).ready(function() {		//Rätt fil
 				}
 	  }
   }
+  let newButton = document.getElementById("checkout_button");     
+  newButton.addEventListener("click", function(){
+
+	  window.open("termsandconditions.html");
+  });
+  
+});
