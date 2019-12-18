@@ -60,7 +60,7 @@
                 }
             }
         }
-    }
+    }   
 }
 
 @media screen and (min-width: 600px) {
@@ -79,12 +79,12 @@
 
                 .detail-innerbox-Img {
                     width: 100%;
-
+                    
                     img {
                         min-width: 80%;
                     }
-                }
-            }
+                }          
+            } 
             .detail-innerbox2 {
                 justify-content: center;
                 background: white;
@@ -92,9 +92,9 @@
                 .detail-h3-price-radiosize-Box {
                     width: 70%;
                 }
-            }
+            }   
         }
-
+        
     }
 
 }
@@ -107,17 +107,18 @@
         .detail-box {
             width: 100%;
             justify-content: center;
-
+            // flex-direction: row;
+         
             .detail-box-Img {
                 width: 40%;
-
+           
                 .detail-innerbox-Img {
                     width: 100%;
                     img {
                         max-width: 30%;
                     }
                 }
-            }
-        }
+            }   
+        }   
     }
 }

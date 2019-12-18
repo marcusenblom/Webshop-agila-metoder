@@ -48,7 +48,11 @@
       text-align: center;
       display: flex;
       justify-content: center;
-      position: relative; }
+      align-items: center;
+      position: fixed;
+      top: 0;
+      z-index: 99;
+      font-family: 'Montserrat', sans-serif; }
       #navbar #header .header-right div img {
         width: 20px;
         margin: 0 10px;

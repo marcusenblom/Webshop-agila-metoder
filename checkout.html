@@ -14,70 +14,59 @@
     <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat|Vollkorn:700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/checkout.css" />
-    <link rel="stylesheet" href="css/form.css" />
+    <!-- <link rel="stylesheet" href="css/form.css" /> -->
     <script src="checkout.js"></script>
     <!-- <script src="form.js"></script> -->
     <title>Gruppuppgift JS</title>
 </head>
 
 <body>
-  <section id="navbar">
+    <section id="navbar">
 
-    <header id="header">
-      <div class="header-left">
-        <div class="menu-toggle-container">
-          <span class="menu-toggle">SHOP</span>
+      <header class="borderWhite" id="header">
+        <div class="header-left">
+          <div class="menu-toggle-container">
+            <span class="menu-toggle">SHOP</span>
+          </div>
         </div>
-      </div>
-      <div class="header-middle">
-        <span class="home">COMPANY</span>
-      </div>
-      <div class="header-right">
-        <div class="">
-          <a href="#"><img src="images/user.png" alt=""></a>
+        <div class="header-middle">
+          <span class="home">COMPANY</span>
         </div>
-        <div class="favorites-toggle">
-          <a><img src="images/like.png" alt=""></a>
+        <div class="header-right">
+          <div class="">
+            <a href="#"><img src="images/user.png" alt=""></a>
+          </div>
+          <div class="">
+            <a href="#"><img src="images/like.png" alt=""></a>
+          </div>
+          <div class="">
+            <a href="#"><img src="images/shopping-bag.png" alt=""></a>
+            <span class="badge badge-pill badge-info"></span>
+          </div>
         </div>
-        <div class="">
-          <a href="#"><img src="images/shopping-bag.png" alt=""></a>
-          <span class="badge badge-pill badge-info"></span>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <div class="menu menu-hide">
-      <div class="menu-section">
-        <ul>
-          <li class="dropdown-header"><a href="index.html">Kläder</a></li>
-          <li id="Coat" class="filter-button">Kappor & Jackor</li>
-          <li id="Dress" class="filter-button">Klänningar</li>
-          <li id="Shoe" class="filter-button">Skor</li>
-          <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
-        </ul>
-      </div>
-      <div class="menu-section">
-        <ul>
-          <li class="dropdown-header">Accessoarer</li>
-          <li>Smycken</li>
-          <li>Mössor & vantar</li>
-          <li>Underkläder</li>
-          <li>Väskor</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="favorites favorites-hide">
-      <div class="favorite-header">
-        <div class="">
-          <span>Dina favoriter</span>
+        <div class="menu menu-hide">
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Kläder</li>
+                    <li id="Coat" class="filter-button">Kappor & Jackor</li>
+                    <li id="Dress" class="filter-button">Klänningar</li>
+                    <li id="Shoe" class="filter-button">Skor</li>
+                    <li id="Shirts" class="filter-button">Skjortor & Tröjor</li>
+                </ul>
+            </div>
+            <div class="menu-section">
+                <ul>
+                    <li class="dropdown-header">Accessoarer</li>
+                    <li>Smycken</li>
+                    <li>Mössor & vantar</li>
+                    <li>Underkläder</li>
+                    <li>Väskor</li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="dark">
-
-    </div>
-  </section>
+    </section>
 
     <div id="checkout_headline">
         <h1>Din varukorg</h1>
@@ -93,7 +82,7 @@
     <div id="checkout_container_cart" class="flex-container">
         <div id="checkout_container_items" class="flex-container">
             <i class="fas fa-trash-alt"></i>
-
+                        
         </div>
         <hr>
         <br>
@@ -106,7 +95,7 @@
 
     <!--Liggger i form.js & form.scss-->
     <div id="checkout_form_container" class="flex-container">
-        <!-- <form id="checkout_form" method="POST" action="abc.php"> -->
+        <form id="checkout_form" method="POST" action="abc.php">
             <ul id="checkout_headings_form">
                 <li>Steg 1 av 3</li>
                 <li>Steg 2 av 3</li>
@@ -115,7 +104,9 @@
 
             <!-- error messages -->
             <span class="fs-error"></span>
+
             <fieldset>
+
                 <h2>Kunduppgifter</h2>
                 <div class="flex-container" id="checkout_form_innercontainer">
 
