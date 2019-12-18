@@ -17,14 +17,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: center;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 
     .checkout_subheading {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 15%;
+      width: 12%;
       height: 60px;
     }
   }
@@ -43,16 +43,16 @@
         height: 200px;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
 
         div {
-          width: 15%;
+          width: 12%;
           display: flex;
           justify-content: center;
           align-items: center;
 
           img {
-            height: 90%;
+            height: 70%;
           }
         }
       }
