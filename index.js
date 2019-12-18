@@ -107,7 +107,7 @@ $(document).ready(function() {
     $(".product-header").html(header);
 
     let numberOfItemsAdded = 0;
-    for (var i = 0; i < listOfAllProducts.length; i++) {
+    for (let i = 0; i < listOfAllProducts.length; i++) {
 
       if (listOfAllProducts[i].category === category) {
         numberOfItemsAdded++;
@@ -134,7 +134,29 @@ $(document).ready(function() {
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
         let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id).on("click", function() {
-          console.log(listOfAllProducts[i]);
+          // console.log(i);
+          // let newArray = [];
+          // let thisId = listOfAllProducts[i].id;
+          //
+          // if (localStorage.getItem("favorites")) {
+          //
+          //   let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
+          //   for (let i = 0; i < currentFavoriteItems.length; i++) {
+          //     if (currentFavoriteItems[i] != ) {
+          //
+          //     }
+          //     newArray.push(currentFavoriteItems[i]);
+          //   };
+          //
+          //
+          //
+          //
+          //
+          // } else {
+          //   newArray.push(listOfAllProducts[i]);
+          // }
+          //
+          // localStorage.setItem("favorites", JSON.stringify(newArray));
         }).appendTo(rightTitleContainer);
 
       };
@@ -142,37 +164,7 @@ $(document).ready(function() {
     };
   };
 
-  // let newArray = [];
-  //
-  // if (localStorage.getItem("favorites")) {
-  //
-  //   let currentFavoriteItems = JSON.parse(localStorage.getItem("favorites")) || [];
-  //
-  //   for (let i = 0; i < currentFavoriteItems.length; i++) {
-  //     newArray.push(currentFavoriteItems[i]);
-  //   };
-  //
-  //   for (let i = 0; i < newArray.length; i++) {
-  //     if (this.id == newArray[i].id) {
-  //       console.log(newArray);
-  //       newArray.splice(i, 1);
-  //       console.log(newArray);
-  //     } else {
-  //       for (let i = 0; i < listOfAllProducts.length; i++) {
-  //         if (listOfAllProducts[i].id == this.id) {
-  //           newArray.push(listOfAllProducts[i]);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-  // for (let i = 0; i < listOfAllProducts.length; i++) {
-  //   if (listOfAllProducts[i].id == this.id) {
-  //     newArray.push(listOfAllProducts[i]);
-  //     console.log(listOfAllProducts[i]);
-  //   }
-  // }
-  // localStorage.setItem("favorites", JSON.stringify(newArray));
+
 
   // Filter: Funktion som kollar igenom alla objekt i listan och skapar endast upp de som har samma typ (egenskap) som den klickade knappens ID //
   $(".filter-button").on("click", function() {
@@ -194,7 +186,7 @@ $(document).ready(function() {
 
     let numberOfItemsAdded = 0;
 
-    for (var i = 0; i < listOfAllProducts.length; i++) {
+    for (let i = 0; i < listOfAllProducts.length; i++) {
 
       if (listOfAllProducts[i].category === category) {
 
@@ -241,7 +233,7 @@ $(document).ready(function() {
     let header = "this seasons winter collection".toUpperCase();
     $(".product-header").html(header);
 
-    for (var i = 0; i < objectsToUse.length; i++) {
+    for (let i = 0; i < objectsToUse.length; i++) {
 
       numberOfItemsAdded++;
 
@@ -274,7 +266,7 @@ $(document).ready(function() {
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
   function recommend() {
-    for (var i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       let randomNumber = Math.floor((Math.random() * 32));
 
       let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
