@@ -109,18 +109,19 @@ $(document).ready(function() {
 
       let nameDiv = $("<div>").addClass("product-info-name").appendTo(productInfoContainer);
 
-      let name = $("<div>").html(currentCart[i].title).appendTo(nameDiv);
+      let name = $("<p>").html(currentCart[i].title).appendTo(nameDiv);
 
-      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(nameDiv);
+      let sizeContainer = $("<p>").html(currentCart[i].size).appendTo(nameDiv);
 
-      let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
+      let amountContainer = $("<div>").appendTo(productContainer);
+      let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function () {
+        buttonIncreaseHandelclick(i)
+      })
+
+      let amountDiv = $("<div>").html(currentCart[i].quantity).appendTo(amountContainer);
 
       let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function () {
         buttonDecreaseHandelclick(i)
-      })
-
-      let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function () {
-        buttonIncreaseHandelclick(i)
       })
 
       let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(amountContainer);
