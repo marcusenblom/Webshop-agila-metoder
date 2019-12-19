@@ -133,9 +133,6 @@ $(document).ready(function() {
 
     };
 
-
-
-
     function buttonDecreaseHandelclick(i) {
       console.log(i);
       let DecreaseItemes = currentCart[i].quantity--;
@@ -145,27 +142,25 @@ $(document).ready(function() {
       displayCart()
     };
 
-
     function handelclickRemoveItems(i) {
       let cartSplice = currentCart.splice(i, 1);
       console.log("remove")
       localStorage.setItem("cart", JSON.stringify(currentCart));
-      checkoutSum()
-      displayCart()
-    };
+
+      checkoutSum();
+      displayCart();
+    }
 
     function buttonIncreaseHandelclick(i) {
 
       let IncreaseItemes = currentCart[i].quantity++;
       console.log("öka", IncreaseItemes);
       localStorage.setItem("cart", JSON.stringify(currentCart));
-      checkoutSum()
-      displayCart()
-    };
-  };
 
-  displayCart();
-
-
+      checkoutSum();
+      displayCart();
+    }
+  }
+  displayCart()
 
 });
