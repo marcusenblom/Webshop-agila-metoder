@@ -247,51 +247,6 @@ $(document).ready(function() {
     };
   });
 
-  // Winter-collection //
-  $(".winter-collection").on("click", function() {
-    $("#hero").empty().css("height", "0"); // döljer hero
-    $("#start-animation").css("height", "0");
-    $("#productSection").css("display", "block");
-    $("#recommended").css("display", "block");
-    $(".number-of-items").css("display", "flex");
-    $(".flex-container").empty();
-
-    let objectsToUse = [productCoat2, productDress2, productShoe5, productCoat7];
-    let numberOfItemsAdded = 0;
-
-    let header = "this seasons winter collection".toUpperCase();
-    $(".product-header").html(header);
-
-    for (let i = 0; i < objectsToUse.length; i++) {
-
-      numberOfItemsAdded++;
-
-      let productContainer = $("<div>").addClass("productContainer").appendTo($(".flex-container"));
-
-      let imgSrc = objectsToUse[i].src;
-      let imgSrc2 = objectsToUse[i].src2;
-      let image = $("<img>").attr("src", imgSrc).addClass("productImage").mouseover(function() {
-          image.attr("src", imgSrc2);
-        }).mouseout(function() {
-          image.attr("src", imgSrc);
-        }).attr("type", "button")
-        .on("click", {
-          bought: listOfAllProducts[i]
-        }, detailProducts).appendTo(productContainer);
-
-      let productTitleContainer = $("<div>").addClass("productTitleContainer").appendTo(productContainer);
-      let leftTitleContainer = $("<div>").addClass("leftInnerTitleContainer").appendTo(productTitleContainer);
-      let rightTitleContainer = $("<div>").addClass("rightInnerTitleContainer").appendTo(productTitleContainer);
-      let title = $("<p>").html(listOfAllProducts[i].title).addClass("titleFont").appendTo(leftTitleContainer);
-      let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
-
-      let favorite = $("<i>").addClass("far fa-heart").appendTo(rightTitleContainer);
-
-    };
-    $(".number-of-items").html("- Visar " + objectsToUse.length + " av " + objectsToUse.length + " produkter -");
-  });
-
-
   // Funktion som skapar upp produkter under sektionen: "recommended" //
 
   function recommend() {
@@ -301,6 +256,11 @@ $(document).ready(function() {
       let productContainer = $("<div>").addClass("recommendedContainer").appendTo($("#recommended-middle-flex"));
 
       let image = $("<img>").attr("src", listOfAllProducts[randomNumber].src).addClass("recommendedImage").appendTo(productContainer);
+
+      image.attr("type", "button")
+        .on("click", {
+          bought: listOfAllProducts[randomNumber]
+        }, detailProducts);
     };
   }
   // Kallar på funktionen för att skapa upp objekten under "recommended" vid omladdning av startsidan

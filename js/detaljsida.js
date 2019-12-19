@@ -70,7 +70,7 @@ $(document).ready(function() {
 
   $("#h3").html(detailProduct.title)
   $("#detail-description").html(detailProduct.description)
-  $("#spaan").html(detailProduct.price)
+  $("#spaan").html(detailProduct.price + " SEK")
   imgSrc3 = "../" + detailProduct.src;
   let detailImg = $("<img>").attr("src", imgSrc3);
   $("#id-detail-innerbox-Img").append(detailImg);
