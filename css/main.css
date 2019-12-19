@@ -334,7 +334,7 @@ footer {
     flex-direction: column;
     width: 100%;
     background: white;
-    margin: 0px; }
+    margin: 0; }
     .detail-box-main .detail-innerbox-main .detail-box-Img {
       display: flex;
       width: 100%;
@@ -373,8 +373,7 @@ footer {
         .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
           display: flex;
           flex-direction: column;
-          margin: 10px;
-          margin-bottom: 70px; }
+          margin: 10px 10px 70px; }
 
 @media screen and (min-width: 600px) {
   .detail-box-main {
