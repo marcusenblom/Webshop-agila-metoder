@@ -56,16 +56,18 @@
           align-items: center;
 
           .removeImage {
-            height: 20%;
+            height: 10%;
           }
         }
 
         .product-info {
           display: flex;
+          height: inherit;
           flex-direction: row;
 
           .product-info-image {
             width: 50%;
+            height: inherit;
 
             .cartImage {
               width: 60%;
@@ -73,7 +75,16 @@
           }
 
           .product-info-name {
+            height: inherit;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
 
+            p {
+              text-align: left;
+              padding: 10px 0;
+            }
           }
         }
       }
