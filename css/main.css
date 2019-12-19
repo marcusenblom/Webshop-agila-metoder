@@ -655,6 +655,14 @@ footer {
         justify-content: flex-end; }
         #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
           margin-bottom: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #conditions_form h4 p :hover {
+        text-decoration: underline; }
+
+#confirmation_wrapper {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin: auto;
+  width: 80%;
+  background-color: white; }
 
 body {
   font-family: 'Slabo 27px', serif;
