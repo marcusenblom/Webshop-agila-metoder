@@ -152,7 +152,6 @@ $(document).ready(function() {
         let price = $("<p>").html(listOfAllProducts[i].price + " SEK").addClass("priceP").appendTo(leftTitleContainer);
 
         let favorite = $("<i>").addClass("far fa-heart").attr("id", listOfAllProducts[i].id).on("click", function() {
-          console.log(i);
           let newArray = [];
           let thisId = listOfAllProducts[i].id;
 
@@ -318,7 +317,7 @@ $(document).ready(function() {
     let detailproduct = event.data.bought;
 
     localStorage.setItem("products-1", JSON.stringify(detailproduct));
-    window.open("detaljsida.html", "_self");
+    window.open("html/detaljsida.html", "_self");
   };
 
 

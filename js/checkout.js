@@ -24,12 +24,12 @@ $(document).ready(function() {
 
     let newFilter = this.id;
     localStorage.setItem("filter", newFilter);
-    window.open("index.html", "_self");
+    window.open("../index.html", "_self");
   });
   // Skickar användaren till index-html och sätter filter till 0
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
-    window.open("index.html", "_self");
+    window.open("../index.html", "_self");
   });
 
   // Öppnar och stänger favorites
@@ -93,7 +93,7 @@ $(document).ready(function() {
       let productInfoContainer = $("<div>").addClass("product-info").appendTo(productContainer);
 
       let imageDiv = $("<div>").addClass("product-info-image").appendTo(productInfoContainer);
-      let imgSrc = currentCart[i].src;
+      let imgSrc = "../" + currentCart[i].src;
       let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
 
       let nameDiv = $("<div>").addClass("product-info-name").appendTo(productInfoContainer);
@@ -118,7 +118,7 @@ $(document).ready(function() {
 
       let removeContainer = $("<div>").addClass("removeInfo").appendTo(productContainer);
 
-      let buttonRemoveItems = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer).html("ta bort").on("click", function() {
+      let buttonRemoveItems = $("<img>").addClass("removeImage").attr("src", "../images/remove.png").appendTo(removeContainer).html("ta bort").on("click", function() {
         handleClickRemoveItems(i);
       });
 
