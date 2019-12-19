@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
   <script src="https://kit.fontawesome.com/a005c4a8c8.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat|Vollkorn:700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baskervville|Barlow|Roboto+Condensed|Slabo+27px|Playfair+Display|Montserrat:400,600|Vollkorn:700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <script src="checkout.js"></script>
   <script src="form.js"></script>
@@ -72,9 +72,9 @@
       <h1>Din varukorg</h1>
     </div>
     <div id="checkout_container_subheading">
-      <div id="myProducts" class="checkout_subheading">Produkter</div>
-      <div id="quantity" class="checkout_subheading">Antal</div>
-      <div id="remove" class="checkout_subheading">Ta bort</div>
+      <div id="myProducts" class="checkout_subheading"><span>Produkter</span></div>
+      <div id="quantity" class="checkout_subheading"><span>Antal</span></div>
+      <div id="remove" class="checkout_subheading"><span>Ta bort</span></div>
     </div>
     <div id="checkout_container_cart">
       <div id="checkout_container_items">
@@ -86,11 +86,11 @@
       <div id="checkout_sum">799 SEK</div>
     </div>
 
-  </section>
+
 
   <section id="checkoutForm">
     <!--Liggger i form.js & form.scss-->
-    <div id="checkout_form_container" class="flex-container">
+    <div id="checkout_form_container">
       <form id="checkout_form" method="POST" action="abc.php">
         <ul id="checkout_headings_form">
           <li>Steg 1 av 3</li>
@@ -175,6 +175,7 @@
     </div>
   </section>
   <!--Liggger i form.js & form.scss SLUT-->
+  </section>
 
   <footer>
 
