@@ -368,7 +368,8 @@ footer {
             margin: 5px; }
         .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box button {
           margin: 10px;
-          padding: 5px; }
+          padding: 5px;
+          width: 60%; }
         .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
           display: flex;
           flex-direction: column;
