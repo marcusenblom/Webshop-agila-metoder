@@ -125,8 +125,6 @@ $(document).ready(function() {
         buttonIncreaseHandelclick(i)
       })
 
-      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(amountContainer);
-
       let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(removeContainer);
 
       let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
