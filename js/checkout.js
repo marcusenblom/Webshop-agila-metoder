@@ -61,7 +61,7 @@ $(document).ready(function() {
       totalSumToDisplay += objectsTotalPrice;
 
     };
-    totalSumDiv.html(totalSumToDisplay);
+    totalSumDiv.html(totalSumToDisplay + " SEK");
   };
   checkoutSum();
 
