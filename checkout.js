@@ -95,10 +95,10 @@ $(document).ready(function() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
    
     
-    let hej=$("#checkout_container_items")
+    let idcheckoutcontaineritems=$("#checkout_container_items")
     $("#checkout_container_items").html(" ");
     for (let i = 0; i < currentCart.length; i++) {
-      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(hej));
+      let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(idcheckoutcontaineritems));
      
       let imageDiv = $("<div>").appendTo(productContainer);
       let imgSrc = currentCart[i].src;
@@ -112,35 +112,37 @@ $(document).ready(function() {
 
       let removeContainer = $("<div>").appendTo(productContainer);
 
-      let buttonRemove = $("<button>").html("--").appendTo(removeContainer).on("click", function () {handclick1(i)})
+      let buttonRemove = $("<button>").html("-").appendTo(removeContainer).on("click", function () {handclick1(i)})
   
-      let increase= $("<button>").appendTo(removeContainer).html("++").on("click", function (){handclick2(i)})
+      let increase= $("<button>").appendTo(removeContainer).html("+").on("click", function (){handclick2(i)})
      
       let buttonRemoveItems=$("<button>").appendTo(removeContainer).html("ta bort").on("click",function(){ handclick4(i)})
       
       let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(removeContainer);
 
-  
       let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
- 
-    }
-  
-  
-     function handclick2(i){
-      console.log(i);
-      let sum1=currentCart[i].quantity++;
-      console.log("öka",sum1,i);
-      localStorage.setItem("cart", JSON.stringify(currentCart));
-      
-      displayCart()
+     
     }
 
 
+    // function checkoutSum(){
+    //   let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    //   for(let i=0;i<currentCart.length;++i){
+    //     console.log("test") 
+    //     let sum=sum+currentCart[i].price;
+    //     $("#checkout_sum").html(sum)
+    //     //lägg till quantity gör en eles if som kontrollera om finns fler quantity  om finns sätt ihop priet
+    //     console.log(sum,"test")
+    //   }
+    //   displayCart()
+    // }
+  
      function handclick1(i){
           console.log(i);
          currentCart[i].quantity--;
           localStorage.setItem("cart", JSON.stringify(currentCart));
-         
+          // checkoutSum()
           displayCart()
         }
       
@@ -149,11 +151,22 @@ $(document).ready(function() {
         let cartSplice=currentCart.splice(i,1);
         console.log(i)
         localStorage.setItem("cart", JSON.stringify(currentCart));
-  
+        // checkoutSum()
         displayCart()
        }
       
+
+
+
+function handclick2(i){
+  console.log(i);
+  let sum1=currentCart[i].quantity++;
+  console.log("öka",sum1,i);
+  localStorage.setItem("cart", JSON.stringify(currentCart));
+// checkoutSum()
+  displayCart()
 }
+  }
     displayCart()
-  
+    // checkoutSum()
 });
