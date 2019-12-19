@@ -87,6 +87,13 @@ $(document).ready(function() {
 
     let idcheckoutcontaineritems = $("#checkout_container_items")
     $("#checkout_container_items").html(" ");
+
+    if (currentCart.length == 0) {
+      let productContainer = $("<div>").attr("id", "noItems").appendTo($(idcheckoutcontaineritems));
+      let noItemsSpan = $("<span>").html("Du har för tillfället 0 varor i din varukorg").appendTo(productContainer);
+
+    }else {
+
     for (let i = 0; i < currentCart.length; i++) {
       let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(idcheckoutcontaineritems));
 
@@ -123,6 +130,7 @@ $(document).ready(function() {
       });
 
     };
+    }
 
     function buttonDecreaseHandleClick(i) {
       if (currentCart[i].quantity > 1) {
