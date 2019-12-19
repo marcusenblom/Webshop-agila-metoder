@@ -595,7 +595,7 @@ footer div {
           flex-direction: column;
   width: 100%;
   background: white;
-  margin: 0px;
+  margin: 0;
 }
 
 .detail-box-main .detail-innerbox-main .detail-box-Img {
@@ -631,59 +631,6 @@ footer div {
   width: 60%;
   -o-object-fit: contain;
      object-fit: contain;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: white;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50%;
-  background: white;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 10px;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  direction: row;
-  margin: 5px;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
-  margin: 5px;
-  background: black;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box button {
-  margin: 10px;
-  padding: 5px;
-}
-
-.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 10px;
-  margin-bottom: 70px;
 }
 
 @media screen and (min-width: 700px) {
@@ -727,7 +674,12 @@ footer div {
 }
 
 @media screen and (min-width: 1000px) {
-  .ddetail-box-main {
+  .detail-box2 {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .detail-box2 .ddetail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -736,19 +688,19 @@ footer div {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .ddetail-box-main .detail-innerbox-main {
+  .detail-box2 .ddetail-box-main .detail-innerbox-main {
     width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .ddetail-box-main .detail-innerbox-main .detail-box-Img {
+  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img {
     width: 50%;
   }
-  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
+  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
     width: 50%;
   }
-  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
+  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
     width: 10%;
   }
 }
@@ -892,7 +844,7 @@ footer div {
 }
 
 #checkoutProductSection #checkout_container_subheading #myProducts {
-  width: 40%;
+  width: 60%;
 }
 
 #checkoutProductSection #checkout_container_subheading #myProducts span {
@@ -964,7 +916,7 @@ footer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 40%;
+  width: 60%;
   height: inherit;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -994,7 +946,6 @@ footer div {
 }
 
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name {
-  height: inherit;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1014,12 +965,13 @@ footer div {
 
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name p {
   text-align: left;
-  height: 20%;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name .cartProductName {
   font-weight: bold;
+  margin-bottom: 60px;
 }
 
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
@@ -1046,6 +998,10 @@ footer div {
   font-size: 0.9rem;
 }
 
+#checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo button {
+  border-radius: 10%;
+}
+
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo {
   width: 15%;
   height: inherit;
@@ -1053,6 +1009,7 @@ footer div {
 
 #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo .removeImage {
   height: 10%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
