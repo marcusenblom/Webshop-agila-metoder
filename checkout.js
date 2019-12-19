@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //hej
+
   // Öppnar upp/stänger menyn (accordion)
   $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
@@ -65,31 +65,6 @@ $(document).ready(function() {
     $(".badge").html(totalAmount);
   };
   counter();
-  /*
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
-  function cartlist(){
-
-
-  let items_div = $("#checkout_container_items");
-    items_div.html('');
-  for (let p = 0; p < cart.length; p++) {
-    console.log(cart[p]);
-
-    let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-    //Helena
-    // let imgSrc4 = currentCartItems[i].src4;
-    // imgSrc4 = cart.src;
-    // let cartImg = $("<img>").attr("src", imgSrc4);
-
-    //Helena
-
-    let spanPrice = $("<span>").html(cart[p].price)
-    let spanSize = $("<span>").html(cart[p].size)
-    let spanQuantity= $("<span>").html(cart[p].quantity)
-
-    items_div.append(tagDiv).addClass("divClass")
-}
-*/
 
   function displayCart() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -132,29 +107,6 @@ $(document).ready(function() {
 
     }
 
-
-    // function checkoutSum(i){
-    //   let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-    // let currentItems=0;
-    //   for(let i=0;i<currentCart.length;++i){
-    //      if(this.id==currentCart[i].id && currentItems==currentCart[i].quantity){
-    //       let sumQuantity=sumQuantity+ currentCart[i].quantity;
-    //       let sumPrice=sumPrice+ currentCart[i].price;
-    //       let totalsum=sum2*sum
-    //       $("#checkout_sum").html(totalsum)
-    //       localStorage.setItem("cart", JSON.stringify(currentCart));
-    //      }else{
-    //       let sum=sum+currentCart[i].price
-    //       $("#checkout_sum").html(sum);
-    //       localStorage.setItem("cart", JSON.stringify(currentCart));
-    //      }
-
-    //     //lägg till quantity gör en eles if som kontrollera om finns fler quantity  om finns sätt ihop priet
-    //     console.log(sum,"test")
-    //   }
-    //   displayCart()
-
-    // }
 
     function buttonDecreaseHandelclick(i) {
       console.log(i);
