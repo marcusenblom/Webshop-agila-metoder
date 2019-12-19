@@ -466,6 +466,7 @@ footer {
     width: 80%;
     display: flex;
     flex-direction: row;
+    font-weight: bold;
     flex-wrap: nowrap;
     justify-content: space-between;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2); }
@@ -476,15 +477,15 @@ footer {
       align-items: center;
       height: 60px; }
     #checkoutProductSection #checkout_container_subheading #myProducts {
-      width: 60%; }
+      width: 40%; }
       #checkoutProductSection #checkout_container_subheading #myProducts span {
         width: 100%;
         text-align: left;
         padding-left: 20px; }
     #checkoutProductSection #checkout_container_subheading #quantity {
-      width: 30%; }
+      width: 20%; }
     #checkoutProductSection #checkout_container_subheading #remove {
-      width: 10%; }
+      width: 15%; }
   #checkoutProductSection #checkout_container_cart {
     background-color: white;
     width: 80%; }
@@ -500,14 +501,16 @@ footer {
         margin-bottom: 30px;
         display: flex;
         flex-direction: row;
-        justify-content: space-between; }
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.1); }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div {
           display: flex;
           justify-content: center;
           align-items: center; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info {
           display: flex;
-          width: 60%;
+          width: 40%;
           height: inherit;
           flex-direction: row;
           justify-content: flex-start; }
@@ -530,36 +533,65 @@ footer {
               text-align: left;
               height: 20%;
               width: 100%; }
+            #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name .cartProductName {
+              font-weight: bold; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
-          width: 30%; }
+          width: 20%;
+          height: inherit;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo .totalProductAmount {
             padding: 0 10px; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo .totalProductPrice {
-            padding: 0 0 0 50px; }
+            padding: 0 0 0 50px;
+            font-weight: bold;
+            font-size: 0.9rem; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo {
-          width: 10%; }
+          width: 15%;
+          height: inherit; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo .removeImage {
             height: 10%; }
+  @media screen and (max-width: 700px) {
+    #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
+      flex-wrap: wrap; }
+      #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo .totalProductPrice {
+        padding: 0; } }
   #checkoutProductSection #checkout_container_sum {
     background-color: white;
     width: 80%;
-    height: 100px;
+    height: 60px;
+    padding-bottom: 40px;
     margin-bottom: 60px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2); }
-    #checkoutProductSection #checkout_container_sum #checkout_sum,
+    #checkoutProductSection #checkout_container_sum #checkout_sum {
+      width: 20%;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     #checkoutProductSection #checkout_container_sum #checkout_to_pay {
       width: 20%;
       display: flex;
       justify-content: center;
       align-items: center; }
-
-#checkoutForm {
-  width: 80%;
-  background-color: white;
-  margin-bottom: 100px; }
+  #checkoutProductSection #checkoutForm {
+    width: 80%;
+    background-color: white;
+    margin-bottom: 100px; }
+  @media screen and (max-width: 700px) {
+    #checkoutProductSection #checkout_container_subheading, #checkoutProductSection #checkout_container_sum, #checkoutProductSection #checkout_container_cart, #checkoutProductSection #checkoutForm {
+      width: 100%; }
+    #checkoutProductSection .amountInfo {
+      width: 20%;
+      height: inherit; }
+      #checkoutProductSection .amountInfo .totalProductAmount {
+        padding: 0 10px; }
+      #checkoutProductSection .amountInfo .totalProductPrice {
+        padding: 0 0 0 50px; } }
 
 #checkoutForm {
   background-color: #f1f1f1;
