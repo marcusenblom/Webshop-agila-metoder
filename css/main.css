@@ -595,21 +595,17 @@ footer div {
           flex-direction: column;
   width: 100%;
   background: white;
-  margin: 0;
 }
 
 .detail-box-main .detail-innerbox-main .detail-box-Img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 50%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   background: white;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
 }
 
 .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
@@ -619,7 +615,7 @@ footer div {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 70%;
+  width: 100%;
   background: black;
 }
 
@@ -627,13 +623,65 @@ footer div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-width: 50%;
   width: 60%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-@media screen and (min-width: 700px) {
+.detail-box-main .detail-innerbox-main .detail-innerbox2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: white;
+}
+
+.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  background: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+}
+
+.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  direction: row;
+  margin: 5px;
+}
+
+.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
+  margin: 5px;
+  background: black;
+}
+
+.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box button {
+  margin: 10px;
+  padding: 5px;
+}
+
+.detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+  margin-bottom: 70px;
+}
+
+@media screen and (min-width: 800px) {
   .detail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -652,15 +700,14 @@ footer div {
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img {
     background: white;
-    width: 100%;
+    width: 70%;
     margin: 10px;
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
-    width: 100%;
+    width: 50%;
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
     width: 100%;
-    max-width: 50%;
   }
   .detail-box-main .detail-innerbox-main .detail-innerbox2 {
     -webkit-box-pack: center;
@@ -674,34 +721,29 @@ footer div {
 }
 
 @media screen and (min-width: 1000px) {
-  .detail-box2 {
+  .ddetail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .detail-box2 .ddetail-box-main {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .detail-box2 .ddetail-box-main .detail-innerbox-main {
-    width: 100%;
+  .ddetail-box-main .detail-innerbox-main {
+    width: 50%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img {
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img {
     width: 50%;
   }
-  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
     width: 50%;
   }
-  .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
-    width: 10%;
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
+    width: 50%;
   }
 }
 
