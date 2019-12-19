@@ -80,15 +80,16 @@
 
 @media screen and (min-width: 600px) {
 
-    .detail-box2 {
+    .detail-box-main {
         justify-content: center;
-
-        .detail-box {
-            flex-direction: row;
+        flex-direction: row;
+        
+        .detail-innerbox-main {
             margin: 10px;
 
             .detail-box-Img {
                 background: white;
+                flex-direction: row;
                 width: 100%;
                 margin: 10px;
 
@@ -116,13 +117,13 @@
 
 @media screen and (min-width: 1000px) {
 
-    .detail-box2 {
+    .ddetail-box-main {
         justify-content: center;
 
-        .detail-box {
+        .detail-innerbox-main{
             width: 100%;
             justify-content: center;
-            // flex-direction: row;
+            flex-direction: row;
          
             .detail-box-Img {
                 width: 40%;
