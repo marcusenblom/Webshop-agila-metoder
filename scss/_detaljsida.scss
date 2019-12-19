@@ -12,92 +12,129 @@
     flex-direction: column;
     width: 100%;
     background: white;
-    margin: 0;
+    
 
     .detail-box-Img {
       display: flex;
-      width: 100%;
+      width: 50%;
       justify-content: center;
       background: white;
-      justify-content: space-evenly;
+      
+    
 
       .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 70%;
+        width: 100%;
         background: black;
 
         img {
           display: flex;
-          max-width: 50%;
           width: 60%;
           object-fit: contain;
+        }
+      }
+    }
+
+
+    .detail-innerbox2 {
+      display: flex;
+      justify-content: center;
+      background-color: white;
+
+      .detail-h3-price-radiosize-Box {
+        display: flex;
+        width: 50%;
+        background: white;
+        flex-direction: column;
+        padding: 10px;
+
+        .detail-radiosize-Box {
+          display: flex;
+          direction: row;
+          margin: 5px;
+
+          .detail-radiosize-innebox {
+            margin: 5px;
+            background: black;
+          }
+        }
+
+        button {
+          margin: 10px;
+          padding: 5px;
+        }
+
+        .detail-description-text {
+          display: flex;
+          flex-direction: column;
+          margin: 10px;
+          margin-bottom: 70px;
+
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
 
-    .detail-box-main {
+  .detail-box-main {
+    justify-content: center;
+    flex-direction: row;
+
+    .detail-innerbox-main {
+      margin: 10px;
+      flex-direction: row;
+
+      .detail-box-Img {
+        background: white;
+        width: 70%;
+        margin: 10px;
+
+        .detail-innerbox-Img {
+          width: 50%;
+
+          img {
+            width: 100%;
+
+          }
+        }
+      }
+
+      .detail-innerbox2 {
         justify-content: center;
-        flex-direction: row;
-        
-        .detail-innerbox-main {
-            margin: 10px;
-            flex-direction: row;
-            .detail-box-Img {
-                background: white;
-                width: 100%;
-                margin: 10px;
+        background: white;
 
-                .detail-innerbox-Img {
-                    width: 100%;
-                    
-                    img {
-                      width: 100%;
-                     max-width: 50%;
-                    }
-                }          
-            } 
-            .detail-innerbox2 {
-                justify-content: center;
-                background: white;
-
-                .detail-h3-price-radiosize-Box {
-                    width: 100%;
-                }
-            }   
+        .detail-h3-price-radiosize-Box {
+          width: 100%;
         }
       }
     }
-  
+  }
+}
+
 
 @media screen and (min-width: 1000px) {
-  .detail-box2 {
+  .ddetail-box-main {
     justify-content: center;
+    flex-direction: column;
 
-    .ddetail-box-main {
-        justify-content: center;
-        flex-direction: row;
+    .detail-innerbox-main {
+      width: 50%;
+      justify-content: center;
 
-        .detail-innerbox-main{
-            width: 100%;
-            justify-content: center;
-           
-         
-            .detail-box-Img {
-                width: 50%;
-           
-                .detail-innerbox-Img {
-                    width: 50%;
-                    img {
-                        width: 10%;
-                    }
-                }
-            }   
-        }   
+      .detail-box-Img {
+        width: 50%;
+
+        .detail-innerbox-Img {
+          width: 50%;
+
+          img {
+            width: 50%
+          }
+        }
+      }
     }
   }
 }
