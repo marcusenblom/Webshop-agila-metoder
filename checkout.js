@@ -100,13 +100,17 @@ $(document).ready(function() {
     for (let i = 0; i < currentCart.length; i++) {
       let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(idcheckoutcontaineritems));
 
-      let imageDiv = $("<div>").appendTo(productContainer);
+      let productInfoContainer = $("<div>").addClass("product-info").appendTo(productContainer);
+
+      let imageDiv = $("<div>").addClass("product-info-image").appendTo(productInfoContainer);
       let imgSrc = currentCart[i].src;
       let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
 
-      let nameContainer = $("<div>").html(currentCart[i].title).appendTo(productContainer);
+      let nameDiv = $("<div>").addClass("product-info-name").appendTo(productInfoContainer);
 
-      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(productContainer);
+      let name = $("<div>").html(currentCart[i].title).appendTo(nameDiv);
+
+      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(nameDiv);
 
       let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
 
@@ -118,7 +122,7 @@ $(document).ready(function() {
         buttonIncreaseHandelclick(i)
       });
 
-      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(productContainer);
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(amountContainer);
 
       let removeContainer = $("<div>").appendTo(productContainer);
 
