@@ -89,94 +89,87 @@
       <div id="checkout_sum">799 SEK</div>
     </div>
 
+
   </section>
 
   <section id="checkoutForm">
-    <!--Liggger i form.js & form.scss-->
-    <div id="checkout_form_container" class="flex-container">
-      <form id="checkout_form" method="POST" action="abc.php">
-        <ul id="checkout_headings_form">
-          <li>Steg 1 av 3</li>
-          <li>Steg 2 av 3</li>
-          <li>Steg 3 av 3</li>
-        </ul>
+      <!--Liggger i form.js & form.scss-->
+      <div id="checkout_form_container" class="flex-container">
+        <form id="checkout_form" method="POST" action="abc.php">
+          <ul id="checkout_headings_form">
+            <li>Steg 1 av 3</li>
+            <li>Steg 2 av 3</li>
+            <li>Steg 3 av 3</li>
+          </ul>
 
-        <!-- error messages -->
-        <span class="fs-error"></span>
+          <!-- error messages -->
+          <span class="fs-error"></span>
 
-        <fieldset>
-
-          <h2>Kunduppgifter</h2>
+          <fieldset>
+          <div>
+            <h2>Kunduppgifter</h2>
+          </div>
           <div class="flex-container" id="checkout_form_innercontainer">
-
-            <form action="confirmation.html" method="get" id="customer_form" name="checkout_registration">
-              <!--<div class="col-md-6 my-2">-->
-              <input type="text" name="firstname" id="firstname" class="checkout_form_input" placeholder="Förnamn" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="text" name="lastname" id="lastname" class="checkout_form_input" placeholder="Efternamn" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="email" name="email" id="email" class="checkout_form_input" placeholder="E-postadress" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="tel" name="phone" id="phone" class="checkout_form_input" placeholder="Telefonnummer" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="text" name="street" id="street" class="checkout_form_input" placeholder="Gatuadress" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="text" name="zipcode" id="zipcode" class="checkout_form_input" placeholder="Postnummer" />
-              <!-- </div> -->
-              <!-- <div class="col-md-6 my-2"> -->
-              <input type="text" name="city" id="city" class="checkout_form_input" placeholder="Ort" />
-              <!-- </div> -->
+            <form>
+              <div id="form_part_1">
+              <p><input type="text" name="firstname" id="firstname" class="checkout_form_input" placeholder="Förnamn"/></p>
+              <p><input type="text" name="lastname" id="lastname" class="checkout_form_input" placeholder="Efternamn"/></p>
+              <p><input type="email" name="email" id="email" class="checkout_form_input" placeholder="E-postadress"/></p>
+              <p><input type="tel" name="phone" id="phone" class="checkout_form_input" placeholder="Telefonnummer"/></p>
+            </div>
+            <div id="form_part_2">
+              <p><input type="text" name="street" id="street" class="checkout_form_input" placeholder="Gatuadress"/></p>
+              <p><input type="text" name="zipcode" id="zipcode" class="checkout_form_input" placeholder="Postnummer"/></p>
+              <p><input type="text" name="city" id="city" class="checkout_form_input" placeholder="Ort"/></p>
+            </div>
             </form>
           </div>
-          <input type="button" name="next" class="next action-button" value="NEXT" id="next_button">
-
-        </fieldset>
-        <fieldset>
-
-          <div class='radio_container'>
-            <label>
-              <input name="checkout_payment_options" type='radio' id="radio">
-              <span class='checkout_payment_info'>Swish</span>
-            </label>
+          <div id="next_button_container">
+            <input type="button" name="next" class="next action-button" value="NEXT" id="next_button">
           </div>
-          <div class='radio_container'>
-            <label>
-              <input name="checkout_payment_options" type='radio' id="radio">
-              <span class='checkout_payment_info'>Kortbetalning</span>
-            </label>
-          </div>
-          <div class='radio_container'>
-            <label>
-              <input name="checkout_payment_options" type='radio' id="radio">
-              <span class='checkout_payment_info'>Faktura</span>
-            </label>
-          </div>
-          <input type="button" name="previous" class="previous action-button" value="BACK" />
-          <input type="button" name="next" class="next action-button" value="NEXT" id="next_button" />
-
         </fieldset>
-        <fieldset>
+          <fieldset>
 
-          <form action="confirmation.html" method="get" id="conditions_form" name="checkout_registration">
-            <h4 id="checkout_conditions">Ja, jag godkänner <p id="terms_and_conditions">köpvillkoren</p>
-            </h4>
-            <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
-          </form>
+            <div class='radio_container'>
+              <label>
+                <input name="checkout_payment_options" type='radio' id="radio">
+                <span class='checkout_payment_info'>Swish</span>
+              </label>
+            </div>
+            <div class='radio_container'>
+              <label>
+                <input name="checkout_payment_options" type='radio' id="radio">
+                <span class='checkout_payment_info'>Kortbetalning</span>
+              </label>
+            </div>
+            <div class='radio_container'>
+              <label>
+                <input name="checkout_payment_options" type='radio' id="radio">
+                <span class='checkout_payment_info'>Faktura</span>
+              </label>
+            </div>
+            <input type="button" name="previous" class="previous action-button" value="BACK" />
+            <input type="button" name="next" class="next action-button" value="NEXT" id="next_button" />
 
-          <input type="button" name="previous" class="previous action-button" value="BACK" />
+          </fieldset>
+          <fieldset>
 
-          <form action="confirmation.html" class="confirm" name="confirm"><button>Slutför köp</button></form>
+            <form action="confirmation.html" method="get" id="conditions_form" name="checkout_registration">
+              <h4 id="checkout_conditions">Ja, jag godkänner <p id="terms_and_conditions">köpvillkoren</p>
+              </h4>
+              <input type="checkbox" id="checkout_checkbox" name="agree" value="agree">
+            </form>
 
-        </fieldset>
+            <input type="button" name="previous" class="previous action-button" value="BACK" />
 
-      </form>
-    </div>
-  </section>
+            <form action="confirmation.html" class="confirm" name="confirm"><button>Slutför köp</button></form>
+
+          </fieldset>
+
+        </form>
+      </div>
+    </section>
+  
   <!--Liggger i form.js & form.scss SLUT-->
 
   <footer>
