@@ -113,20 +113,20 @@ $(document).ready(function() {
 
       let sizeContainer = $("<p>").html(currentCart[i].size).appendTo(nameDiv);
 
-      let amountContainer = $("<div>").appendTo(productContainer);
+      let amountContainer = $("<div>").addClass("amountInfo").appendTo(productContainer);
       let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function () {
         buttonIncreaseHandelclick(i)
       })
 
-      let amountDiv = $("<div>").html(currentCart[i].quantity).appendTo(amountContainer);
+      let amountDiv = $("<div>").addClass("totalProductAmount").html(currentCart[i].quantity).appendTo(amountContainer);
 
       let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function () {
         buttonDecreaseHandelclick(i)
       })
 
-      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(amountContainer);
+      let priceContainer = $("<div>").addClass("totalProductPrice").html(currentCart[i].price + " SEK").appendTo(amountContainer);
 
-      let removeContainer = $("<div>").appendTo(productContainer);
+      let removeContainer = $("<div>").addClass("removeInfo").appendTo(productContainer);
 
       let buttonRemoveItems = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer).html("ta bort").on("click", function() {
         handelclickRemoveItems(i)

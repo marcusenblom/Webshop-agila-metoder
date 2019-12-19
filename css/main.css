@@ -314,7 +314,6 @@
         width: 100%; }
 
 footer {
-  margin-top: 200px;
   border-top: 1px solid rgba(128, 128, 128, 0.2);
   padding: 40px;
   height: auto;
@@ -475,8 +474,17 @@ footer {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 12%;
       height: 60px; }
+    #checkoutProductSection #checkout_container_subheading #myProducts {
+      width: 60%; }
+      #checkoutProductSection #checkout_container_subheading #myProducts span {
+        width: 100%;
+        text-align: left;
+        padding-left: 20px; }
+    #checkoutProductSection #checkout_container_subheading #quantity {
+      width: 30%; }
+    #checkoutProductSection #checkout_container_subheading #remove {
+      width: 10%; }
   #checkoutProductSection #checkout_container_cart {
     background-color: white;
     width: 80%; }
@@ -489,35 +497,49 @@ footer {
       #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer {
         width: 100%;
         height: 200px;
+        margin-bottom: 30px;
         display: flex;
         flex-direction: row;
         justify-content: space-between; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div {
-          width: 33%;
           display: flex;
           justify-content: center;
           align-items: center; }
-          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer div .removeImage {
-            height: 10%; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info {
           display: flex;
+          width: 60%;
           height: inherit;
-          flex-direction: row; }
+          flex-direction: row;
+          justify-content: flex-start; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-image {
-            width: 50%;
-            height: inherit; }
+            height: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px; }
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-image .cartImage {
-              width: 60%; }
+              height: 90%; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name {
             height: inherit;
-            width: 50%;
             display: flex;
+            justify-content: center;
+            align-items: center;
             flex-direction: row;
             flex-wrap: wrap; }
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name p {
               text-align: left;
-              padding: 10px 0;
+              height: 20%;
               width: 100%; }
+        #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
+          width: 30%; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo .totalProductAmount {
+            padding: 0 10px; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo .totalProductPrice {
+            padding: 0 0 0 50px; }
+        #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo {
+          width: 10%; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo .removeImage {
+            height: 10%; }
   #checkoutProductSection #checkout_container_sum {
     background-color: white;
     width: 80%;
@@ -535,9 +557,9 @@ footer {
       align-items: center; }
 
 #checkoutForm {
-  display: flex;
-  justify-content: center;
-  width: 80%; }
+  width: 80%;
+  background-color: white;
+  margin-bottom: 100px; }
 
 body {
   font-family: 'Slabo 27px', serif;
