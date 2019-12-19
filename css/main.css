@@ -516,7 +516,8 @@ footer {
             flex-wrap: wrap; }
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name p {
               text-align: left;
-              padding: 10px 0; }
+              padding: 10px 0;
+              width: 100%; }
   #checkoutProductSection #checkout_container_sum {
     background-color: white;
     width: 80%;
