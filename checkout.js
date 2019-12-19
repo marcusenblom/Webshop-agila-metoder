@@ -125,17 +125,18 @@ $(document).ready(function() {
     };
 
     function buttonDecreaseHandleClick(i) {
-      console.log(i);
-      let decreaseItems = currentCart[i].quantity--;
-      localStorage.setItem("cart", JSON.stringify(currentCart));
-      console.log("minka", decreaseItems);
-      checkoutSum()
-      displayCart()
+      if (currentCart[i].quantity > 1) {
+        let decreaseItems = currentCart[i].quantity--;
+        localStorage.setItem("cart", JSON.stringify(currentCart));
+
+        checkoutSum()
+        displayCart()
+      }
     };
 
     function handleClickRemoveItems(i) {
       let cartSplice = currentCart.splice(i, 1);
-      console.log("remove")
+
       localStorage.setItem("cart", JSON.stringify(currentCart));
 
       checkoutSum();
@@ -145,7 +146,6 @@ $(document).ready(function() {
     function buttonIncreaseHandleClick(i) {
 
       let increaseItems = currentCart[i].quantity++;
-      console.log("öka", increaseItems);
       localStorage.setItem("cart", JSON.stringify(currentCart));
 
       checkoutSum();
