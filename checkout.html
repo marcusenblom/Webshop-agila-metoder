@@ -72,12 +72,9 @@
       <h1>Din varukorg</h1>
     </div>
     <div id="checkout_container_subheading">
-      <div id="myProducts" class="checkout_subheading">Mina varor</div>
-      <div id="name" class="checkout_subheading">Namn</div>
-      <div id="Size" class="checkout_subheading">Storlek </div>
-      <div id="quantity" class="checkout_subheading">Antal</div>
-      <div id="checkOutPrice" class="checkout_subheading">Pris</div>
-      <div id="remove" class="checkout_subheading">Ta bort</div>
+      <div id="myProducts" class="checkout_subheading"><span>Produkter</span></div>
+      <div id="quantity" class="checkout_subheading"><span>Antal</span></div>
+      <div id="remove" class="checkout_subheading"><span>Ta bort</span></div>
     </div>
     <div id="checkout_container_cart">
       <div id="checkout_container_items">
@@ -90,25 +87,23 @@
     </div>
 
 
-  </section>
 
   <section id="checkoutForm">
-      <!--Liggger i form.js & form.scss-->
-      <div id="checkout_form_container" class="flex-container">
-        <form id="checkout_form" method="POST" action="abc.php">
-          <ul id="checkout_headings_form">
-            <li>Steg 1 av 3</li>
-            <li>Steg 2 av 3</li>
-            <li>Steg 3 av 3</li>
-          </ul>
+    <!--Liggger i form.js & form.scss-->
+    <div id="checkout_form_container">
+      <form id="checkout_form" method="POST" action="abc.php">
+        <ul id="checkout_headings_form">
+          <li>Steg 1 av 3</li>
+          <li>Steg 2 av 3</li>
+          <li>Steg 3 av 3</li>
+        </ul>
 
-          <!-- error messages -->
-          <span class="fs-error"></span>
+        <!-- error messages -->
+        <span class="fs-error"></span>
 
-          <fieldset>
-          <div>
-            <h2>Kunduppgifter</h2>
-          </div>
+        <fieldset>
+
+          <h2>Kunduppgifter</h2>
           <div class="flex-container" id="checkout_form_innercontainer">
             <form>
               <div id="form_part_1">
@@ -171,6 +166,7 @@
     </section>
   
   <!--Liggger i form.js & form.scss SLUT-->
+  </section>
 
   <footer>
 
