@@ -1,3 +1,4 @@
+
 // * {
 //     box-sizing: border-box;
 // }
@@ -8,133 +9,135 @@
   margin-top: 100px;
 
   .detail-innerbox-main {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background: white;
-    
-
-    .detail-box-Img {
       display: flex;
-      width: 50%;
-      justify-content: center;
+      flex-direction: column;
+      width: 100%;
       background: white;
-      
+      margin: 0px;
 
-      .detail-innerbox-Img {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        background: black;
-
-        img {
+      .detail-box-Img {
           display: flex;
-          width: 60%;
-          object-fit: contain;
-        }
-      }
-    }
+          width: 100%;
+          justify-content: center;
+          background: white;
+          justify-content: space-evenly;
 
-
-    .detail-innerbox2 {
-      display: flex;
-      justify-content: center;
-      background-color: white;
-
-      .detail-h3-price-radiosize-Box {
-        display: flex;
-        width: 50%;
-        background: white;
-        flex-direction: column;
-        padding: 10px;
-
-        .detail-radiosize-Box {
-          display: flex;
-          direction: row;
-          margin: 5px;
-
-          .detail-radiosize-innebox {
-            margin: 5px;
-            background: rgb(112, 112, 112);
+          .detail-innerbox-Img {
+              display: flex;
+              justify-content: center;
+              width: 70%;
+             
+             
+              
+              img {
+                  display: flex;
+                  max-width: 50%;
+                  width: 60%;
+                  object-fit: contain;
+                
+              }
+              
           }
-        }
 
-        button {
-          margin: 10px;
-          padding: 5px;
-        }
-
-        .detail-description-text {
-          display: flex;
-          flex-direction: column;
-          margin: 10px;
-          margin-bottom: 70px;
-
-        }
       }
-    }
-  }
+      .detail-innerbox2 {
+          display: flex;
+          justify-content: center;
+          background-color: white;
+
+          .detail-h3-price-radiosize-Box {
+              display: flex;
+              width: 50%;
+              background: white;
+              flex-direction: column;
+              padding: 10px;
+
+              .detail-radiosize-Box {
+                  display: flex;
+                  direction: row;
+                  margin: 5px;
+
+                  .detail-radiosize-innebox {
+                      margin: 5px;
+                    
+                  }
+              }
+                  button {
+                      margin: 10px;
+                      padding: 5px;
+                  }
+                  .detail-description-text {
+                      display: flex;
+                      flex-direction: column;
+                      margin: 10px;
+                      margin-bottom: 70px;
+
+                  }
+          }
+      }
+  }   
 }
 
 @media screen and (min-width: 600px) {
 
   .detail-box-main {
-    justify-content: center;
-    flex-direction: row;
-
-    .detail-innerbox-main {
-      margin: 10px;
+      justify-content: center;
       flex-direction: row;
+      
+      .detail-innerbox-main {
+          margin: 10px;
+          flex-direction: row;
+          .detail-box-Img {
+              background: white;
+              width: 100%;
+              margin: 10px;
 
-      .detail-box-Img {
-        background: white;
-        width: 100%;
-        margin: 10px;
+              .detail-innerbox-Img {
+                max-width: 100%;
+                min-width: 90%;
+                  img {
+                    width: 100%;
+                   
+                  }
+              }          
+          } 
+          .detail-innerbox2 {
+              justify-content: center;
+              background: white;
 
-        .detail-innerbox-Img {
-          width: 60%;
-
-          img {
-            width: 100%;
-
-          }
-        }
+              .detail-h3-price-radiosize-Box {
+                  width: 100%;
+              }
+          }   
       }
-
-      .detail-innerbox2 {
-        justify-content: center;
-        background: white;
-
-        .detail-h3-price-radiosize-Box {
-          width: 100%;
-        }
-      }
-    }
+      
   }
+
 }
 
-
 @media screen and (min-width: 1000px) {
-  .detail-box-main {
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
 
-    .detail-innerbox-main {
-    
+  .ddetail-box-main {
       justify-content: center;
+      flex-direction: row;
 
-      .detail-box-Img {
-        width: 100%;
-
-        .detail-innerbox-Img {
-          width: 50%;
-
-          img {
-            width: 50%
-          }
-        }
-      }
-    }
+      .detail-innerbox-main{
+          width: 100%;
+          justify-content: center;
+         
+       
+          .detail-box-Img {
+              width: 50%;
+              height: 400px;
+         
+              .detail-innerbox-Img {
+                  width: 50%;
+                 
+                  img {
+                    width: 50%;
+                  }
+              }
+          }   
+      }   
   }
 }
