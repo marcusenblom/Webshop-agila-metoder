@@ -336,23 +336,24 @@ footer {
     margin: 0px; }
     .detail-box2 .detail-box .detail-box-Img {
       display: flex;
-      width: 50%;
+      width: 100%;
       justify-content: center;
       background: white; }
       .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 70%;
         background: black; }
         .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-          width: 100%; }
+          max-width: 70%;
+          object-fit: contain; }
     .detail-box2 .detail-box .detail-innerbox2 {
       display: flex;
       justify-content: center;
       background-color: white; }
       .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
         display: flex;
-        width: 50%;
+        width: 70%;
         background: white;
         flex-direction: column;
         padding: 10px; }
@@ -477,7 +478,7 @@ footer {
       align-items: center;
       height: 60px; }
     #checkoutProductSection #checkout_container_subheading #myProducts {
-      width: 40%; }
+      width: 60%; }
       #checkoutProductSection #checkout_container_subheading #myProducts span {
         width: 100%;
         text-align: left;
@@ -510,7 +511,7 @@ footer {
           align-items: center; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info {
           display: flex;
-          width: 40%;
+          width: 60%;
           height: inherit;
           flex-direction: row;
           justify-content: flex-start; }
@@ -523,7 +524,6 @@ footer {
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-image .cartImage {
               height: 90%; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name {
-            height: inherit;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -531,10 +531,11 @@ footer {
             flex-wrap: wrap; }
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name p {
               text-align: left;
-              height: 20%;
-              width: 100%; }
+              width: 100%;
+              margin-bottom: 5px; }
             #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .product-info .product-info-name .cartProductName {
-              font-weight: bold; }
+              font-weight: bold;
+              margin-bottom: 60px; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
           width: 20%;
           height: inherit;
@@ -547,6 +548,8 @@ footer {
             padding: 0 0 0 50px;
             font-weight: bold;
             font-size: 0.9rem; }
+          #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo button {
+            border-radius: 10%; }
         #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo {
           width: 15%;
           height: inherit; }
@@ -593,6 +596,59 @@ footer {
         padding: 0 10px; }
       #checkoutProductSection .amountInfo .totalProductPrice {
         padding: 0 0 0 50px; } }
+
+#checkoutForm {
+  background-color: #f1f1f1;
+  width: 100%; }
+  #checkoutForm #checkout_form_container {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    margin: auto;
+    width: 80%;
+    background-color: white; }
+    #checkoutForm #checkout_form_container #checkout_form {
+      width: 90%; }
+      #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
+        list-style-type: none;
+        text-align: center; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset h2 {
+        text-align: center;
+        padding-bottom: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
+        display: flex;
+        width: 40%;
+        margin: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        justify-content: space-between; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          text-align: center;
+          display: block;
+          max-width: 100%; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
+            margin: 10px; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          text-align: center;
+          display: block;
+          max-width: 100%; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
+            margin: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
+        display: flex;
+        width: 40%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: flex-end; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
+          margin-bottom: 10px; }
 
 body {
   font-family: 'Slabo 27px', serif;

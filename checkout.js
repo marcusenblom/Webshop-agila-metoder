@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   // Öppnar upp/stänger menyn (accordion)
 
-  $(".menu-toggle").click(function () {
+  $(".menu-toggle").click(function() {
     if ($(".menu").hasClass("menu-hide")) {
       $(".menu").removeClass("menu-hide");
       $(".menu").addClass("menu-show");
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
   });
   // Stänger menyn samt skickar filter till localStorage
-  $(".filter-button").on("click", function () {
+  $(".filter-button").on("click", function() {
     $(".menu").addClass("menu-hide");
     $(".menu").removeClass("menu-show");
     $(".menu-toggle-container").css("border-bottom", "0");
@@ -27,13 +27,13 @@ $(document).ready(function() {
     window.open("index.html", "_self");
   });
   // Skickar användaren till index-html och sätter filter till 0
-  $(".home").on("click", function () {
+  $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
     window.open("index.html", "_self");
   });
 
   // Öppnar och stänger favorites
-  $(".favorites-toggle").click(function () {
+  $(".favorites-toggle").click(function() {
     if ($(".favorites").hasClass("favorites-hide")) {
       $(".favorites").removeClass("favorites-hide");
       $(".favorites").addClass("favorites-show");
@@ -54,7 +54,7 @@ $(document).ready(function() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
     let sumQuantity;
     let sumPrice;
-    let  TotalSumDisplay= $("#checkout_sum")
+    let TotalSumDisplay = $("#checkout_sum")
     let totalAmount = 0;
     for (let i = 0; i < currentCart.length; ++i) {
 
@@ -111,20 +111,21 @@ $(document).ready(function() {
 
       let name = $("<p>").addClass("cartProductName").html(currentCart[i].title).appendTo(nameDiv);
 
-      let sizeContainer = $("<p>").html("Storlek: " + "<b>" + currentCart[i].size + "</b>").appendTo(nameDiv);
+      let sizeContainer = $("<p>").addClass("cartProductSize").html("Storlek: " + "<b>" + currentCart[i].size + "</b>").appendTo(nameDiv);
+
+      let priceContainer = $("<p>").addClass("totalProductPrice").html(currentCart[i].price + " SEK").appendTo(nameDiv);
 
       let amountContainer = $("<div>").addClass("amountInfo").appendTo(productContainer);
-      let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function () {
-        buttonIncreaseHandelclick(i)
+
+      let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function() {
+        buttonDecreaseHandelclick(i)
       })
 
       let amountDiv = $("<div>").addClass("totalProductAmount").html(currentCart[i].quantity).appendTo(amountContainer);
 
-      let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function () {
-        buttonDecreaseHandelclick(i)
+      let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function() {
+        buttonIncreaseHandelclick(i)
       })
-
-      let priceContainer = $("<div>").addClass("totalProductPrice").html(currentCart[i].price + " SEK").appendTo(amountContainer);
 
       let removeContainer = $("<div>").addClass("removeInfo").appendTo(productContainer);
 
@@ -138,7 +139,7 @@ $(document).ready(function() {
       console.log(i);
       let DecreaseItemes = currentCart[i].quantity--;
       localStorage.setItem("cart", JSON.stringify(currentCart));
-      console.log("öka", DecreaseItemes);
+      console.log("minka", DecreaseItemes);
       checkoutSum()
       displayCart()
     };
