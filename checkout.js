@@ -52,28 +52,16 @@ $(document).ready(function() {
 
   function checkoutSum() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-    let sumQuantity= 0;
-    let sumPrice = 0;
-    let  TotalSumDisplay= $("#checkout_sum")
-    let totalAmount = 0;
-    for (let i = 0; i < currentCart.length; i++) {
-       // console.log("mina " , currentCart[i].price)
-      sumQuantity +=currentCart[i].quantity
-      sumPrice +=currentCart[i].price
-      console.log(sumPrice, sumQuantity)
-      totalAmount = sumPrice* sumQuantity
+    let totalSumDiv = $("#checkout_sum");
+    let totalSumToDisplay = 0;
 
-      console.log("mina " +totalAmount)
-      TotalSumDisplay.html(totalAmount);
+    for (let i = 0; i < currentCart.length; i++) {
+
+      let objectsTotalPrice = currentCart[i].quantity * currentCart[i].price;
+      totalSumToDisplay += objectsTotalPrice;
 
     };
-
-    console.log(totalAmount + "test")
-    localStorage.setItem("cart", JSON.stringify(currentCart));
-
-    //lägg till quantity gör en eles if som kontrollera om finns fler quantity  om finns sätt ihop priet
-    displayCart()
-
+    totalSumDiv.html(totalSumToDisplay);
   };
   checkoutSum();
 
@@ -119,33 +107,33 @@ $(document).ready(function() {
       let amountContainer = $("<div>").addClass("amountInfo").appendTo(productContainer);
 
       let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function() {
-        buttonDecreaseHandelclick(i)
+        buttonDecreaseHandleClick(i)
       })
 
       let amountDiv = $("<div>").addClass("totalProductAmount").html(currentCart[i].quantity).appendTo(amountContainer);
 
       let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function() {
-        buttonIncreaseHandelclick(i)
+        buttonIncreaseHandleClick(i)
       })
 
       let removeContainer = $("<div>").addClass("removeInfo").appendTo(productContainer);
 
       let buttonRemoveItems = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer).html("ta bort").on("click", function() {
-        handelclickRemoveItems(i)
+        handleClickRemoveItems(i);
       });
 
     };
 
-    function buttonDecreaseHandelclick(i) {
+    function buttonDecreaseHandleClick(i) {
       console.log(i);
-      let DecreaseItemes = currentCart[i].quantity--;
+      let decreaseItems = currentCart[i].quantity--;
       localStorage.setItem("cart", JSON.stringify(currentCart));
-      console.log("minka", DecreaseItemes);
+      console.log("minka", decreaseItems);
       checkoutSum()
       displayCart()
     };
 
-    function handelclickRemoveItems(i) {
+    function handleClickRemoveItems(i) {
       let cartSplice = currentCart.splice(i, 1);
       console.log("remove")
       localStorage.setItem("cart", JSON.stringify(currentCart));
@@ -154,10 +142,10 @@ $(document).ready(function() {
       displayCart();
     }
 
-    function buttonIncreaseHandelclick(i) {
+    function buttonIncreaseHandleClick(i) {
 
-      let IncreaseItemes = currentCart[i].quantity++;
-      console.log("öka", IncreaseItemes);
+      let increaseItems = currentCart[i].quantity++;
+      console.log("öka", increaseItems);
       localStorage.setItem("cart", JSON.stringify(currentCart));
 
       checkoutSum();
