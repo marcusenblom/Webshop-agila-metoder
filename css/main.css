@@ -661,7 +661,7 @@ footer div {
 
 .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
   margin: 5px;
-  background: black;
+  background: #707070;
 }
 
 .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box button {
@@ -681,7 +681,7 @@ footer div {
   margin-bottom: 70px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .detail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -700,11 +700,11 @@ footer div {
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img {
     background: white;
-    width: 70%;
+    width: 100%;
     margin: 10px;
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
-    width: 50%;
+    width: 60%;
   }
   .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
     width: 100%;
@@ -729,15 +729,15 @@ footer div {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 50%;
   }
   .ddetail-box-main .detail-innerbox-main {
-    width: 50%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
   .ddetail-box-main .detail-innerbox-main .detail-box-Img {
-    width: 50%;
+    width: 100%;
   }
   .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
     width: 50%;
