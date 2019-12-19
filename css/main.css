@@ -332,26 +332,48 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background: white;
-    margin: 0; }
+    background: white; }
     .detail-box-main .detail-innerbox-main .detail-box-Img {
       display: flex;
-      width: 100%;
+      width: 50%;
       justify-content: center;
-      background: white;
-      justify-content: space-evenly; }
+      background: white; }
       .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 70%;
+        width: 100%;
         background: black; }
         .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
           display: flex;
-          max-width: 50%;
           width: 60%;
           object-fit: contain; }
+    .detail-box-main .detail-innerbox-main .detail-innerbox2 {
+      display: flex;
+      justify-content: center;
+      background-color: white; }
+      .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box {
+        display: flex;
+        width: 50%;
+        background: white;
+        flex-direction: column;
+        padding: 10px; }
+        .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box {
+          display: flex;
+          direction: row;
+          margin: 5px; }
+          .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
+            margin: 5px;
+            background: black; }
+        .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box button {
+          margin: 10px;
+          padding: 5px; }
+        .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
+          display: flex;
+          flex-direction: column;
+          margin: 10px;
+          margin-bottom: 70px; }
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   .detail-box-main {
     justify-content: center;
     flex-direction: row; }
@@ -360,13 +382,12 @@ footer {
       flex-direction: row; }
       .detail-box-main .detail-innerbox-main .detail-box-Img {
         background: white;
-        width: 100%;
+        width: 70%;
         margin: 10px; }
         .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
-          width: 100%; }
+          width: 50%; }
           .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
-            width: 100%;
-            max-width: 50%; }
+            width: 100%; }
       .detail-box-main .detail-innerbox-main .detail-innerbox2 {
         justify-content: center;
         background: white; }
@@ -374,20 +395,18 @@ footer {
           width: 100%; } }
 
 @media screen and (min-width: 1000px) {
-  .detail-box2 {
-    justify-content: center; }
-    .detail-box2 .ddetail-box-main {
-      justify-content: center;
-      flex-direction: row; }
-      .detail-box2 .ddetail-box-main .detail-innerbox-main {
-        width: 100%;
-        justify-content: center; }
-        .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img {
+  .ddetail-box-main {
+    justify-content: center;
+    flex-direction: column; }
+    .ddetail-box-main .detail-innerbox-main {
+      width: 50%;
+      justify-content: center; }
+      .ddetail-box-main .detail-innerbox-main .detail-box-Img {
+        width: 50%; }
+        .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
           width: 50%; }
-          .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
-            width: 50%; }
-            .detail-box2 .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
-              width: 10%; } }
+          .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
+            width: 50%; } }
 
 #navbar .favorites-show {
   width: 300px; }
@@ -639,7 +658,10 @@ footer {
         text-decoration: underline; }
 
 #confirmation_wrapper {
-  width: 80%; }
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin: auto;
+  width: 80%;
+  background-color: white; }
 
 body {
   font-family: 'Slabo 27px', serif;
