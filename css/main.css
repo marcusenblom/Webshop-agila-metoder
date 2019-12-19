@@ -686,112 +686,70 @@ footer div {
   margin-bottom: 70px;
 }
 
-@media screen and (min-width: 600px) {
-  .detail-box2 {
+@media screen and (min-width: 700px) {
+  .detail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .detail-box2 .detail-box {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin: 10px;
   }
-  .detail-box2 .detail-box .detail-box-Img {
+  .detail-box-main .detail-innerbox-main {
+    margin: 10px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .detail-box-main .detail-innerbox-main .detail-box-Img {
     background: white;
     width: 100%;
     margin: 10px;
   }
-  .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
+  .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
     width: 100%;
   }
-  .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-    min-width: 80%;
+  .detail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
+    width: 100%;
+    max-width: 50%;
   }
-  .detail-box2 .detail-box .detail-innerbox2 {
+  .detail-box-main .detail-innerbox-main .detail-innerbox2 {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     background: white;
-    margin: 0px; }
-    .detail-box2 .detail-box .detail-box-Img {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      background: white; }
-      .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
-        display: flex;
-        justify-content: center;
-        width: 70%;
-        background: black; }
-        .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-          max-width: 70%;
-          object-fit: contain; }
-    .detail-box2 .detail-box .detail-innerbox2 {
-      display: flex;
-      justify-content: center;
-      background-color: white; }
-      .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
-        display: flex;
-        width: 70%;
-        background: white;
-        flex-direction: column;
-        padding: 10px; }
-        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box {
-          display: flex;
-          direction: row;
-          margin: 5px; }
-          .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
-            margin: 5px; }
-        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box button {
-          margin: 5px;
-          padding: 5px; }
-        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
-          display: flex;
-          flex-direction: column; }
-
-@media screen and (min-width: 800px) {
-  .detail-box2 {
-    justify-content: center; }
-    .detail-box2 .detail-box {
-      flex-direction: row;
-      margin: 10px; }
-      .detail-box2 .detail-box .detail-box-Img {
-        background: white;
-        width: 100%;
-        margin: 10px; }
-        .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
-          width: 100%; }
-          .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-            min-width: 80%; }
-      .detail-box2 .detail-box .detail-innerbox2 {
-        justify-content: center;
-        background: white; }
-        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
-          width: 70%; } }
+  }
+  .detail-box-main .detail-innerbox-main .detail-innerbox2 .detail-h3-price-radiosize-Box {
+    width: 100%;
+  }
+}
 
 @media screen and (min-width: 1000px) {
-  .detail-box2 {
+  .ddetail-box-main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  .detail-box2 .detail-box {
+  .ddetail-box-main .detail-innerbox-main {
     width: 100%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .detail-box2 .detail-box .detail-box-Img {
-    width: 40%;
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img {
+    width: 50%;
   }
-  .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
-    width: 100%;
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img {
+    width: 50%;
   }
-  .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-    max-width: 30%;
+  .ddetail-box-main .detail-innerbox-main .detail-box-Img .detail-innerbox-Img img {
+    width: 10%;
   }
 }
 
@@ -1177,56 +1135,111 @@ footer div {
 
 #checkoutForm {
   background-color: #f1f1f1;
-  width: 100%; }
-  #checkoutForm #checkout_form_container {
-    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
-    margin: auto;
-    width: 80%;
-    background-color: white; }
-    #checkoutForm #checkout_form_container #checkout_form {
-      width: 90%; }
-      #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
-        list-style-type: none;
-        text-align: center; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset h2 {
-        text-align: center;
-        padding-bottom: 10px; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
-        display: flex;
-        width: 40%;
-        margin: auto;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-flow: row wrap;
-        justify-content: space-between; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
-          display: flex;
+  width: 100%;
+}
+
+#checkoutForm #checkout_form_container {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  margin: auto;
+  width: 80%;
+  background-color: white;
+}
+
+#checkoutForm #checkout_form_container #checkout_form {
+  width: 90%;
+}
+
+#checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
+  list-style-type: none;
+  text-align: center;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset h2 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
           flex-direction: column;
-          flex-wrap: wrap;
-          text-align: center;
-          display: block;
-          max-width: 100%; }
-          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
-            margin: 10px; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
-          display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  display: block;
+  max-width: 100%;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
+  margin: 10px;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
           flex-direction: column;
-          flex-wrap: wrap;
-          text-align: center;
-          display: block;
-          max-width: 100%; }
-          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
-            margin: 10px; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
-        display: flex;
-        width: 40%;
-        margin: auto;
-        flex-direction: row;
-        justify-content: flex-end; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
-          margin-bottom: 10px; }
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  display: block;
+  max-width: 100%;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
+  margin: 10px;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40%;
+  margin: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
+  margin-bottom: 10px;
+}
 
 body {
   font-family: 'Slabo 27px', serif;

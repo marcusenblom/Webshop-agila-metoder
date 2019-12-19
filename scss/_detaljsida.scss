@@ -78,7 +78,7 @@
     }   
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
 
     .detail-box-main {
         justify-content: center;
@@ -86,10 +86,9 @@
         
         .detail-innerbox-main {
             margin: 10px;
-
+            flex-direction: row;
             .detail-box-Img {
                 background: white;
-                flex-direction: row;
                 width: 100%;
                 margin: 10px;
 
@@ -97,7 +96,8 @@
                     width: 100%;
                     
                     img {
-                        min-width: 80%;
+                      width: 100%;
+                     max-width: 50%;
                     }
                 }          
             } 
@@ -106,7 +106,7 @@
                 background: white;
 
                 .detail-h3-price-radiosize-Box {
-                    width: 70%;
+                    width: 100%;
                 }
             }   
         }
@@ -119,19 +119,20 @@
 
     .ddetail-box-main {
         justify-content: center;
+        flex-direction: row;
 
         .detail-innerbox-main{
             width: 100%;
             justify-content: center;
-            flex-direction: row;
+           
          
             .detail-box-Img {
-                width: 40%;
+                width: 50%;
            
                 .detail-innerbox-Img {
-                    width: 100%;
+                    width: 50%;
                     img {
-                        max-width: 30%;
+                        width: 10%;
                     }
                 }
             }   
