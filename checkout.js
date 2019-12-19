@@ -93,13 +93,13 @@ $(document).ready(function() {
 
   function displayCart() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-   
-    
-    let idcheckoutcontaineritems=$("#checkout_container_items")
+
+
+    let idcheckoutcontaineritems = $("#checkout_container_items")
     $("#checkout_container_items").html(" ");
     for (let i = 0; i < currentCart.length; i++) {
       let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(idcheckoutcontaineritems));
-     
+
       let imageDiv = $("<div>").appendTo(productContainer);
       let imgSrc = currentCart[i].src;
       let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
@@ -110,18 +110,22 @@ $(document).ready(function() {
 
       let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
 
+      let buttonDecrease = $("<button>").html("-").appendTo(amountContainer).on("click", function() {
+        buttonDecreaseHandelclick(i)
+      });
+
+      let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function() {
+        buttonIncreaseHandelclick(i)
+      });
+
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(productContainer);
+
       let removeContainer = $("<div>").appendTo(productContainer);
 
-      let buttonDecrease = $("<button>").html("-").appendTo(removeContainer).on("click", function () {buttonDecreaseHandelclick(i)})
-  
-      let buttonIncrease= $("<button>").appendTo(removeContainer).html("+").on("click", function (){ buttonIncreaseHandelclick(i)})
-     
-      let buttonRemoveItems=$("<button>").appendTo(removeContainer).html("ta bort").on("click",function(){ handelclickRemoveItems(i)})
-      
-      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(removeContainer);
+      let buttonRemoveItems = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer).html("ta bort").on("click", function() {
+        handelclickRemoveItems(i)
+      });
 
-      let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
-     
     }
 
 
@@ -145,39 +149,39 @@ $(document).ready(function() {
     //     console.log(sum,"test")
     //   }
     //   displayCart()
-    
+
     // }
-  
-     function buttonDecreaseHandelclick(i){
-          console.log(i);
-         let DecreaseItemes=currentCart[i].quantity--;
-          localStorage.setItem("cart", JSON.stringify(currentCart));
-          console.log("öka",DecreaseItemes);
-          // checkoutSum()
-          displayCart()
-        }
-      
-  
-    function handelclickRemoveItems(i){
-        let cartSplice=currentCart.splice(i,1);
-        console.log("remove")
-        localStorage.setItem("cart", JSON.stringify(currentCart));
-        // checkoutSum()
-        displayCart()
-       }
-      
+
+    function buttonDecreaseHandelclick(i) {
+      console.log(i);
+      let DecreaseItemes = currentCart[i].quantity--;
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+      console.log("öka", DecreaseItemes);
+      // checkoutSum()
+      displayCart()
+    }
+
+
+    function handelclickRemoveItems(i) {
+      let cartSplice = currentCart.splice(i, 1);
+      console.log("remove")
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+      // checkoutSum()
+      displayCart()
+    }
 
 
 
-function buttonIncreaseHandelclick(i){
- 
-  let IncreaseItemes=currentCart[i].quantity++;
-  console.log("öka",IncreaseItemes);
-  localStorage.setItem("cart", JSON.stringify(currentCart));
-  // checkoutSum()
-  displayCart()
-}
+
+    function buttonIncreaseHandelclick(i) {
+
+      let IncreaseItemes = currentCart[i].quantity++;
+      console.log("öka", IncreaseItemes);
+      localStorage.setItem("cart", JSON.stringify(currentCart));
+      // checkoutSum()
+      displayCart()
+    }
   }
-    displayCart()
-    // checkoutSum()
+  displayCart()
+  // checkoutSum()
 });
