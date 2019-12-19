@@ -1,152 +1,130 @@
-
 // * {
 //     box-sizing: border-box;
 // }
 
 .detail-box-main {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+  .detail-innerbox-main {
     display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    margin: 0;
 
-    .detail-innerbox-main {
+    .detail-box-Img {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      background: white;
+      justify-content: space-evenly;
+
+      .detail-innerbox-Img {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        background: white;
-        margin: 0px;
+        justify-content: center;
+        width: 70%;
+        background: black;
 
-        .detail-box-Img {
-            display: flex;
-            width: 100%;
-            justify-content: center;
-            background: white;
-            justify-content: space-evenly;
-
-            .detail-innerbox-Img {
-                display: flex;
-                justify-content: center;
-                width: 70%;
-                background: black;
-<<<<<<< HEAD
-
-
-=======
-               
-                
->>>>>>> ecd00a9a839484efb194d43fc1986c6f7936ded2
-                img {
-                    display: flex;
-                    max-width: 50%;
-                    width: 60%;
-                    object-fit: contain;
-<<<<<<< HEAD
-
-                }
-
-            }
-
-=======
-                  
-                }
-                
-            }
-
->>>>>>> ecd00a9a839484efb194d43fc1986c6f7936ded2
+        img {
+          display: flex;
+          max-width: 50%;
+          width: 60%;
+          object-fit: contain;
         }
-        .detail-innerbox2 {
-            display: flex;
-            justify-content: center;
-            background-color: white;
-
-            .detail-h3-price-radiosize-Box {
-                display: flex;
-                width: 70%;
-                background: white;
-                flex-direction: column;
-                padding: 10px;
-
-                .detail-radiosize-Box {
-                    display: flex;
-                    direction: row;
-                    margin: 5px;
-
-                    .detail-radiosize-innebox {
-                        margin: 5px;
-                        background:black;
-                    }
-                }
-                    button {
-                        margin: 10px;
-                        padding: 5px;
-                    }
-                    .detail-description-text {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 10px;
-                        margin-bottom: 70px;
-
-                    }
-            }
-        }
+      }
     }
+  }
 }
 
+.detail-innerbox2 {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+
+  .detail-h3-price-radiosize-Box {
+    display: flex;
+    width: 70%;
+    background: white;
+    flex-direction: column;
+    padding: 10px;
+
+    .detail-radiosize-Box {
+      display: flex;
+      direction: row;
+      margin: 5px;
+
+      .detail-radiosize-innebox {
+        margin: 5px;
+        background: black;
+      }
+    }
+
+    button {
+      margin: 10px;
+      padding: 5px;
+    }
+
+    .detail-description-text {
+      display: flex;
+      flex-direction: column;
+      margin: 10px 10px 70px;
+    }
+  }
+}
 @media screen and (min-width: 600px) {
+  .detail-box2 {
+    justify-content: center;
 
-    .detail-box2 {
-        justify-content: center;
+    .detail-box {
+      flex-direction: row;
+      margin: 10px;
 
-        .detail-box {
-            flex-direction: row;
-            margin: 10px;
+      .detail-box-Img {
+        background: white;
+        width: 100%;
+        margin: 10px;
 
-            .detail-box-Img {
-                background: white;
-                width: 100%;
-                margin: 10px;
+        .detail-innerbox-Img {
+          width: 100%;
 
-                .detail-innerbox-Img {
-                    width: 100%;
-
-                    img {
-                        min-width: 80%;
-                    }
-                }
-            }
-            .detail-innerbox2 {
-                justify-content: center;
-                background: white;
-
-                .detail-h3-price-radiosize-Box {
-                    width: 70%;
-                }
-            }
+          img {
+            min-width: 80%;
+          }
         }
+      }
 
+      .detail-innerbox2 {
+        justify-content: center;
+        background: white;
+
+        .detail-h3-price-radiosize-Box {
+          width: 70%;
+        }
+      }
     }
-
+  }
 }
-
 @media screen and (min-width: 1000px) {
+  .detail-box2 {
+    justify-content: center;
 
-    .detail-box2 {
-        justify-content: center;
+    .detail-box {
+      width: 100%;
+      justify-content: center;
+      // flex-direction: row;
+      .detail-box-Img {
+        width: 40%;
 
-        .detail-box {
-            width: 100%;
-            justify-content: center;
-            // flex-direction: row;
+        .detail-innerbox-Img {
+          width: 100%;
 
-            .detail-box-Img {
-                width: 40%;
-
-                .detail-innerbox-Img {
-                    width: 100%;
-                    img {
-                        max-width: 30%;
-                    }
-                }
-            }
+          img {
+            max-width: 30%;
+          }
         }
+      }
     }
+  }
 }
