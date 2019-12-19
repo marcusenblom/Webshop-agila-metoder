@@ -715,11 +715,62 @@ footer div {
         -ms-flex-pack: center;
             justify-content: center;
     background: white;
-  }
-  .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
-    width: 70%;
-  }
-}
+    margin: 0px; }
+    .detail-box2 .detail-box .detail-box-Img {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      background: white; }
+      .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
+        display: flex;
+        justify-content: center;
+        width: 70%;
+        background: black; }
+        .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
+          max-width: 70%;
+          object-fit: contain; }
+    .detail-box2 .detail-box .detail-innerbox2 {
+      display: flex;
+      justify-content: center;
+      background-color: white; }
+      .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
+        display: flex;
+        width: 70%;
+        background: white;
+        flex-direction: column;
+        padding: 10px; }
+        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box {
+          display: flex;
+          direction: row;
+          margin: 5px; }
+          .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-radiosize-Box .detail-radiosize-innebox {
+            margin: 5px; }
+        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box button {
+          margin: 5px;
+          padding: 5px; }
+        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box .detail-description-text {
+          display: flex;
+          flex-direction: column; }
+
+@media screen and (min-width: 800px) {
+  .detail-box2 {
+    justify-content: center; }
+    .detail-box2 .detail-box {
+      flex-direction: row;
+      margin: 10px; }
+      .detail-box2 .detail-box .detail-box-Img {
+        background: white;
+        width: 100%;
+        margin: 10px; }
+        .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
+          width: 100%; }
+          .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
+            min-width: 80%; }
+      .detail-box2 .detail-box .detail-innerbox2 {
+        justify-content: center;
+        background: white; }
+        .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
+          width: 70%; } }
 
 @media screen and (min-width: 1000px) {
   .detail-box2 {
@@ -1123,6 +1174,59 @@ footer div {
     padding: 0 0 0 50px;
   }
 }
+
+#checkoutForm {
+  background-color: #f1f1f1;
+  width: 100%; }
+  #checkoutForm #checkout_form_container {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    margin: auto;
+    width: 80%;
+    background-color: white; }
+    #checkoutForm #checkout_form_container #checkout_form {
+      width: 90%; }
+      #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
+        list-style-type: none;
+        text-align: center; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset h2 {
+        text-align: center;
+        padding-bottom: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
+        display: flex;
+        width: 40%;
+        margin: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+        justify-content: space-between; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          text-align: center;
+          display: block;
+          max-width: 100%; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
+            margin: 10px; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          text-align: center;
+          display: block;
+          max-width: 100%; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
+            margin: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
+        display: flex;
+        width: 40%;
+        margin: auto;
+        flex-direction: row;
+        justify-content: flex-end; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
+          margin-bottom: 10px; }
 
 body {
   font-family: 'Slabo 27px', serif;
