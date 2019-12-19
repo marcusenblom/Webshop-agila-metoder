@@ -52,17 +52,18 @@ $(document).ready(function() {
 
   function checkoutSum() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
-    let sumQuantity;
-    let sumPrice;
-    let TotalSumDisplay = $("#checkout_sum")
+    let sumQuantity= 0;
+    let sumPrice = 0;
+    let  TotalSumDisplay= $("#checkout_sum")
     let totalAmount = 0;
-    for (let i = 0; i < currentCart.length; ++i) {
-
-      sumQuantity = +currentCart[i].quantity
-      sumPrice = +currentCart[i].price
+    for (let i = 0; i < currentCart.length; i++) {
+       // console.log("mina " , currentCart[i].price)
+      sumQuantity +=currentCart[i].quantity
+      sumPrice +=currentCart[i].price
       console.log(sumPrice, sumQuantity)
-      totalAmount = sumPrice * sumQuantity
-      console.log(totalAmount)
+      totalAmount = sumPrice* sumQuantity
+
+      console.log("mina " +totalAmount)
       TotalSumDisplay.html(totalAmount);
 
     };
