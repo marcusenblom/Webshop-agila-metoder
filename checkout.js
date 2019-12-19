@@ -109,9 +109,9 @@ $(document).ready(function() {
 
       let nameDiv = $("<div>").addClass("product-info-name").appendTo(productInfoContainer);
 
-      let name = $("<p>").html(currentCart[i].title).appendTo(nameDiv);
+      let name = $("<p>").addClass("cartProductName").html(currentCart[i].title).appendTo(nameDiv);
 
-      let sizeContainer = $("<p>").html(currentCart[i].size).appendTo(nameDiv);
+      let sizeContainer = $("<p>").html("Storlek: " + "<b>" + currentCart[i].size + "</b>").appendTo(nameDiv);
 
       let amountContainer = $("<div>").addClass("amountInfo").appendTo(productContainer);
       let buttonIncrease = $("<button>").appendTo(amountContainer).html("+").on("click", function () {
