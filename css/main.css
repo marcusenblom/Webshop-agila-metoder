@@ -325,9 +325,6 @@ footer {
     width: 40%;
     text-align: center; }
 
-* {
-  box-sizing: border-box; }
-
 .detail-box2 {
   display: flex;
   justify-content: center;
@@ -346,10 +343,10 @@ footer {
       .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 50%;
+        width: 100%;
         background: black; }
-      .detail-box2 .detail-box .detail-box-Img img {
-        width: 50%; }
+        .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
+          width: 100%; }
     .detail-box2 .detail-box .detail-innerbox2 {
       display: flex;
       justify-content: center;
