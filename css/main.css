@@ -336,23 +336,24 @@ footer {
     margin: 0px; }
     .detail-box2 .detail-box .detail-box-Img {
       display: flex;
-      width: 50%;
+      width: 100%;
       justify-content: center;
       background: white; }
       .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img {
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 70%;
         background: black; }
         .detail-box2 .detail-box .detail-box-Img .detail-innerbox-Img img {
-          width: 100%; }
+          max-width: 70%;
+          object-fit: contain; }
     .detail-box2 .detail-box .detail-innerbox2 {
       display: flex;
       justify-content: center;
       background-color: white; }
       .detail-box2 .detail-box .detail-innerbox2 .detail-h3-price-radiosize-Box {
         display: flex;
-        width: 50%;
+        width: 70%;
         background: white;
         flex-direction: column;
         padding: 10px; }
