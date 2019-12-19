@@ -1,5 +1,5 @@
-$(document).ready(function () {
-  //hej
+$(document).ready(function() {
+
   // Öppnar upp/stänger menyn (accordion)
 
   $(".menu-toggle").click(function () {
@@ -92,31 +92,6 @@ $(document).ready(function () {
     $(".badge").html(totalAmount);
   };
   counter();
-  /*
-  cart = JSON.parse(localStorage.getItem("cart")) || [];
-  function cartlist(){
-
-
-  let items_div = $("#checkout_container_items");
-    items_div.html('');
-  for (let p = 0; p < cart.length; p++) {
-    console.log(cart[p]);
-
-    let tagDiv = $("<div>").append($("<h4>").html(cart[p].title))
-    //Helena
-    // let imgSrc4 = currentCartItems[i].src4;
-    // imgSrc4 = cart.src;
-    // let cartImg = $("<img>").attr("src", imgSrc4);
-
-    //Helena
-
-    let spanPrice = $("<span>").html(cart[p].price)
-    let spanSize = $("<span>").html(cart[p].size)
-    let spanQuantity= $("<span>").html(cart[p].quantity)
-
-    items_div.append(tagDiv).addClass("divClass")
-}
-*/
 
   function displayCart() {
     let currentCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -126,13 +101,17 @@ $(document).ready(function () {
     for (let i = 0; i < currentCart.length; i++) {
       let productContainer = $("<div>").addClass("mainCartContainer").appendTo($(idcheckoutcontaineritems));
 
-      let imageDiv = $("<div>").appendTo(productContainer);
+      let productInfoContainer = $("<div>").addClass("product-info").appendTo(productContainer);
+
+      let imageDiv = $("<div>").addClass("product-info-image").appendTo(productInfoContainer);
       let imgSrc = currentCart[i].src;
       let image = $("<img>").addClass("cartImage").attr("src", imgSrc).appendTo(imageDiv);
 
-      let nameContainer = $("<div>").html(currentCart[i].title).appendTo(productContainer);
+      let nameDiv = $("<div>").addClass("product-info-name").appendTo(productInfoContainer);
 
-      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(productContainer);
+      let name = $("<div>").html(currentCart[i].title).appendTo(nameDiv);
+
+      let sizeContainer = $("<div>").html(currentCart[i].size).appendTo(nameDiv);
 
       let amountContainer = $("<div>").html(currentCart[i].quantity).appendTo(productContainer);
 
@@ -146,16 +125,13 @@ $(document).ready(function () {
         buttonIncreaseHandelclick(i)
       })
 
-      let buttonRemoveItems = $("<button>").appendTo(removeContainer).html("ta bort").on("click", function () {
-        handelclickRemoveItems(i)
-      })
+      let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(amountContainer);
 
       let priceContainer = $("<div>").html(currentCart[i].price + " SEK").appendTo(removeContainer);
 
       let removeImg = $("<img>").addClass("removeImage").attr("src", "images/remove.png").appendTo(removeContainer);
 
     };
-
 
 
 
