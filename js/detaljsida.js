@@ -22,12 +22,12 @@ $(document).ready(function() {
 
     let newFilter = this.id;
     localStorage.setItem("filter", newFilter);
-    window.open("index.html", "_self");
+    window.open("../index.html", "_self");
   });
   // Skickar användaren till index-html och sätter filter till 0
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
-    window.open("index.html", "_self");
+    window.open("../index.html", "_self");
   });
 
   // Öppnar och stänger favorites
@@ -71,7 +71,7 @@ $(document).ready(function() {
   $("#h3").html(detailProduct.title)
   $("#detail-description").html(detailProduct.description)
   $("#spaan").html(detailProduct.price)
-  imgSrc3 = detailProduct.src;
+  imgSrc3 = "../" + detailProduct.src;
   let detailImg = $("<img>").attr("src", imgSrc3);
   $("#id-detail-innerbox-Img").append(detailImg);
 

@@ -1,19 +1,19 @@
-$(document).ready(function() {		//Rätt fil 
-	   
+$(document).ready(function() {		//Rätt fil
+
 	let pLink = document.getElementById("terms_and_conditions");     	//Öppna terms and conditions
     pLink.addEventListener("click", function(){
 
-		window.open("termsandconditions.html");
-		
+		window.open("../html/termsandconditions.html");
+
     });
 	//funkar
 	$(".next").click(function(agree) {								//Nextknappen för kunduppgifter
 	  var current_index = $(this).parent().index("fieldset");
-	  
+
 	  let validateSuccess = validateStep(current_index);
 	  console.log("Validering: ", validateSuccess);
-	  if(validateSuccess){						
-		  makeStepActive(current_index+1);		
+	  if(validateSuccess){
+		  makeStepActive(current_index+1);
 	  }else{
 		  agree.preventDefault();
 	  }
@@ -21,11 +21,11 @@ $(document).ready(function() {		//Rätt fil
 	//funkar
 
 	  //orginal radio
-	  $(".next2").click(function(agree) {								//Nextknappen för input radiobutton 
+	  $(".next2").click(function(agree) {								//Nextknappen för input radiobutton
 		var current_index = $(this).parent().index("fieldset");
-  
-		if(validateStep(current_index)){			
-			makeStepActive(current_index+1);		
+
+		if(validateStep(current_index)){
+			makeStepActive(current_index+1);
 		}else{
 			agree.preventDefault();
 		}
@@ -33,28 +33,28 @@ $(document).ready(function() {		//Rätt fil
 	  //orginal
 
 	  //funkar
-	$(".confirm").click(function(agree) {								//Slutför köp knappen 
+	$(".confirm").click(function(agree) {								//Slutför köp knappen
 		var current_index = $(this).parent().index("fieldset");
-		
+
 		let validateSuccess = validateStep(current_index);
 		console.log("Validering: ", validateSuccess);
-		if(validateSuccess){							
-			makeStepActive(current_index + 1);				
+		if(validateSuccess){
+			makeStepActive(current_index + 1);
 		}else{
 			agree.preventDefault();
 		}
 	  });
 	  //funkar
-	
+
 	//funkar
-	$(".previous").click(function() {								//Bakåtknappen 
-	  var current_index = $(this).parent().index("fieldset");		
+	$(".previous").click(function() {								//Bakåtknappen
+	  var current_index = $(this).parent().index("fieldset");
 	  makeStepActive(current_index - 1);
 	});
 	//funkar
 
-   makeStepActive(0);	
-   
+   makeStepActive(0);
+
 
 
   function makeStepActive(index){
@@ -82,10 +82,10 @@ $(document).ready(function() {		//Rätt fil
 					document.getElementById(id).style.borderColor = "#E34234";
 					// let errorMessage = err.push('Please Enter Your '+id);				// koppla till HTML, se rad 113??? (denna funkar ej)
 					// let errorSpan = document.getElementsByClassName("fs-error");
-					// errorSpan.innerHTML=errorMessage;							
-					hasError = true;					
+					// errorSpan.innerHTML=errorMessage;
+					hasError = true;
 				}
-				
+
 			});
 			return !hasError;
 		  break;
@@ -93,7 +93,7 @@ $(document).ready(function() {		//Rätt fil
 		  case 1:
 
 			if(($("input[name='checkout_payment_options']:checked").length === 0)){			//Validera betlaningsalternativ
-				alert('Välj ett betalningsalternativ');									
+				alert('Välj ett betalningsalternativ');
 				return false;
 			}
 			return true;
@@ -102,24 +102,24 @@ $(document).ready(function() {		//Rätt fil
 
 			//CASE 1
 		break;
-			
+
 			default:
 				if(($("input[name='agree']:checked").length === 0)){
 					alert('Godkänn köpvillkoren');							// Validera köpvillkor
 					return false;
 				}
 				return true;
-				
+
 				if(err.length > 0){
 					$('.fs-error').html('<span style="color:red;">'+err.join('!<br>')+'</span>');
 					$('.fs-error').show();
-  
+
 					return false;
 				}else{
 					return true;
 				}
 	  }
   }
- 
-  
+
+
 });
