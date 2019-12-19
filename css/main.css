@@ -551,7 +551,8 @@ footer {
           width: 15%;
           height: inherit; }
           #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .removeInfo .removeImage {
-            height: 10%; }
+            height: 10%;
+            cursor: pointer; }
   @media screen and (max-width: 700px) {
     #checkoutProductSection #checkout_container_cart #checkout_container_items .mainCartContainer .amountInfo {
       flex-wrap: wrap; }
