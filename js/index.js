@@ -25,6 +25,17 @@ $(document).ready(function() {
 
     localStorage.setItem("filter", newFilter);
   });
+  // Ta bort .dark Filter
+  $(".dark").on("click", function(){
+    $(".dark").css("display", "none");
+    $(".menu").addClass("menu-hide");
+    $(".menu").removeClass("menu-show");
+    $(".menu-toggle-container").css("border-bottom", "0");
+    $(".favorites").addClass("favorites-hide");
+    $(".favorites").removeClass("favorites-show");
+    $(".favorites").css("width", "0");
+    $(".favorites-toggle").css("border-bottom", "0");
+  });
   // Tar användaren till startsidan
   $(".home").on("click", function() {
     localStorage.setItem("filter", 0);
