@@ -9,9 +9,10 @@
     background-color: white;
 
     #checkout_form {
-      width: 90%;
+      width: 100%;
 
       #checkout_headings_form {
+        padding: 0;
         li {
           list-style-type: none;
           text-align: center;
@@ -21,6 +22,7 @@
       .fs-error {}
 
       fieldset {
+        text-align: center;
         h2 {
           text-align: center;
           padding-bottom: 10px;
@@ -35,7 +37,6 @@
           justify-content: center;
           flex-wrap: wrap;
           flex-flow: row wrap;
-          justify-content: space-between;
 
           #form_part_1 {
             display: flex;
@@ -95,6 +96,7 @@
         #conditions_form {
           h4 {
             p {
+              text-decoration: underline;
               :hover {
                 text-decoration: underline;
               }

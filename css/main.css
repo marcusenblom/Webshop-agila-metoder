@@ -621,51 +621,56 @@ footer {
     width: 80%;
     background-color: white; }
     #checkoutForm #checkout_form_container #checkout_form {
-      width: 90%; }
-      #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
-        list-style-type: none;
+      width: 100%; }
+      #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form {
+        padding: 0; }
+        #checkoutForm #checkout_form_container #checkout_form #checkout_headings_form li {
+          list-style-type: none;
+          text-align: center; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset {
         text-align: center; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset h2 {
-        text-align: center;
-        padding-bottom: 10px; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
-        display: flex;
-        width: 40%;
-        margin: auto;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-flow: row wrap;
-        justify-content: space-between; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
-          display: flex;
-          flex-direction: column;
-          flex-wrap: wrap;
+        #checkoutForm #checkout_form_container #checkout_form fieldset h2 {
           text-align: center;
-          display: block;
-          max-width: 100%; }
-          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
-            margin: 10px; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
+          padding-bottom: 10px; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer {
           display: flex;
-          flex-direction: column;
+          width: 40%;
+          margin: auto;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: center;
           flex-wrap: wrap;
-          text-align: center;
-          display: block;
-          max-width: 100%; }
-          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
-            margin: 10px; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
-        display: flex;
-        width: 40%;
-        margin: auto;
-        flex-direction: row;
-        justify-content: flex-end; }
-        #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
-          margin-bottom: 10px; }
-      #checkoutForm #checkout_form_container #checkout_form fieldset #conditions_form h4 p :hover {
+          flex-flow: row wrap; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+            display: block;
+            max-width: 100%; }
+            #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_1 .checkout_form_input {
+              margin: 10px; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+            display: block;
+            max-width: 100%; }
+            #checkoutForm #checkout_form_container #checkout_form fieldset #checkout_form_innercontainer #form_part_2 .checkout_form_input {
+              margin: 10px; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container {
+          display: flex;
+          width: 40%;
+          margin: auto;
+          flex-direction: row;
+          justify-content: flex-end; }
+          #checkoutForm #checkout_form_container #checkout_form fieldset #next_button_container #next_button {
+            margin-bottom: 10px; }
+      #checkoutForm #checkout_form_container #checkout_form fieldset #conditions_form h4 p {
         text-decoration: underline; }
+        #checkoutForm #checkout_form_container #checkout_form fieldset #conditions_form h4 p :hover {
+          text-decoration: underline; }
 
 #confirmation_wrapper {
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
